@@ -1,8 +1,32 @@
 
 
-Status on November 25 2014
+Status on Nov 25 2014
 
 sv:
 phonegap installation (android device)
 https://github.com/StanislavVolodarskiy/cyberfon.git is created
 this file is created
+mongodb docs reading
+
+
+
+Status on Dec 13 2014
+
+phonegap development setup
+server setup (node.js, socket.io, express.js)
+simple chat web test
+
+-
+TODO:
+
+chat on mobile
+phoneGap sample
+local server
+global server
+authorization
+global chat
+location logger
+
+Apple development environment
+
+db setup

@@ -1,0 +1,46 @@
+<template name="profile">
+  <div class="content-scrollable">
+    <div class="wrapper-auth">
+
+      {{#if currentUser}}
+
+        <a class="js-sign-off btn-secondary">Выход</a>
+
+      {{else}}
+
+        <div class="btns-group">
+          <a class="js-sign-in btn-secondary">Вход</a>
+          <a class="js-sign-up btn-secondary">Регистрация</a>
+        </div>
+  
+        <form>
+          {{#if errorMessages}}
+            <div class="list-errors">
+              {{#each errorMessages}}
+                <div class="list-item">{{this}}</div>
+              {{/each}}
+            </div>
+          {{/if}}
+  
+          <div>
+            <input type="username" name="username" placeholder="Имя" />
+          </div>
+  
+          <div>
+            <input type="password" name="password" placeholder="Пароль" />
+          </div>
+
+          {{#if sign_up}}
+            <div>
+              <input type="password" name="confirm" placeholder="Пароль ещё раз" />
+            </div>
+          {{/if}}
+  
+          <button type="submit" class="btn-primary">Войти</button>
+        </form>
+      {{/if}}
+
+    </div>
+  </div>
+</template>
+

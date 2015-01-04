@@ -13,18 +13,36 @@ mongodb docs reading
 Status on Dec 13 2014
 
 phonegap development setup
+phoneGap sample
 server setup (node.js, socket.io, express.js)
 simple chat web test
+global server
+
+
+
+Status on Dec 21 2014
+
+global chat
+chat on mobile
+
+
+
+Status on Dec 22 2014
+
+meteor js investigation
+
+
+
+Status on Jan 4 2015
+
+Profile skeleton.
 
 -
 TODO:
 
-chat on mobile
-phoneGap sample
-local server
-global server
+nodejs protected API
+phonegap local data
 authorization
-global chat
 location logger
 
 Apple development environment

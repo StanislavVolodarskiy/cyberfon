@@ -1,5 +1,17 @@
+Router.setTemplateNameConverter(function(s) { return s; });
+
 Router.route('main', {
-    path: '/'
+    path: '/',
+    onBeforeAction: function () {
+        if (!Meteor.user() && !Meteor.loggingIn()) {
+            Router.go('sign_in');
+        }
+        this.next();
+    }
 });
 
-Router.route('profile');
+Router.route('menu');
+
+Router.route('sign_in');
+Router.route('sign_up');
+Router.route('sign_out');

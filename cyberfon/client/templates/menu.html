@@ -1,0 +1,18 @@
+<template name="menu">
+  <div class="content-scrollable">
+
+    {{#if currentUser}}
+
+      <div><a href="{{pathFor 'main'}}">Назад</a></div>
+
+      <div>{{username}}</div>
+      <!--
+      <div><a href="{{pathFor 'profile'}}">Редактировать</a></div>
+      -->
+      <div><a href="{{pathFor 'sign_out'}}">Выйти</a></div>
+
+    {{/if}}
+
+  </div>
+</template>
+

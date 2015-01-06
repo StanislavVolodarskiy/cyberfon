@@ -1,0 +1,21 @@
+<template name="sign_in">
+  <div class="content-scrollable">
+    <div class="wrapper-auth">
+
+      <form>
+        <div>
+          <input type="username" name="username" placeholder="Имя"/>
+        </div>
+  
+        <div>
+          <input type="password" name="password" placeholder="Пароль"/>
+        </div>
+  
+        <button type="submit" class="btn-primary">Войти</button>
+      </form>
+
+      <div><a href="{{pathFor 'sign_up'}}">Ещё не регистрировались?<br>Зарегистрируйтесь</a></div>
+  
+    </div>
+  </div>
+</template>

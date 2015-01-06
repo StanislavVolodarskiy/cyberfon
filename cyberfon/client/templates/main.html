@@ -1,4 +1,19 @@
 <template name="main">
-  <a href="{{pathFor route='profile'}}">Профиль</a>
+  <div><a href="{{pathFor route='menu'}}">Меню</a></div>
+  <div>Киберфон Ингрия</div>
+  <div>
+    <div>Мой статус:</div>
+    <div class="js-edit-status">{{status}}</div>
+  </div>
+  <div>
+    {{#each users}}
+      {{> user}}
+    {{/each}}
+  </div>
 </template>
 
+<template name="user">
+<div>
+    {{username}}
+</div>
+</template>

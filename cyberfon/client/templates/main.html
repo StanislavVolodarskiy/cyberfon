@@ -5,6 +5,11 @@
     <div>Мой статус:</div>
     <div class="js-edit-status">{{status}}</div>
   </div>
+  {{#if status_editing}}
+  <div>
+    <input type="text" value="{{status}}" placeholder="Task name">
+  </div>
+  {{/if}}
   <div>
     {{#each users}}
       {{> user}}
@@ -13,7 +18,10 @@
 </template>
 
 <template name="user">
-<div>
+  <div>
     {{username}}
-</div>
+  </div>
+  <div>
+    {{profile.status}}
+  </div>
 </template>

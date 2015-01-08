@@ -1,0 +1,21 @@
+<template name="dialog">
+  <div><a href="{{pathFor 'main'}}">Назад</a></div>
+  <div><a href="{{pathFor 'menu'}}">Меню</a></div>
+  <div>Диалог с {{correspondent.username}}</div>
+  <div>
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
+  </div>
+  <div>
+    <form class="js-new-message">
+      <input type="text" placeholder="Написать...">
+    </form> 
+  </div>
+</template>
+
+<template name="message">
+  <div>
+    {{author.username}}: {{text}}
+  </div>
+</template>

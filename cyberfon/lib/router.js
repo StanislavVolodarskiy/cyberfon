@@ -2,11 +2,18 @@ Router.setTemplateNameConverter(function(s) { return s; });
 
 Router.route('main', {
     path: '/',
-    onBeforeAction: function () {
+    onBeforeAction: function() {
         if (!Meteor.user() && !Meteor.loggingIn()) {
             Router.go('sign_in');
         }
         this.next();
+    }
+});
+
+Router.route('dialog', {
+    path: '/dialog/:_id',
+    data: function() {
+        return {corr_id: this.params._id};
     }
 });
 

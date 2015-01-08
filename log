@@ -37,13 +37,22 @@ Status on Jan 4 2015
 
 Profile skeleton.
 
+
+
+Status on Jan 8 2015
+
+Dialogs work.
+
 -
 TODO:
 
-nodejs protected API
-phonegap local data
-authorization
+delploy in internet server
+make APK
+dialog
+stylesheets
 location logger
+message server time
+remove myself from friends' lists
 
 Apple development environment
 

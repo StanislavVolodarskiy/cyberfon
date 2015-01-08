@@ -1,13 +1,15 @@
 <template name="main">
-  <div><a href="{{pathFor route='menu'}}">Меню</a></div>
+  <div><a href="{{pathFor 'menu'}}">Меню</a></div>
   <div>Киберфон Ингрия</div>
-  <div>
+  <div class="js-edit-status">
     <div>Мой статус:</div>
-    <div class="js-edit-status">{{status}}</div>
+    <div>{{status}}</div>
   </div>
   {{#if status_editing}}
   <div>
-    <input type="text" value="{{status}}" placeholder="Task name">
+    <form class="js-status-editing">
+      <input type="text" value="{{status}}" placeholder="Мой статус">
+    </form> 
   </div>
   {{/if}}
   <div>
@@ -19,9 +21,9 @@
 
 <template name="user">
   <div>
-    {{username}}
+    <a href="{{pathFor 'dialog' this.user_id}}">{{username}}</a>
   </div>
   <div>
-    {{profile.status}}
+    <a href="{{pathFor 'dialog' this.user_id}}">{{profile.status}}</a>
   </div>
 </template>

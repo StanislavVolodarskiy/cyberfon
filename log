@@ -42,6 +42,7 @@ Profile skeleton.
 Status on Jan 8 2015
 
 Dialogs work.
+remove myself from friends' lists
 
 -
 TODO:
@@ -52,7 +53,6 @@ dialog
 stylesheets
 location logger
 message server time
-remove myself from friends' lists
 
 Apple development environment
 

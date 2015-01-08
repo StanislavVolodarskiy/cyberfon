@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+e
+for f in log cyberfon/lib/* cyberfon/client/* cyberfon/client/templates/*; do
+    if [ -f $f ]; then
+        e $f
+    fi
+done

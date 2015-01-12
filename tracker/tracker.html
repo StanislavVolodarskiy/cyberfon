@@ -1,0 +1,24 @@
+<head>
+  <title>tracker</title>
+</head>
+
+<body>
+  <h1>Geolocation tracker</h1>
+  {{> tracker}}
+</body>
+
+<template name="tracker">
+  <form>
+    Трек: <input type="text" value="{{track}}" placeholder="Имя трека">
+  </form> 
+  <div>Трек: {{track}}</div>
+  <div>Ошибка: {{error.code}}: {{error.message}}</div>
+  <div>Время: {{position.timestamp}}</div>
+  <div>Широта: {{position.coords.latitude}}</div>
+  <div>Долгота: {{position.coords.longitude}}</div>
+  <div>Высота: {{position.coords.altitude}}</div>
+  <div>Точность: {{position.coords.accuracy}}</div>
+  <div>Точность по высоте: {{position.coords.altitudeAccuracy}}</div>
+  <div>Направление: {{position.coords.heading}}</div>
+  <div>Скорость: {{position.coords.speed}}</div>
+</template>

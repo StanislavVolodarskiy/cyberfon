@@ -43,17 +43,29 @@ Status on Jan 8 2015
 
 Dialogs work.
 remove myself from friends' lists
+deploy on internet server
+
+
+
+Status on Jan 9 2015
+
+deploy on internet server
+make APK
+
+
+
+Status on Jan 10 2015
+
+location logger
+
 
 -
 TODO:
 
-delploy in internet server
-make APK
-dialog
 stylesheets
-location logger
+location logger in cyberfon
 message server time
+clean message after submit
+official build process (on server for example)
 
 Apple development environment
-
-db setup

@@ -1,23 +1,22 @@
 <template name="sign_in">
-  <div class="content-scrollable">
-    <div class="wrapper-auth">
-
-        Hello
-
-      <form>
-        <div>
-          <input type="username" name="username" placeholder="Имя"/>
-        </div>
+  <div class="page auth">
+    <div class="content-scrollable">
+      <div class="wrapper-auth">
+        <form>
+          <div class="input-no-symbol">
+            <input type="text" name="username" placeholder="Имя"/>
+          </div>
+    
+          <div class="input-no-symbol">
+            <input type="password" name="password" placeholder="Пароль"/>
+          </div>
+    
+          <button type="submit" class="btn-primary">Войти</button>
+        </form>
   
-        <div>
-          <input type="password" name="password" placeholder="Пароль"/>
-        </div>
-  
-        <button type="submit" class="btn-primary">Войти</button>
-      </form>
-
-      <div><a href="{{pathFor 'sign_up'}}">Ещё не регистрировались?<br>Зарегистрируйтесь</a></div>
-  
+        <div><a href="{{pathFor 'sign_up'}}" class="link-auth-alt">Ещё не регистрировались?<br>Зарегистрируйтесь</a></div>
+    
+      </div>
     </div>
   </div>
 </template>

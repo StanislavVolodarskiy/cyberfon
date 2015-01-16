@@ -7,11 +7,13 @@ textarea {
   .font-s2;
   .type-regular;
   padding: .75rem 0; //total height ~48
+  padding-left: 1em;
   line-height: 1.5rem !important;
 
   // Style
   .placeholder(@color-complementary);
-  border: none;
+  border: solid;
+  border-color: @color-complementary;
   border-radius: 0;
   box-sizing: border-box;
   color: @color-full;
@@ -70,45 +72,12 @@ input:-webkit-autofill {
 }
 
 // Input with an icon
-.input-symbol {
+.input-no-symbol {
   display: inline-block;
   position: relative;
-
-  &.error [class^="icon-"],
-  &.error [class*=" icon-"] {
-    color: @color-negative;
-  }
-
-  // Position & padding
-  [class^="icon-"],
-  [class*=" icon-"] {
-    left: 1em;
-  }
-
-  input { padding-left: 3em; }
 
   // Styling
   input {
     width: 100%;
-
-    &:focus {
-      & + [class^="icon-"],
-      & + [class*=" icon-"] {
-        color: @color-primary;
-      }
-    }
-  }
-
-  [class^="icon-"],
-  [class*=" icon-"] {
-    .transition( all 300ms ease-in );
-    .transform(translate3d(0,-50%,0));
-    background: transparent;
-    color: @color-medium;
-    font-size: 1em;
-    height: 1em;
-    position: absolute;
-    top: 50%;
-    width: 1em;
   }
 }

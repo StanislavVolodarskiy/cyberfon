@@ -1,25 +1,26 @@
 <template name="sign_up">
-  <div class="content-scrollable">
-    <div class="wrapper-auth">
-
-      <form>
-        <div>
-          <input type="username" name="username" placeholder="Имя"/>
-        </div>
-  
-        <div>
-          <input type="password" name="password" placeholder="Пароль"/>
-        </div>
-  
-        <div>
-          <input type="password" name="password_again" placeholder="Пароль ещё раз"/>
-        </div>
-
-        <button type="submit" class="btn-primary">Зарегистрироваться</button>
-      </form>
-
-      <div><a href="{{pathFor 'sign_in'}}">Уже зарегистрировались?<br>Войдите</a></div>
-  
+  <div class="page auth">
+    <div class="content-scrollable">
+      <div class="wrapper-auth">
+        <form>
+          <div class="input-no-symbol">
+            <input type="text" name="username" placeholder="Имя"/>
+          </div>
+    
+          <div class="input-no-symbol">
+            <input type="password" name="password" placeholder="Пароль"/>
+          </div>
+    
+          <div class="input-no-symbol">
+            <input type="password" name="password_again" placeholder="Пароль ещё раз"/>
+          </div>
+   
+          <button type="submit" class="btn-primary">Зарегистрироваться</button>
+        </form>
+   
+        <div><a href="{{pathFor 'sign_in'}}" class="link-auth-alt">Уже зарегистрировались?<br>Войдите</a></div>
+    
+      </div>
     </div>
   </div>
 </template>

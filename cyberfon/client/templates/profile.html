@@ -1,0 +1,21 @@
+<template name="profile">
+  <div class="page auth">
+    <div class="content-scrollable">
+      <div class="wrapper-auth">
+        <div><a href="{{pathFor 'menu'}}" class="btn-secondary">Меню</a></div>
+        <form>
+          <div class="input-no-symbol"><input type="text" name="username"    value="{{username}}"            disabled              /></div>
+          <div class="input-no-symbol"><input type="text" name="first_name"  value="{{profile.first_name}}"  placeholder="Имя"     /></div>
+          <div class="input-no-symbol"><input type="text" name="second_name" value="{{profile.second_name}}" placeholder="Отчество"/></div>
+          <div class="input-no-symbol"><input type="text" name="last_name"   value="{{profile.last_name}}"   placeholder="Фамилия" /></div>
+          <p>&nbsp;</p>
+          <div class="input-no-symbol"><input type="password" name="old_password"   placeholder="Текущий пароль"      /></div>
+          <div class="input-no-symbol"><input type="password" name="password"       placeholder="Новый пароль"        /></div>
+          <div class="input-no-symbol"><input type="password" name="password_again" placeholder="Новый пароль ещё раз"/></div>
+   
+          <button type="submit" class="btn-primary">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

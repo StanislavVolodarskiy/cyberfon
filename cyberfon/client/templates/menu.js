@@ -2,7 +2,13 @@ Template.menu.helpers({
     'username': function() {
         return Meteor.user().username;
     },
+    'profile': function() {
+        return Meteor.user().profile;
+    },
     'lat': function() {
+        if (true) {
+            return 'AGA';
+        }
         
         var each = function(obj, f) {
             for (var key in obj) {

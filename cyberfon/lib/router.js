@@ -23,6 +23,10 @@ Router.route('dialog', {
 
 Router.route('menu');
 
+Router.route('sign_in_up', {
+    layoutTemplate: undefined
+});
+
 Router.route('sign_in');
 Router.route('sign_up');
 Router.route('sign_out');

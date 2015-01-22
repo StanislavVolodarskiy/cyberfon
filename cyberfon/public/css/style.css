@@ -1,0 +1,63 @@
+body p, body h1, body a, body label {
+    text-shadow: none;
+}
+
+.login-page, .register-page,
+.login-page .register-header, .register-page .register-header{
+    background-color: #006a77;
+    margin: 0;
+}
+
+a.login-register {
+    text-shadow:none;
+    color:#cccccc!important;
+}
+
+
+.centered {
+    text-align: center!important;
+}
+
+.register-link {
+    padding: 20px 0 0 0;
+}
+.register-link2 {
+    padding: 40px 0 0 0;
+}
+
+.enter-button, .enter-button:hover  {
+    width:200px!important;
+    background-color:#005c67!important;
+    border:0!important;
+    color:#ffffff!important;
+    text-shadow: none!important;
+    margin:30px auto;
+}
+.login-page img {
+    width:90%;
+    max-width: 400px;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    margin: 0 20%;
+}
+
+.register-header h1 {
+    margin:0;
+    color:#ffffff;
+    font-size: 1.3em!important;
+}
+.register-header {
+    border:0;
+}
+
+.register-page label {
+    color:#ffffff;
+    padding:10px 0 0 0;
+
+    font-size:1.1em;
+}
+
+.register-page p, .register-page a, .register-page a:hover, .register-page a:visited {
+    color:#ffffff;
+}

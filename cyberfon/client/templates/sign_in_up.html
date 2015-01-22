@@ -1,0 +1,17 @@
+<template name="sign_in_up">
+
+<div data-role="page" id="login" class="login-page">
+    <div role="main" class="ui-content centered">
+        <div class="text-center">
+            <img src="img/logo.png" />
+        </div>
+        <form>
+            <input type="text" name="text-1" id="text-1" value="" placeholder="Логин">
+            <input type="text" data-clear-btn="true" name="text-3" id="text-3" value="" placeholder="Пароль">
+            <button class="ui-btn enter-button">Войти</button>
+        </form>
+        <div class="centered register-link"><a class="login-register" data-transition="flow" href="#register">У меня нет учетной записи</a></div>
+        <div class="centered register-link2"><a class="login-register" data-transition="flow" href="#sms_confirm">Ввести SMS код</a></div>
+    </div>
+</div>
+</template>

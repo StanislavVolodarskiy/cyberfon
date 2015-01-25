@@ -11,3 +11,7 @@ iron:router
 accounts-password
 mdg:geolocation
 less
+meteoric:ionic-sass
+fourseven:scss
+meteoric:ionicons-sass
+meteoric:ionic

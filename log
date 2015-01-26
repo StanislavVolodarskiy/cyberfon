@@ -62,6 +62,8 @@ location logger
 -
 TODO:
 
+check phone_num
+normalize phone_num
 stylesheets
 location logger in cyberfon
 message server time

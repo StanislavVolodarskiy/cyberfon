@@ -1,5 +1,8 @@
 <template name="sign_in">
-<div style="text-align: center">Киберфон</div>
+<div class="navigation-bar">
+    <div class="navigation-bar__center">Вход</div>
+</div>
+
 <form>
     {{#if errors}}
         <div>
@@ -10,7 +13,7 @@
     {{/if}}
     <ul class="list">
         <li class="list__item">
-        <input type="text" class="text-input text-input--transparent" name="phone_num" style="width:100%; margin-top:4px;" placeholder="Телефон">
+        <input type="text" class="text-input text-input--transparent" name="phone_num" style="width:100%; margin-top:4px;" placeholder="Номер телефона">
         </li>
         <li class="list__item">
         <input type="text" class="text-input text-input--transparent" name="password" style="width:100%; margin-top:4px;" placeholder="Пароль">

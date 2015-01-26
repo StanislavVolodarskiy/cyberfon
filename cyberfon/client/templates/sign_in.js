@@ -19,14 +19,16 @@ Template.sign_in.events({
 
         Meteor.loginWithPassword({'username': phone_num}, password, function(error) {
             if (error === undefined) {
+                Session.set(SIGN_IN_ERRORS, []);
                 Router.go('main');
             } else {
-                console.log(error);
-
                 var errors = [];
-
                 if (error.reason == 'Match failed') {
                     errors.push('Нет такой пары телефон/пароль.');
+                }
+                if (errors.length == 0) {
+                    console.log(error);
+                    errors.push('Неизвестная ошибка.');
                 }
                 Session.set(SIGN_IN_ERRORS, errors);
             }

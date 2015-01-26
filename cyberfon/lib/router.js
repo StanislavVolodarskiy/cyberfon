@@ -8,7 +8,7 @@ Router.route('main', {
     path: '/',
     onBeforeAction: function() {
         if (!Meteor.user() && !Meteor.loggingIn()) {
-            Router.go('sign_in');
+            // Router.go('sign_in');
         }
         this.next();
     }
@@ -27,3 +27,4 @@ Router.route('sign_in');
 Router.route('sign_up');
 Router.route('sign_out');
 Router.route('profile');
+Router.route('people_list');

@@ -1,4 +1,4 @@
-<template name="sign_up">
+<template name="sign_up2">
   <div class="page auth">
     <div class="content-scrollable">
       <div class="wrapper-auth">
@@ -21,4 +21,52 @@
       </div>
     </div>
   </div>
+</template>
+
+
+<template name="sign_up">
+<!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
+
+<div class="navigation-bar">
+  <div class="navigation-bar__left">
+    <span class="toolbar-button--outline navigation-bar__line-height">
+        <a href="{{pathFor 'sign_in'}}"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
+    </span>
+  </div>
+
+  <div class="navigation-bar__center">
+    Регистрация
+  </div>
+
+
+</div>
+
+
+    <ul class="list">
+  <li class="list__item">
+    <input type="text" class="text-input text-input--transparent" name="first_name" style="width:100%; margin-top:4px;" placeholder="Имя">
+  </li>
+  <li class="list__item">
+    <input type="text" class="text-input text-input--transparent" name="middle_name" style="width:100%; margin-top:4px;" placeholder="Фамилия">
+  </li>
+    <li class="list__item">
+    <input type="text" class="text-input text-input--transparent" name="cell" style="width:100%; margin-top:4px;" placeholder="Номер телефона">
+  </li>
+  
+    <li class="list__item">
+    <input type="pwassword" class="text-input text-input--transparent" name="password" style="width:100%; margin-top:4px;" placeholder="Пароль">
+  </li>
+  
+    <li class="list__item">
+    <input type="password" class="text-input text-input--transparent" name="password_confirm" style="width:100%; margin-top:4px;" placeholder="Повторите пароль">
+  </li>
+  
+  <button class="button button--large">Регистрация</button>
+  
+  <div class="button--large--quiet"><a href="{{pathFor 'sign_in'}}" class="link-auth-alt">Уже есть учетная запись</a></div>
+ 
+  
+</ul>
+
+
 </template>

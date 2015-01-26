@@ -23,14 +23,12 @@ Template.sign_up.events({
         var errors = [];
         if (first_name === ''          ) { errors.push('Введите имя.'    ); }
         if (last_name === ''           ) { errors.push('Введите фамилию.'); }
-        if (password !== password_again) { errors.push('Разные пароли.'    ); }
+        if (password !== password_again) { errors.push('Разные пароли.'  ); }
 
         if (errors.length > 0) {
             Session.set(SIGN_UP_ERRORS, errors);
             return;
         }
-
-        alert('AGA');
 
         Accounts.createUser({
             'username': phone_num,
@@ -41,14 +39,21 @@ Template.sign_up.events({
                 'status'    : '?'
             }
         }, function(error) {
-            console.log(error);
+            if (error === undefined) {
+                Session.set(SIGN_UP_ERRORS, []);
+                Router.go('main');
+            } else {
+                var errors = [];
+                if (error.reason === 'Password may not be empty'      ) { errors.push('Введите пароль.'          ); }
+                if (error.reason === 'Need to set a username or email') { errors.push('Введите номер телефона.'  ); }
+                if (error.reason === 'Username already exists.'       ) { errors.push('Номер телефона уже занят.'); }
 
-            var errors = [];
-            if (errors.length == 0) {
-                console.log(error);
-                errors.push('Неизвестная ошибка.');
+                if (errors.length == 0) {
+                    console.log(error);
+                    errors.push('Неизвестная ошибка.');
+                }
+                Session.set(SIGN_UP_ERRORS, errors);
             }
-            Session.set(SIGN_UP_ERRORS, errors);
         });
     }
 });

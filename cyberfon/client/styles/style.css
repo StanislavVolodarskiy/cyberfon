@@ -1,3 +1,7 @@
+body {
+    font-family: Helvetica;
+}
+
 @font-face {
     font-family: OpenSans; 
     src:
@@ -39,6 +43,14 @@
     text-align: center;
 }
 
+.me {
+    width:50px;
+    padding:0px 5px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 40px;
+}
+
 .person {
     padding:5px 0 0 0;
     vertical-align: top;
@@ -52,8 +64,7 @@
 
 .person .status {
     fon-size:14px;
-    font-family: tahoma;
-    color:#999;
+    color:#888888;
     margin:5px 20px 0 0;
 }
 
@@ -106,7 +117,7 @@
     background: red;
     height: 20px!important;
     padding:5px 10px!important;
-    margin:0px!important;
+    margin:-10px!important;
     color:white;
     line-height: 10px;
     font-size: 12px;
@@ -127,4 +138,39 @@
 .people-list .notification {
     /*background-color: #999;*/
     margin-top:5px;
+}
+
+.notify {
+    height:15px;
+    margin-top:0px;
+    font-size: 12px;
+    float:left;
+}
+.mystatus {
+    color:black;
+}
+.status_date {
+    float:left;
+    margin:6px 0 0 5px;
+    font-size: 13px;
+    font-family: Helvetica;
+}
+
+.bottom_left_favorites  {
+    
+}
+
+.bottom_middle_dialogs i {
+    margin-top: 10px;
+}
+
+.bottom_right_status  {
+    margin-top: -10px;
+}
+.block_header {
+    height:30px;
+    width:100%;
+    margin:10px 0 0 0;
+    padding:10px 0 0 10px;
+    background-color:#cccccc;
 }

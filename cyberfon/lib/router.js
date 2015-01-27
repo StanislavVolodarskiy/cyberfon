@@ -29,3 +29,4 @@ Router.route('sign_out');
 Router.route('profile');
 Router.route('people_list');
 Router.route('modal');
+Router.route('chat');

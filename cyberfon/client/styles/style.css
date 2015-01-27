@@ -174,3 +174,51 @@ body {
     padding:10px 0 0 10px;
     background-color:#cccccc;
 }
+.twit {
+    padding:15px 5px;
+    position: relative;
+    border-bottom: 1px #ccc solid;
+} 
+
+.twit_answer {
+    padding:15px 5px;
+    position: relative;
+    border-bottom: 1px #ccc solid;
+}
+
+
+
+.twit_avatar {
+    position: absolute;
+    width:50px;
+    top:10px;
+    left:0;
+}
+.twit_avatar img {
+    padding:5px;
+}
+
+.informer {
+    position: absolute;
+    top:2px;
+    right:2px;
+}
+
+.twit .twit_text {
+    padding:0 5px 0 5px;
+}
+
+.twit_answer .twit_text {
+    padding:0 5px 0 55px;
+}
+
+.is_author .twit_text {
+    padding-right:60px!important;
+}
+
+.twit_apply {
+    position: absolute;
+    width:50px;
+    right:0;
+    top:15px;
+}

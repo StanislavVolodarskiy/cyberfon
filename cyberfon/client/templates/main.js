@@ -4,7 +4,7 @@ Session.setDefault(STATUS_EDITIING, false);
 Template.main.helpers({
     'status': function() {
         var user = Meteor.user();
-        return (user === undefined) ? undefined : user.profile.status;
+        return (user === undefined || user === null) ? undefined : user.profile.status;
     },
     'users': function() {
         return Meteor.users.find({'_id': {'$ne': Meteor.userId()}});

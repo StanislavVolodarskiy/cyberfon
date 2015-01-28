@@ -1,123 +1,124 @@
 <template name="main">
-<div class="screen">
-    <div class="navigation-bar fixed-top">
-        <div class="navigation-bar__left">
-            <!--<span class="toolbar-button navigation-bar__line-height">
-                <a href="goback"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
-            </span>-->
-        </div>
+    <div class="screen">
+        <div class="navigation-bar fixed-top">
+            <div class="navigation-bar__left">
+                <!--<span class="toolbar-button navigation-bar__line-height">
+                    <a href="goback"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
+                </span>-->
+            </div>
 
-        <div class="navigation-bar__center">Эфир</div>
+            <div class="navigation-bar__center">Эфир</div>
 
 
-        <div class="navigation-bar__right header">
-            <!-- Выбор приватности
-                - невидимый (меня никто не видит, а я всех вижу): span.invisible + i.ion-eye-disabled
-                - видимый (меня все видят): span.inradius + i.ion-eye-disabled
-            -->
-            
-            
-            <!-- НЕВИДИМЫЙ
-            <span class="toolbar-button navigation-bar__line-height invisible">
-                <a href="#change_status"><i class="ion-eye-disabled" style="font-size:32px; vertical-align:-6px;"></i></a>
-            </span>-->
-            
-            <!-- ВИДИМЫЙ -->
-            <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
-                <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
-            </span>
+            <div class="navigation-bar__right header">
+                <!-- Выбор приватности
+                    - невидимый (меня никто не видит, а я всех вижу): span.invisible + i.ion-eye-disabled
+                    - видимый (меня все видят): span.inradius + i.ion-eye-disabled
+                -->
+
+
+                <!-- НЕВИДИМЫЙ
+                <span class="toolbar-button navigation-bar__line-height invisible">
+                    <a href="#change_status"><i class="ion-eye-disabled" style="font-size:32px; vertical-align:-6px;"></i></a>
+                </span>-->
+
+                <!-- ВИДИМЫЙ -->
+                <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
+                        <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
+                    </span>
                 </a>
-            
-        </div>
-    </div>
 
-    <div class="screen-content">
-        <div class="block_me">
-            <div class="people-list">
-                <div class="table">
-                    <ul class="table-row">
-                        <li class="table-cell me">Я</li>
-
-                        <li class="table-cell person">
-                        <!--<div class="name">Я</div>-->
-                        <div class="status mystatus">{{status.text}}</div>
-                        <div class="statusbar">
-                            <div class="notification notify">{{status.nComments}}</div>
-                            <div class="status_date">{{status.date}}</div>
-                        </div>
-                        </li>
-                        <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
-                        
-                        <!-- Здесь дублируется значок приватности
-                       <i class="ion-eye visible"... - видимый
-                       <i class="ion-eye-disabled invisible"... - невидимый
-                        -->
-                        <li class="table-cell favorites"><i class="ion-eye visible" style="font-size:35px;"></i></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
-        <div class="block_inradius">
-            <div class="block_header block_header_inradius">В радиусе 1 км</div>
-            {{#each near_users}} {{> user}} {{/each}}
+        <div class="screen-content">
+            <div class="block_me">
+                <div class="people-list">
+                    <div class="table">
+                        <ul class="table-row">
+                            <li class="table-cell me"><a href="chat">Я</a></li>
+
+                            <li class="table-cell person">
+                                <a href="chat">
+                                    <div class="status mystatus">{{status.text}}</div>
+                                    <div class="statusbar">
+                                        <div class="notification notify">{{status.nComments}}</div>
+                                        <div class="status_date">{{status.date}}</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
+
+                            <!-- Здесь дублируется значок приватности
+                           <i class="ion-eye visible"... - видимый
+                           <i class="ion-eye-disabled invisible"... - невидимый
+                            -->
+                            <li class="table-cell favorites"><a href="change_private"><i class="ion-eye visible" style="font-size:35px;"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block_inradius">
+                <div class="block_header block_header_inradius">В радиусе 1 км</div>
+                {{#each near_users}} {{> user}} {{/each}}
+            </div>
+
+            <div class="block_offradius">
+                <div class="block_header block_header_offradius">Закрепленные</div>
+                {{#each favourite_users}} {{> user}} {{/each}}
+            </div>
+
+
         </div>
 
-        <div class="block_offradius">
-            <div class="block_header block_header_offradius">Закрепленные</div>
-            {{#each favourite_users}} {{> user}} {{/each}}
+
+        <div class="tab-bar fixed-bottom bottom_bar">
+            <label class="tab-bar__item">
+
+                <a href="config_menu"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_left_favorites"><i class="ion-gear-a" style="font-size:25px;"></i></div>
+                    </button></a>
+            </label>
+
+            <label class="tab-bar__item">
+
+                <a href="dialogs"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_middle_dialogs"><i class="ion-chatboxes" style="font-size:28px;"></i></div>
+                    </button></a>
+            </label>
+
+            <label class="tab-bar__item">
+
+                <button class="tab-bar__button">
+                    <div class="tab-bar__label bottom_right_status"></div>
+                </button>
+            </label>
         </div>
-
-
     </div>
-
-
-    <div class="tab-bar fixed-bottom bottom_bar">
-        <label class="tab-bar__item">
-            
-            <a href="config_menu"><button class="tab-bar__button">
-                <div class="tab-bar__label bottom_left_favorites"><i class="ion-gear-a" style="font-size:25px;"></i></div>
-            </button></a>
-        </label>
-
-        <label class="tab-bar__item">
-            
-            <a href="dialogs"><button class="tab-bar__button">
-                <div class="tab-bar__label bottom_middle_dialogs"><i class="ion-chatboxes" style="font-size:28px;"></i></div>
-            </button></a>
-        </label>
-
-        <label class="tab-bar__item">
-            
-            <button class="tab-bar__button">
-                <div class="tab-bar__label bottom_right_status"></div>
-            </button>
-        </label>
-    </div>
-</div>
 </template>
 
 <template name="user">
-<div class="people-list">
-    <div class="table">
-        <!-- 
-            ДОБАВИТЬ!!!
-            row_inradius - для элементов которые в радиусе
-            row_offradius - для элементов которые в радиусе
-        
-        -->
-        
-        
-        <ul class="table-row ">
-            <li class="table-cell avatar"><img src="{{fake_avatar}}" /></li>
-            <li class="table-cell person">
-            <div class="name">{{first_name}} {{last_name}}</div>
-            <div class="status">{{status.text}}</div>
-            <div class="statusbar"><div class="notification notify">{{status.nComments}}</div><div class="status_date">{{status.date}}</div></div>
-            </li>
-            <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
-            <li class="table-cell favorites row_inradius"><i class="ion-android-favorite fav" style="font-size:35px;"></i></li>
-        </ul>
+    <div class="people-list">
+        <div class="table">
+            <!-- 
+                ДОБАВИТЬ!!!
+                row_inradius - для элементов которые в радиусе
+                row_offradius - для элементов которые в радиусе
+            
+            -->
+
+
+            <ul class="table-row ">
+                <li class="table-cell avatar"><a href="chat"><img src="{{fake_avatar}}" /></a></li>
+                <li class="table-cell person"><a href="chat">
+                        <div class="name">{{first_name}} {{last_name}}</div>
+                        <div class="status">{{status.text}}</div>
+                        <div class="statusbar"><div class="notification notify">{{status.nComments}}</div><div class="status_date">{{status.date}}</div></div>
+                    </a></li>
+                <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
+                <li class="table-cell favorites row_inradius"><a href="#favorites"><i class="ion-android-favorite fav" style="font-size:35px;"></i></a></li>
+            </ul>
+        </div>
     </div>
-</div>
 </template>

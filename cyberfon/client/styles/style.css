@@ -188,6 +188,7 @@ body {
 
 
 
+
 .twit_avatar {
     position: absolute;
     width:50px;
@@ -204,16 +205,22 @@ body {
     right:2px;
 }
 
-.twit .twit_text {
+.twit .twit_text, .twit .twit_person {
     padding:0 5px 0 5px;
 }
 
-.twit_answer .twit_text {
+.twit_answer .twit_text, .twit_answer .twit_person {
     padding:0 5px 0 55px;
 }
 
-.is_author .twit_text {
+.is_author .twit_text, .is_author .twit_person {
     padding-right:60px!important;
+}
+
+.twit_person {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color:#999999;
 }
 
 .twit_apply {
@@ -221,4 +228,27 @@ body {
     width:50px;
     right:0;
     top:15px;
+}
+.list_avatar {
+    position: relative;
+}
+
+
+.list_avatar_image {
+position: absolute;
+top:0;
+left:0;
+}
+
+.list_informer {
+    height:10px;
+    width:10px;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.twit_date {
+    font-size: 12px;
+    color:#999999;
+    margin:5px 0 0 0;
 }

@@ -1,6 +1,16 @@
 body {
     font-family: Helvetica;
 }
+a {
+    text-decoration: none;
+}
+
+.bottom_bar a, .bottom_bar:visited {
+    color:#8f8f8f;
+}
+.bottom_bar:active {
+    color:#7abfff;
+}
 
 @font-face {
     font-family: OpenSans; 
@@ -169,11 +179,28 @@ body {
 }
 .block_header {
     height:30px;
-    width:100%;
+
     margin:10px 0 0 0;
     padding:10px 0 0 10px;
-    background-color:#cccccc;
+    
 }
+.block_header_inradius {
+    background-color:#cbffbc;
+}
+
+.row_inradius {
+    border-right:5px #cbffbc solid;
+}
+
+.block_header_offradius {
+    background-color:#fca3a4;
+}
+
+.row_offradius {
+    border-right:5px #fca3a4 solid;
+}
+
+
 .twit {
     padding:15px 5px;
     position: relative;
@@ -251,4 +278,69 @@ left:0;
     font-size: 12px;
     color:#999999;
     margin:5px 0 0 0;
+}
+
+.header .invisible {
+    background-color: #dc5236;
+    margin-right: 10px;
+}
+.header .invisible i {
+    color:#fff;
+}
+
+.header .visible {
+    background-color: #329117;
+    margin-right: 10px;
+}
+
+.header .visible i {
+    color:#fff;
+}
+
+.visible {
+    color: #329117;
+}
+.invisible {
+    color: #dc5236;
+}
+.navigation-bar {
+    background: rgb(0,106,119);
+    
+}
+
+.navigation-bar a {
+    color:#ccc;
+    
+}
+
+.navigation-bar__center {
+    color:#fff;
+    
+}
+
+.context_cont {
+    position: relative !important;
+    
+}
+
+.context_icon {
+    display:inline-block;
+    position: relative;
+    height: 25px;
+}
+
+.context_icon i {
+    float:left;
+}
+
+.context_text {
+    display:inline-block !important;
+}
+
+.context_icon .visible {
+    
+}
+
+.context_icon .invisible {
+    
 }

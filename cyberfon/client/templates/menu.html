@@ -19,3 +19,61 @@
   </div>
 </template>
 
+<template name="change_private">
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog change_visible">
+      <div class="alert-dialog-content">
+        Выберите уровень приватности
+      </div>
+
+      <div class="alert-dialog-footer">
+          <button class="alert-dialog-button">
+              <div class="context_cont">
+                 <div class="context_icon"><i class="ion-eye visible" style="font-size:35px;"></i></div>
+                 <div class="context_text visible">Видимый всем</div>
+              </div>
+          </button>
+          <button class="alert-dialog-button">
+              <div class="context_cont">
+                 <div class="context_icon"><i class="ion-eye invisible" style="font-size:35px;"></i></div>
+                 <div class="context_text invisible">Невидимый</div>
+              </div>
+          </button>
+      </div>
+    </div>
+</template>
+
+
+<template name="config_menu">
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog change_visible">
+      <div class="alert-dialog-content">
+        Меню
+      </div>
+
+      <div class="alert-dialog-footer">
+          <a href="account_settings"><button class="alert-dialog-button">
+              Учетные данные
+          </button></a>
+          
+          <a href="image_config"><button class="alert-dialog-button">
+              Аватарка
+              </button></a>
+          <a href="logout"><button class="alert-dialog-button">
+              Выйти
+              </button></a>
+      </div>
+    </div>
+</template>
+
+<template name="account_settings">
+    Account
+</template>
+
+<template name="image_config">
+    Image config
+</template>
+
+<template name="logout">
+    logout
+</template>

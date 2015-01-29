@@ -375,6 +375,7 @@ left:0;
     
 }
 
+.people-list .avatar:hover,
 .people-list .person:hover {
     cursor: pointer;
 }

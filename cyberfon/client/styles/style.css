@@ -344,3 +344,12 @@ left:0;
 .context_icon .invisible {
     
 }
+.comment_form {
+    color:#fff;
+}
+
+.comment_form input {
+    width:100%;
+    height:30px;
+    
+}

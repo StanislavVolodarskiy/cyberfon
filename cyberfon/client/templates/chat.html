@@ -1,5 +1,5 @@
 <template name="chat">
-    <div class="screen">    
+    <div class="screen chat">    
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
                 <span class="navigation-bar__line-height">
@@ -22,7 +22,11 @@
 
         </div>
 
+        
+        
         <div class="screen-content">   
+            
+            <div class="other_twits"><div class="button--large--quiet"><a href="{{pathFor 'user_chats'}}">Другие чаты пользователя</a></div></div>
 
             <div class="twit is_author">
                 <!-- класс is_author вызывает появление отступа справа в который должны помещать дополнительные элементы 
@@ -57,65 +61,12 @@
                 <div class="twit_text">Ну он добрый вообще-то. <div class="twit_date">3 мин назад</div></div>
                 <div class="twit_apply"><a href="#delete">Delete</a></div>
             </div>
-
-            <div class="twit is_author">
-                <!-- класс is_author вызывает появление отступа справа в который должны помещать дополнительные элементы 
-                управления  для автора (кнопка Удалить и кнопка Назначить текущим статусом)
-                Владелец чата должен иметь отступ и элементы управления в каждом твите и комментарии, а автор
-                комментария только навпротив своего комментария
-                -->
-                <div class="twit_text">Тут вот такое дело. Только что у нас леопард сбежал из клетки. Побежал куда-то туда. В вашу сторону. 
-                <div class="twit_date">вчера в 20.05</div> </div>
-                <!-- Apply Status - сделать текущим статусом. Это будет простая индикатор при нажатии на который
-                он будет менять значение на противоположное. 
-                -->
-                <div class="twit_apply"><a href="#apply">Apply</a> <a href="#delete">Delete</a></div>
-            </div>
-
-            <div class="twit_answer is_author">
-                <div class="twit_avatar">
-                    <div class="avatar_image"><img src="/avatars/av1.jpg" /></div>
-                    <div class="informer"><img src="/images/inradius.png" /></div>
-                </div>
-                <div class="twit_person">Степан Васильев</div>
-                <div class="twit_text">И чо делать? А вдруг он нас покусает? <div class="twit_date">12.12.2014 13:53</div></div>
-                <div class="twit_apply"><a href="#delete">Delete</a></div>
-            </div>
-
-            <div class="twit_answer is_author">
-                <div class="twit_avatar">
-                    <div class="avatar_image"><img src="/avatars/av1.jpg" /></div>
-                    <div class="informer"><img src="/images/inradius.png" /></div>
-                </div>
-                <div class="twit_person">Василий Степанов</div>
-                <div class="twit_text">Ну он добрый вообще-то. <div class="twit_date">29.12.2014 21.02</div></div>
-                <div class="twit_apply"><a href="#delete">Delete</a></div>
-            </div>
-            
+   
         </div>
 
 
-        <div class="tab-bar fixed-bottom bottom_bar">
-        <label class="tab-bar__item">
-            
-            <a href="config_menu"><button class="tab-bar__button">
-                <div class="tab-bar__label bottom_left_favorites"><i class="ion-gear-a" style="font-size:25px;"></i></div>
-            </button></a>
-        </label>
-
-        <label class="tab-bar__item">
-            
-            <a href="dialogs"><button class="tab-bar__button">
-                <div class="tab-bar__label bottom_middle_dialogs"><i class="ion-chatboxes" style="font-size:28px;"></i></div>
-            </button></a>
-        </label>
-
-        <label class="tab-bar__item">
-            
-            <button class="tab-bar__button">
-                <div class="tab-bar__label bottom_right_status"></div>
-            </button>
-        </label>
-    </div>
+        <div class="tab-bar fixed-bottom bottom_bar comment_form">
+            <input autofocus="autofocus" value="" placeholder="Введите комментарий">
+        </div>
     </div>
 </template>

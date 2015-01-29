@@ -36,6 +36,7 @@ Router.route('account_settings');
 Router.route('image_config');
 Router.route('logout');
 Router.route('dialogs');
+Router.route('user_chats');
 
 
 

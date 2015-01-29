@@ -353,3 +353,7 @@ left:0;
     height:30px;
     
 }
+
+.people-list .person:hover {
+    cursor: pointer;
+}

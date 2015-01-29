@@ -38,7 +38,6 @@ Router.route('people_list');
 Router.route('context_menu');
 Router.route('change_private');
 Router.route('config_menu');
-Router.route('account_settings');
 Router.route('image_config');
 Router.route('logout');
 Router.route('dialogs');

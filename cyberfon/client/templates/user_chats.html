@@ -1,3 +1,69 @@
 <template name="user_chats">
-    Чаты пользователя
+    <div class="screen user_chats">    
+        <div class="navigation-bar fixed-top">
+            <div class="navigation-bar__left">
+                <span class="navigation-bar__line-height">
+                    <a href="goback"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
+                </span>
+            </div>
+
+            <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
+
+            <div class="navigation-bar__right">
+                <span class="navigation-bar__line-height">
+                    <!-- TODO: Его аватарка, при клике должна по идее открываться увеличенное изображение  -->
+                    <a href="#avatar"><img src="{{fake_avatar}}" /></a>
+                </span>
+            </div>
+
+        </div>
+
+        
+        
+        <div class="screen-content">   
+       
+            <div class="twit is_author">
+                <!-- класс is_author вызывает появление отступа справа в который должны помещать дополнительные элементы 
+                управления  для автора (кнопка Удалить и кнопка Назначить текущим статусом)
+                Владелец чата должен иметь отступ и элементы управления в каждом твите и комментарии, а автор
+                комментария только навпротив своего комментария
+                -->
+                <div class="twit_text">Тут вот такое дело. Только что у нас леопард сбежал из клетки. Побежал куда-то туда. В вашу сторону.
+                    <div class="twit_date">вчера в 20.05 <span class="twit_comments_count"> | 20 комментариев</span></div> </div>
+                <!-- TODO: Apply Status - сделать текущим статусом. Это будет простая индикатор при нажатии на который
+                он будет менять значение на противоположное. 
+                -->
+                <div class="twit_apply">
+                    <i class="ion-checkmark-circled twit_passive" style="font-size:35px;"></i>
+                    <i class="ion-close-round delete_twit" style="font-size:20px;"></i>
+                </div>
+            </div>
+            
+            
+            <div class="twit is_author">
+                <div class="twit_text">Тут вот такое дело. Только что у нас леопард сбежал из клетки. Побежал куда-то туда. В вашу сторону.
+                <div class="twit_date">вчера в 20.05 <span class="twit_comments_count"> | 20 комментариев</span></div> </div>
+                <div class="twit_apply">
+                    <i class="ion-checkmark-circled twit_passive" style="font-size:35px;"></i>
+                    <i class="ion-close-round delete_twit" style="font-size:20px;"></i>
+                </div>
+            </div>
+            
+            <div class="twit is_author">
+                <div class="twit_text">Тут вот такое дело. Только что у нас леопард сбежал из клетки. Побежал куда-то туда. В вашу сторону.
+                <div class="twit_date">вчера в 20.05 <span class="twit_comments_count"> | 20 комментариев</span></div> </div>
+                <div class="twit_apply">
+                    <i class="ion-checkmark-circled twit_active" style="font-size:35px;"></i>
+                    <i class="ion-close-round delete_twit" style="font-size:20px;"></i>
+                </div>
+            </div>
+
+   
+        </div>
+
+
+        <div class="tab-bar fixed-bottom bottom_bar comment_form">
+            <input autofocus="autofocus" value="" placeholder="Введите комментарий">
+        </div>
+    </div>
 </template>

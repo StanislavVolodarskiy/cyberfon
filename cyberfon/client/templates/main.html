@@ -11,22 +11,7 @@
 
 
             <div class="navigation-bar__right header">
-                <!-- Выбор приватности
-                    - невидимый (меня никто не видит, а я всех вижу): span.invisible + i.ion-eye-disabled
-                    - видимый (меня все видят): span.inradius + i.ion-eye-disabled
-                -->
 
-
-                <!-- НЕВИДИМЫЙ
-                <span class="toolbar-button navigation-bar__line-height invisible">
-                    <a href="#change_status"><i class="ion-eye-disabled" style="font-size:32px; vertical-align:-6px;"></i></a>
-                </span>-->
-
-                <!-- ВИДИМЫЙ -->
-                <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
-                        <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
-                    </span>
-                </a>
 
             </div>
         </div>
@@ -92,7 +77,24 @@
             <label class="tab-bar__item">
 
                 <button class="tab-bar__button">
-                    <div class="tab-bar__label bottom_right_status"></div>
+                    <div class="tab-bar__label bottom_right_status">
+                                        <!-- Выбор приватности
+                    - невидимый (меня никто не видит, а я всех вижу): span.invisible + i.ion-eye-disabled
+                    - видимый (меня все видят): span.inradius + i.ion-eye-disabled
+                -->
+
+
+                <!-- НЕВИДИМЫЙ
+                <span class="toolbar-button navigation-bar__line-height invisible">
+                    <a href="#change_status"><i class="ion-eye-disabled" style="font-size:32px; vertical-align:-6px;"></i></a>
+                </span>-->
+
+                <!-- ВИДИМЫЙ -->
+                <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
+                        <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
+                    </span>
+                </a>
+                    </div>
                 </button>
             </label>
         </div>
@@ -110,7 +112,19 @@
 
 
             <ul class="table-row ">
-                <li class="table-cell avatar"><a href="chat"><img src="{{fake_avatar}}" /></a></li>
+                <li class="table-cell avatar">
+                    <!--<a href="chat"><img src="{{fake_avatar}}" /></a>-->
+                    <div class="main_avatar_cont">
+                        <div class="twit_avatar">
+                            <div class="avatar_image"><img src="/avatars/av1.jpg" /></div>
+                            <div class="informer"><img src="/images/inradius.png" /></div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </li>
                 <li class="table-cell person js-open-chat">
                     <div class="name">{{first_name}} {{last_name}}</div>
                     <div class="status">{{status.text}}</div>

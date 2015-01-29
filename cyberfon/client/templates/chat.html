@@ -7,16 +7,12 @@
                 </span>
             </div>
 
-
-            <div class="navigation-bar__center">
-                <!-- Здесь владелец чата  -->
-                Иван Иванов
-            </div>
+            <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
 
             <div class="navigation-bar__right">
                 <span class="navigation-bar__line-height">
-                    <!-- Его аватарка, при клике должна по идее открываться увеличенное изображение  -->
-                    <a href="#avatar"><img src="/avatars/av1.jpg" /></a>
+                    <!-- TODO: Его аватарка, при клике должна по идее открываться увеличенное изображение  -->
+                    <a href="#avatar"><img src="{{fake_avatar}}" /></a>
                 </span>
             </div>
 
@@ -36,7 +32,7 @@
                 -->
                 <div class="twit_text">Тут вот такое дело. Только что у нас леопард сбежал из клетки. Побежал куда-то туда. В вашу сторону.
                     <div class="twit_date">вчера в 20.05</div> </div>
-                <!-- Apply Status - сделать текущим статусом. Это будет простая индикатор при нажатии на который
+                <!-- TODO: Apply Status - сделать текущим статусом. Это будет простая индикатор при нажатии на который
                 он будет менять значение на противоположное. 
                 -->
                 <div class="twit_apply"><a href="#apply">Apply</a> <a href="#delete">Delete</a></div>

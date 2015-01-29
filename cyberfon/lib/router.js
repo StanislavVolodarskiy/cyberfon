@@ -21,6 +21,13 @@ Router.route('dialog', {
     }
 });
 
+Router.route('chat', {
+    path: '/chat/:_id',
+    data: function() {
+        return {corr_id: this.params._id};
+    }
+});
+
 Router.route('menu');
 
 Router.route('sign_in');
@@ -28,7 +35,6 @@ Router.route('sign_up');
 Router.route('sign_out');
 Router.route('profile');
 Router.route('people_list');
-Router.route('chat');
 Router.route('context_menu');
 Router.route('change_private');
 Router.route('config_menu');

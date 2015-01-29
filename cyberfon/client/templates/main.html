@@ -21,20 +21,8 @@
                 <div class="people-list">
                     <div class="table">
                         <ul class="table-row">
-                            <li class="table-cell me"><a href="chat">Я</a></li>
-
-                            <li class="table-cell person">
-                                <a href="chat">
-                                    <div class="status mystatus">{{status.text}}</div>
-                                    <!--<div class="statusbar">
-                                        <div class="notification notify">{{status.nComments}}</div>
-                                        <div class="status_date">{{status.date}}</div>
-                                    </div>-->
-                                      
-                                </a>
-                            </li>
-                            <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
-
+                            <li class="table-cell me js-open-chat">Я</li>
+                            <li class="table-cell person js-open-chat"><div class="status mystatus">{{status.text}}</div></li>
                             <!-- Здесь дублируется значок приватности
                            <i class="ion-eye visible"... - видимый
                            <i class="ion-eye-disabled invisible"... - невидимый

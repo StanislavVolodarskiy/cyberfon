@@ -30,6 +30,7 @@ var fake_alexey = {
 Template.main.helpers({
     'status': function() {
         return {
+            'status_id': 'my_status_id',
             'text'     : 'Эй, пошли на шашлык, братва',
             'date'     : new Date(),
             'nComments': 3
@@ -46,6 +47,12 @@ Template.main.helpers({
     'users': function() {
         return Meteor.users.find({'_id': {'$ne': Meteor.userId()}});
     },
+});
+
+Template.main.events({
+    'click .js-open-chat': function(event, template) {
+        Router.go('chat', {'_id': 'my_status_id'});
+    }
 });
 
 Template.main_user.events({

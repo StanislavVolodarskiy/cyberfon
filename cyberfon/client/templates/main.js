@@ -12,7 +12,8 @@ var fake_vasiliy = {
         'date'     : new Date(2015, 1, 22, 10, 33, 16, 4),
         'nComments': 4
     },
-    'distance': 'near'
+    'distance': 'near',
+    'favourite': 'no'
 };
 
 var fake_alexey = {
@@ -26,7 +27,8 @@ var fake_alexey = {
         'date'     : new Date(2015, 2, 22, 10, 33, 16, 4),
         'nComments': 9
     },
-    'distance': 'near'
+    'distance': 'near',
+    'favourite': 'yes'
 };
 
 var fake_john = {
@@ -40,7 +42,8 @@ var fake_john = {
         'date'     : new Date(2014, 2, 22, 10, 33, 16, 4),
         'nComments': 0
     },
-    'distance': 'far'
+    'distance': 'far',
+    'favourite': 'yes'
 };
 
 Template.main.helpers({
@@ -74,5 +77,8 @@ Template.main.events({
 Template.main_user.events({
     'click .js-open-chat': function(event, template) {
         Router.go('chat', {'_id': template.data.status.status_id});
+    },
+    'click .js-toggle-favourite': function(event, template) {
+        console.log('TODO: js-toggle-favourite');
     }
 });

@@ -1,6 +1,9 @@
 body {
-    font-family: Helvetica;
+    font-family: "Ubuntu";
+    font-weight: 400;
 }
+
+/*300,400,600,700,800*/
 a {
     text-decoration: none;
 }
@@ -12,20 +15,300 @@ a {
     color:#7abfff;
 }
 
+
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-Medium.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: Ubuntu; 
+    src:
+    url("/fonts/Ubuntu-MediumItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-BlackItalic.ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Medium.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-MediumItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-Thin.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto; 
+    src:
+    url("/fonts/Roboto-ThinItalic.ttf");
+    font-weight: 200;
+    font-style: italic;
+}*/
+
+
+/*@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 @font-face {
     font-family: OpenSans; 
     src:
-    url("/fonts/OpenSans-BoldItalic.ttf"),
-    url("/fonts/OpenSans-Bold.ttf"),
-    url("/fonts/OpenSans-ExtraBoldItalic.ttf"),
-    url("/fonts/OpenSans-ExtraBold.ttf"),
-    url("/fonts/OpenSans-Italic.ttf"),
-    url("/fonts/OpenSans-LightItalic.ttf"),
-    url("/fonts/OpenSans-Light.ttf"),
-    url("/fonts/OpenSans-Regular.ttf"),
-    url("/fonts/OpenSans-SemiboldItalic.ttf"),
-    url("/fonts/OpenSans-Semibold.ttf");
+    url("/fonts/OpenSans-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
 }
+
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-ExtraBoldItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-SemiboldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans-Semibold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+*/
+
+
+
+
+/*
+
+@font-face {
+    font-family: OpenSans; 
+    src:
+    url("/fonts/OpenSans.ttf")
+}
+
+
+@font-face {
+    font-family: OpenSans-BoldItalic; 
+    src:
+    url("/fonts/OpenSans-BoldItalic.ttf")
+}
+**************
+@font-face {
+    font-family: OpenSans-Bold; 
+    src:
+    url("/fonts/OpenSans-Bold.ttf")
+}
+@font-face {
+    font-family: OpenSans-ExtraBoldItalic; 
+    src:
+    url("/fonts/OpenSans-ExtraBoldItalic.ttf")
+}
+@font-face {
+    font-family: OpenSans-ExtraBold; 
+    src:
+    url("/fonts/OpenSans-ExtraBold.ttf")
+}
+
+@font-face {
+    font-family: OpenSans-Italic; 
+    src:
+    url("/fonts/OpenSans-Italic.ttf")
+}
+@font-face {
+    font-family: OpenSans-LightItalic; 
+    src:
+    url("/fonts/OpenSans-LightItalic.ttf")
+}
+@font-face {
+    font-family: OpenSans-Light; 
+    src:
+    url("/fonts/OpenSans-Light.ttf")
+}
+@font-face {
+    font-family: OpenSans-SemiboldItalic; 
+    src:
+    url("/fonts/OpenSans-SemiboldItalic.ttf")
+}
+@font-face {
+    font-family: OpenSans-Semibold; 
+    src:
+    url("/fonts/OpenSans-Semibold.ttf")
+}
+
+*/
+
 
 
 .people-list .table {
@@ -69,12 +352,14 @@ a {
 .person .name {
     
     font-size: 20px;
-   color:black;
+   color:#888888;
+   font-weight: 300;
+   color:rgb(0,106,119);
 }
 
 .person .status {
     fon-size:14px;
-    color:#888888;
+    color:#000000;
     margin:5px 20px 0 0;
 }
 
@@ -116,7 +401,8 @@ a {
 .screen-content{
     top:44px; 
     width:100%; 
-    height:81%; 
+    height:81%;
+    margin-bottom: 50px;
     background:#fff; 
     position: relative; 
     float:left;
@@ -158,6 +444,7 @@ a {
 }
 .mystatus {
     color:black;
+    
 }
 .status_date {
     float:left;
@@ -165,6 +452,15 @@ a {
     font-size: 13px;
     font-family: Helvetica;
 }
+.efir_status {
+    width:60px;
+    
+}
+.efir_status i {
+    margin-left: 15px;
+    
+}
+
 
 .bottom_left_favorites  {
     
@@ -185,7 +481,9 @@ a {
     
 }
 .block_header_inradius {
-    background-color:#cbffbc;
+    border-bottom: 1px rgb(0,106,119) solid;
+    color:#666666;
+
 }
 
 .row_inradius {
@@ -193,11 +491,13 @@ a {
 }
 
 .block_header_offradius {
-    background-color:#fca3a4;
+    border-bottom: 1px rgb(0,106,119) solid;
+    color:#666666;
 }
 
 .row_offradius {
     border-right:5px #fca3a4 solid;
+    
 }
 
 
@@ -381,5 +681,13 @@ left:0;
     cursor: pointer;
 }
 .sdfsd {
+    width:100%;
+}
+
+.clearbox {
+    position: relative;
+    float:left;
+    clear: both;
+    height:50px;
     width:100%;
 }

@@ -77,19 +77,12 @@
 <template name="main_user">
     <div class="people-list">
         <div class="table">
-            <!-- 
-                TODO:
-                row_inradius - для элементов которые в радиусе
-                row_offradius - для элементов которые в радиусе
-            -->
-
-
             <ul class="table-row ">
                 <li class="table-cell avatar js-open-chat">
                     <div class="main_avatar_cont">
                         <div class="twit_avatar">
-                            <div class="avatar_image"><img src="/avatars/av1.jpg" /></div>
-                            <div class="informer"><img src="/images/inradius.png" /></div>
+                            <div class="avatar_image"><img src="{{fake_avatar}}" /></div>
+                            <div class="informer"><img src="/images/{{distance}}.png" /></div>
                         </div>
                     </div>
                 </li>
@@ -97,7 +90,6 @@
                     <div class="name">{{first_name}} {{last_name}}</div>
                     <div class="status">{{status.text}}</div>
                 </li>
-                <!--<li class="table-cell message"><i class="ion-email-unread" style="font-size:30px;"></i></li>-->
                 <li class="table-cell favorites row_inradius"><a href="#favorites"><i class="ion-android-favorite fav" style="font-size:35px;"></i></a></li>
             </ul>
         </div>

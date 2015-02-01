@@ -11,7 +11,8 @@ var fake_vasiliy = {
         'text'     : 'Хочу чтобы всем было тепло и хорошо и чтобы всех было все что хотят',
         'date'     : new Date(2015, 1, 22, 10, 33, 16, 4),
         'nComments': 4
-    }
+    },
+    'distance': 'near'
 };
 
 var fake_alexey = {
@@ -24,7 +25,22 @@ var fake_alexey = {
         'text'     : 'Три проходки в кино, яблоки, помидоры, малина и клубника',
         'date'     : new Date(2015, 2, 22, 10, 33, 16, 4),
         'nComments': 9
-    }
+    },
+    'distance': 'near'
+};
+
+var fake_john = {
+    'user_id': 'fake_john',
+    'fake_avatar': 'avatars/av4.jpg',
+    'first_name': 'John',
+    'last_name': 'Winston',
+    'status': {
+        'status_id': 'fake_john_status_id',
+        'text'     : 'Wow!',
+        'date'     : new Date(2014, 2, 22, 10, 33, 16, 4),
+        'nComments': 0
+    },
+    'distance': 'far'
 };
 
 Template.main.helpers({
@@ -42,7 +58,7 @@ Template.main.helpers({
         return [fake_vasiliy, fake_alexey];
     },
     'favourite_users': function() {
-        return [fake_alexey, fake_vasiliy];
+        return [fake_john, fake_vasiliy];
     },
     'users': function() {
         return Meteor.users.find({'_id': {'$ne': Meteor.userId()}});

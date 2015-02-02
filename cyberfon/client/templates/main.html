@@ -7,11 +7,14 @@
                 </span>-->
             </div>
 
-            <div class="navigation-bar__center">Эфир</div>
+            <div class="navigation-bar__center">Эфир (радиус 1 км)</div>
 
 
             <div class="navigation-bar__right header">
 
+    <span class="toolbar-button--quiet navigation-bar__line-height rightheader">
+      <i class="ion-plus-round" style="font-size:25px;"></i>
+    </span>
 
             </div>
         </div>
@@ -24,21 +27,19 @@
                             <!--<li class="table-cell me js-open-chat">Я</li>-->
                             
                             <li class="table-cell efir_status"><a href="change_private"><i class="ion-wifi visible" style="font-size:35px;"></i></a></li>
-                            <li class="table-cell person js-open-chat"><div class="status mystatus">{{status.text}}</div></li>
+                            <li class="table-cell person js-open-chat"><div class="status mystatus">{{status.text}}<br><div class="mycomments">Комментариев: 3</div></div></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="block_inradius">
-                <div class="block_header block_header_inradius">В радиусе 1 км</div>
-                {{#each near_users}} {{> main_user}} {{/each}}
-            </div>
+            
+            {{#each near_users}} {{> main_user}} {{/each}}
+            
 
-            <div class="block_offradius">
-                <div class="block_header block_header_offradius">Закрепленные</div>
-                {{#each favourite_users}} {{> main_user}} {{/each}}
-            </div>
+            
+            {{#each favourite_users}} {{> main_user}} {{/each}}
+            
 
 
         </div>
@@ -74,7 +75,8 @@
     </div>
 </template>
 
-<template name="main_user">
+
+<template name="main_user2">
     <div class="people-list">
         <div class="table">
             <ul class="table-row ">
@@ -94,4 +96,17 @@
             </ul>
         </div>
     </div>
+</template>
+
+<template name="main_user">
+
+    <div class="chat_row">
+        <div class="avapic">
+            <div class="avatar_image"><img src="{{fake_avatar}}" /></div>
+            <div class="informer"><img src="/images/{{distance}}.png" /></div>
+        </div>
+        <div class="chat_text"><span class="named">{{first_name}} {{last_name}}:</span> {{status.text}}</div>
+        <div class="chat_bottoms"><span class="lock"><i class="ion-locked"></i> </span></div>
+    </div>
+    
 </template>

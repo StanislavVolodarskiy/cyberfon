@@ -35,8 +35,9 @@ Template.sign_up.events({
             'password': password,
             'profile': {
                 'first_name': first_name,
-                'last_name' : last_name ,
-                'status'    : '?'
+                'last_name' : last_name,
+                'favorites' : [],
+                'status'    : undefined
             }
         }, function(error) {
             if (error === undefined) {

@@ -18,7 +18,7 @@ Template.chat.helpers({
     'near_users': function() {
         return [fake_vasiliy, fake_alexey];
     },
-    'favourite_users': function() {
+    'favorite_users': function() {
         return [fake_alexey, fake_vasiliy];
     },
     'users': function() {

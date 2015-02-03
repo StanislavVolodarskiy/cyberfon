@@ -29,7 +29,6 @@ Router.route('chat', {
 });
 
 Router.route('menu');
-
 Router.route('sign_in');
 Router.route('sign_up');
 Router.route('sign_out');
@@ -39,9 +38,5 @@ Router.route('context_menu');
 Router.route('change_private');
 Router.route('config_menu');
 Router.route('image_config');
-Router.route('logout');
 Router.route('dialogs');
 Router.route('user_chats');
-
-
-

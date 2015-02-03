@@ -1,8 +1,9 @@
 <template name="sign_out">
-  <div class="content-scrollable">
-    <div class="wrapper-auth">
-      <div><a href="{{pathFor 'menu'}}" class="btn-secondary">Меню</a></div>
-      <div><a class="js-sign-out btn-secondary">Выйти</a></div>
+    <div class="alert-dialog-mask"></div>
+    <div class="alert-dialog change_visible">
+      <div class="alert-dialog-footer">
+          <button class="alert-dialog-button js-sign-out">Да, выйти</button>
+          <a href="{{pathFor 'config_menu'}}"><button class="alert-dialog-button">Нет, не надо</button></a>
+      </div>
     </div>
-  </div>
 </template>

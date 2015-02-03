@@ -47,23 +47,11 @@
 <template name="config_menu">
     <div class="alert-dialog-mask"></div>
     <div class="alert-dialog change_visible">
-      <div class="alert-dialog-content">
-        Меню
-      </div>
+      <div class="alert-dialog-content">Меню</div>
 
       <div class="alert-dialog-footer">
-          <a href="profile"><button class="alert-dialog-button">
-              Настройки профиля
-          </button></a>
-
-          <a href="logout"><button class="alert-dialog-button">
-              Выйти
-              </button></a>
+          <a href="{{pathFor 'profile'}}"><button class="alert-dialog-button">Настройки профиля</button></a>
+          <a href="{{pathFor 'sign_out'}}"><button class="alert-dialog-button">Выйти</button></a>
       </div>
     </div>
-</template>
-
-
-<template name="logout">
-    logout
 </template>

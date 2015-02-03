@@ -62,9 +62,9 @@ location logger
 -
 TODO:
 
+five minutes timeout to correct status (or until first comment)
 check phone_num
 normalize phone_num
-stylesheets
 location logger in cyberfon
 message server time
 clean message after submit

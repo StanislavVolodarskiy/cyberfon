@@ -1,25 +1,3 @@
-var fake_vasiliy = {
-    'fake_avatar': 'avatars/av1.jpg',
-    'first_name': 'Вася',
-    'last_name': 'Пупкин',
-    'status': {
-        'text'     : 'Хочу чтобы всем было тепло и хорошо и чтобы всех было все что хотят',
-        'date'     : new Date(2015, 1, 22, 10, 33, 16, 4),
-        'nComments': 4
-    }
-};
-
-var fake_alexey = {
-    'fake_avatar': 'avatars/av4.jpg',
-    'first_name': 'Леша',
-    'last_name': 'Гришин',
-    'status': {
-        'text'     : 'Три проходки в кино, яблоки, помидоры, малина и клубника',
-        'date'     : new Date(2015, 2, 22, 10, 33, 16, 4),
-        'nComments': 9
-    }
-};
-
 var fake_profile = {
     'fake_avatar': 'avatars/av1.jpg',
     'first_name': 'Иван',

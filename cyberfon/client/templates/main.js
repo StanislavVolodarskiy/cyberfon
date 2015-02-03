@@ -165,7 +165,7 @@ Template.main.events({
 });
 
 Template.main_user.events({
-    'click .js-open-chat': function(event, template) {
+    'click .js-open-chat-2': function(event, template) {
         Router.go('chat', {'_id': template.data.status.status_id});
     },
     'click .js-toggle-favourite': function(event, template) {

@@ -17,14 +17,14 @@ Router.route('main', {
 Router.route('dialog', {
     path: '/dialog/:_id',
     data: function() {
-        return {corr_id: this.params._id};
+        return {'corr_id': this.params._id};
     }
 });
 
 Router.route('chat', {
     path: '/chat/:_id',
     data: function() {
-        return {corr_id: this.params._id};
+        return {'chat_id': this.params._id};
     }
 });
 

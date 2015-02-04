@@ -1,18 +1,32 @@
 Template.main.helpers({
+    'user_id': function() {
+        return Meteor.userId();
+    },
+
     'status': function() {
+        var null_status = {
+            'status_id' : undefined,
+            'text'      : '-',
+            'date'      : '-',
+            'n_comments': '-'
+        };
+
         var user = Meteor.user();
         if (user === undefined || user === null) {
-            return [];
+            return null_status;
+        }
+        if (user.profile.status === undefined) {
+            return null_status;
         }
 
-        return user.profile.status;
+        var status = Statuses.findOne({'_id': user.profile.status});
+        if (status === undefined) {
+            return null_status;
+        }
 
-        return {
-            'status_id': 'my_status_id',
-            'text'     : 'Там эти, олени. Может на шашлык сходим? На оленях покатаемся?..',
-            'date'     : new Date(),
-            'nComments': 3
-        };
+        status['n_comments'] = Comments.count({'status': user.profile.status});
+
+        return status;
     },
 
     'users': function() {

@@ -67,6 +67,7 @@ login/logout track
 -
 TODO:
 
+make timeout for location data
 five minutes timeout to correct status (or until first comment)
 check phone_num
 normalize phone_num

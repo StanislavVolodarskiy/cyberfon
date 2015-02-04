@@ -58,9 +58,17 @@ Template.main.helpers({
             '_id': {'$in': user_ids}
         }).map(function(doc) {
             var user = doc.profile;
+
+            user._id = doc._id;
+
             user.fake_avatar = 'avatars/av1.jpg';
-            user.distance = neighbour_set(doc._id) ? 'near' : 'far';
-            user.favorite = favorite_set (doc._id) ? 'yes'  : 'no' ;
+
+            user.distance_image = neighbour_set(doc._id) ? 'near' : 'far';
+
+            var favorite = favorite_set(doc._id);
+            user.favorite = favorite;
+            user.favorite_class = favorite ? 'ion-locked': 'ion-unlocked';
+
             return user;
         });
     }
@@ -68,7 +76,7 @@ Template.main.helpers({
 
 Template.main.events({
     'click .js-open-chat': function(event, template) {
-        Router.go('chat', {'_id': 'my_status_id'});
+        Router.go('chat', {'_id': 'TODO_my_status_id'});
     }
 });
 
@@ -77,6 +85,14 @@ Template.main_user.events({
         Router.go('chat', {'_id': template.data.status.status_id});
     },
     'click .js-toggle-favorite': function(event, template) {
-        console.log('TODO: js-toggle-favorite');
+        var user = Meteor.user();
+        if (user === undefined || user === null) {
+            return;
+        }
+
+        var op = (template.data.favorite) ? '$pull' : '$addToSet';
+        var update = {};
+        update[op] = {'profile.favorites': template.data._id};
+        Meteor.users.update({'_id': user._id}, update);
     }
 });

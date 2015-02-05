@@ -90,7 +90,17 @@ Template.main.helpers({
 
 Template.main.events({
     'click .js-open-chat': function(event, template) {
-        Router.go('chat', {'_id': 'TODO_my_status_id'});
+        var user = Meteor.user();
+        if (user === undefined || user === null) {
+            return;
+        }
+
+        var status = user.profile.status;
+        if (status === undefined) {
+            return;
+        }
+
+        Router.go('chat', {'_id': status});
     }
 });
 

@@ -1,3 +1,20 @@
 <template name="new_chat">
-    NEW_CHAT
+<form>
+    {{#if errors}}
+        <div>
+            {{#each errors}}
+                <div>{{this}}</div>
+            {{/each}}
+        </div>
+    {{/if}}
+    <ul class="list">
+        <li class="list__item">
+        <input type="text" class="text-input text-input--transparent" name="status" style="width:100%; margin-top:4px;" placeholder="Тема">
+        </li>
+
+        <button class="button button--large" type="submit">Готово</button>
+
+        <div class="button--large--quiet"><a href="{{pathFor 'main'}}">Отмена</a></div>
+    </ul>
+</form>
 </template>

@@ -24,7 +24,7 @@ Template.main.helpers({
             return null_status;
         }
 
-        status['n_comments'] = Comments.count({'status': user.profile.status});
+        status['n_comments'] = Comments.find({'status': user.profile.status}).count();
 
         return status;
     },

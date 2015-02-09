@@ -71,19 +71,17 @@ Template.main.helpers({
         return Meteor.users.find({
             '_id': {'$in': user_ids}
         }).map(function(doc) {
-            var user = doc.profile;
-
-            user._id = doc._id;
-
-            user.fake_avatar = 'avatars/av1.jpg';
-
-            user.distance_image = neighbour_set(doc._id) ? 'near' : 'far';
-
             var favorite = favorite_set(doc._id);
-            user.favorite = favorite;
-            user.favorite_class = favorite ? 'ion-locked': 'ion-unlocked';
 
-            return user;
+            return {
+                'first_name': doc.profile.first_name,
+                'last_name': doc.profile.last_name,
+                'fake_avatar': 'avatars/av1.jpg',
+                'distance_image': neighbour_set(doc._id) ? 'near' : 'far',
+                'favorite': favorite,
+                'favorite_class': favorite ? 'ion-locked': 'ion-unlocked',
+                'status': Statuses.findOne({'_id': doc.profile.status})
+            };
         });
     }
 });
@@ -106,7 +104,7 @@ Template.main.events({
 
 Template.main_user.events({
     'click .js-open-chat-2': function(event, template) {
-        Router.go('chat', {'_id': template.data.status.status_id});
+        Router.go('chat', {'_id': template.data.status._id});
     },
     'click .js-toggle-favorite': function(event, template) {
         var user = Meteor.user();

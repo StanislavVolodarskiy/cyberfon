@@ -12,7 +12,7 @@ Template.new_chat.events({
 
         var result = Statuses.insert({
             'user': user_id,
-            'time': new Date(),
+            'date': new Date(),
             'text': status
         });
         Meteor.users.update({'_id': user_id}, {'$set': {'profile.status': result}});

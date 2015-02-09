@@ -20,7 +20,7 @@ Template.dialog.helpers({
             return list.concat(a1.slice(i1)).concat(a2.slice(i2));
         };
         return merge(outgoing, incoming, function(message) {
-            return message.time;
+            return message.date;
         });
     }
 });
@@ -39,7 +39,7 @@ Template.dialog.events({
         Messages.insert({
             'from': user_id,
             'to': corr_id,
-            'time': new Date(),
+            'date': new Date(),
             'text': event.target.value
         });
     }

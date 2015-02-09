@@ -3,6 +3,9 @@ Template.chat.helpers({
         var user = Meteor.user();
         return (user === undefined || user === null) ? undefined : user.profile;
     },
+    'status': function() {
+        return Statuses.findOne({'_id': this.chat_id});
+    },
     'comments': function() {
         var user_location = function(user) {
             if (user === undefined || user === null) {

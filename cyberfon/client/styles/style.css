@@ -1,5 +1,5 @@
 body {
-    font-family: "Ubuntu";
+    font-family:Arial;
     font-weight: 400;
 }
 
@@ -16,7 +16,7 @@ a {
 }
 
 
-@font-face {
+/*@font-face {
     font-family: Ubuntu; 
     src:
     url("/fonts/Ubuntu-Regular.ttf");
@@ -74,7 +74,7 @@ a {
 }
 
 
-
+*/
 
 
 
@@ -326,6 +326,10 @@ a {
 }
 .people-list .table-cell {
     display: table-cell;
+    
+}
+
+.plus_icon {
     
 }
 
@@ -717,6 +721,7 @@ left:0;
 .chat_row .chat_text {
     
     padding:0 30px 0 60px;
+
    
 }
 .chat_row .chat_bottoms {
@@ -731,7 +736,7 @@ left:0;
 
 .chat_text .named {
     color: rgb(0,106,119);
-    font-weight: 600;
+    font-weight: bold;
 }
 .lock {
     color:#ccc;
@@ -746,4 +751,22 @@ left:0;
 .navigation-bar__right {
     margin-top:3px;
     
+}
+
+.main_chat_add {
+    color:#ccc;
+    font-weight:100;
+}
+.samtext {
+    font-size: 1em;
+    color:#888888;
+    font-weight: 600;
+}
+
+.substatus {
+    margin:30px 0 0 0;
+    text-align:center;
+    color:#888888;
+    font-style: italic;
+    font-size: 1.3em;
 }

@@ -11,13 +11,18 @@
 
 
             <div class="navigation-bar__right header">
-                <a href="{{pathFor 'new_chat'}}">
-                    <span class="toolbar-button--quiet navigation-bar__line-height rightheader">
-                        <i class="ion-plus-round" style="font-size:25px;"></i>
-                    </span>
-                </a>
+
+                <div class="tab-bar__label bottom_right_status">
+
+                    <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
+                            <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
+
+
 
         <div class="screen-content">
             <div class="block_me">
@@ -25,45 +30,61 @@
                     <div class="table">
                         <ul class="table-row">
                             <!--<li class="table-cell me js-open-chat">Я</li>-->
-                            
+
                             <li class="table-cell efir_status"><a href="change_private"><i class="ion-wifi visible" style="font-size:35px;"></i></a></li>
                             <li class="table-cell person js-open-chat"><div class="status mystatus">
-                                {{status.text}}
-                                <br>
-                                <div class="mycomments">Комментариев: {{status.n_comments}}</div>
-                            </div></li>
+
+                                    Трансляция:                                  
+                                    {{status.text}}
+                                    <br>
+                                    <div class="mycomments">Комментариев: {{status.n_comments}}</div>
+                                </div></li>
+
+                            <li class="table-cell plus_icon">
+                                <a href="{{pathFor 'new_chat'}}">
+                                    <i class="ion-plus-round" style="font-size:25px;"></i>
+                                </a>
+
+                            </li>
+
+
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
+
+
+
             {{#each users}} {{> main_user}} {{/each}}
 
+
+            <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div>
         </div>
 
         <div class="tab-bar fixed-bottom bottom_bar">
             <label class="tab-bar__item">
-                <a href="config_menu"><button class="tab-bar__button">
-                    <div class="tab-bar__label bottom_left_favorites"><i class="ion-gear-a" style="font-size:25px;"></i></div>
-                </button></a>
+                <a href="/"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_left_favorites"><span style="font-size:16px;">ЭФИР</span></div>
+                    </button></a>
             </label>
 
             <label class="tab-bar__item">
                 <a href="dialogs"><button class="tab-bar__button">
-                    <div class="tab-bar__label bottom_middle_dialogs"><i class="ion-chatboxes" style="font-size:28px;"></i></div>
-                </button></a>
+                        <div class="tab-bar__label bottom_middle_dialogs"><span style="font-size:16px;">ДИАЛОГИ</span></div>
+                    </button></a>
             </label>
 
             <label class="tab-bar__item">
 
                 <button class="tab-bar__button">
-                    <div class="tab-bar__label bottom_right_status">
 
-                <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
-                        <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
-                    </span>
-                </a>
-                    </div>
+                    <a href="favorites"><span class="toolbar-button navigation-bar__line-height">
+                            <i class="ion-heart" style="font-size:32px; vertical-align:-6px;"></i>
+                        </span>
+                    </a>
+
+
                 </button>
             </label>
         </div>
@@ -78,6 +99,6 @@
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
         <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}: </span>{{status.text}}</div>
-        <div class="chat_bottoms js-toggle-favorite"><span class="lock"><i class="{{favorite_class}}"></i> </span></div>
+        <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart" style="font-size: 22px;"></i> </span></div>
     </div>
 </template>

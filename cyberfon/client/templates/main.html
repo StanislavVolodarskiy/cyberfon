@@ -25,41 +25,27 @@
 
 
         <div class="screen-content">
-            <div class="block_me">
-                <div class="people-list">
-                    <div class="table">
-                        <ul class="table-row">
-                            <!--<li class="table-cell me js-open-chat">Я</li>-->
-
-                            <li class="table-cell efir_status"><a href="change_private"><i class="ion-wifi visible" style="font-size:35px;"></i></a></li>
-                            <li class="table-cell person js-open-chat"><div class="status mystatus">
-
-                                    Трансляция:                                  
-                                    {{status.text}}
-                                    <br>
-                                    <div class="mycomments">Комментариев: {{status.n_comments}}</div>
-                                </div></li>
-
-                            <li class="table-cell plus_icon">
-                                <a href="{{pathFor 'new_chat'}}">
-                                    <i class="ion-plus-round" style="font-size:25px;"></i>
-                                </a>
-
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
+            <div class="conenction_bar">
+                <div class="coord_status">lon:57.3113, lat:60.5443</div>
+                <div class="connect_status">connected</div>
             </div>
+            
 
+            <div class="chat_row mystatus">
+                <div class="avapic">
+                    <div class="avatar_image"><img src="/avatars/av2.jpg" /></div>
+                    <div class="informer"></div>
+                </div>
+                <div class="chat_text js-open-chat"><span class="translation_online">Трансляция</span><br />{{status.text}} ({{status.n_comments}})</div>
+                <div class="chat_bottoms"><a href="{{pathFor 'new_chat'}}"><span class=""><i class="ion-plus-round newchat_plus" style="font-size: 34px;"></i></span></a></div>
+            </div> 
 
 
 
             {{#each users}} {{> main_user}} {{/each}}
 
 
-            <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div>
+            <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
         </div>
 
         <div class="tab-bar fixed-bottom bottom_bar">
@@ -98,7 +84,7 @@
             <div class="avatar_image"><img src="{{fake_avatar}}" /></div>
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
-        <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}: </span>{{status.text}}</div>
-        <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart" style="font-size: 22px;"></i> </span></div>
+        <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}</span><br />{{status.text}}</div>
+        <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart" style="font-size: 30px;"></i> </span></div>
     </div>
 </template>

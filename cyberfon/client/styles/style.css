@@ -445,12 +445,7 @@ a {
     font-size: 12px;
     float:left;
 }
-.mystatus {
-    color:black;
-    text-align: center;
-    font-weight: 600;
-    font-size:1.1em;
-}
+
 .mycomments {
     margin:5px 0 0 0;
     font-weight:600;
@@ -726,12 +721,16 @@ left:0;
 }
 .chat_row .chat_bottoms {
     position: absolute;
-    width: 20px;
+    width: 30px;
     padding:0px;
     right:0;
     top:0;
     margin-top:12px;
     
+}
+
+.newchat_plus {
+    color:#666666;
 }
 
 .chat_text .named {
@@ -749,8 +748,12 @@ left:0;
     
 }
 .navigation-bar__right {
-    margin-top:3px;
     
+    
+}
+
+.bottom_right_status {
+    line-height: 0!important;
 }
 
 .main_chat_add {
@@ -764,9 +767,52 @@ left:0;
 }
 
 .substatus {
-    margin:30px 0 0 0;
+    margin:30px 0 30px 0;
     text-align:center;
     color:#888888;
     font-style: italic;
     font-size: 1.3em;
+}
+
+.conenction_bar {
+    margin:5px 10px 5px 10px;
+}
+
+.coord_status {
+    font-size: 12px;
+    position: absolute;
+    left:10px;
+    text-align: left;
+    color:#999999;
+}
+.connect_status {
+    font-size: 12px;
+    position: absolute;
+    right:10px;
+    text-align: right;
+    color:#329117;
+}
+
+.translation_online {
+    color: #329117;
+    font-weight: bold;
+    
+}
+.translation_offline {
+    color: #d50101;
+    font-weight: bold;
+    
+}
+
+.mystatus {
+    background-color: #d9e9eb;
+    border-bottom: 0!important;
+}
+
+.chat_bottoms .ion-heart {
+    color:#bbb;
+}
+
+.chat_bottoms .ion-heart-active {
+    color:#fde556!important;
 }

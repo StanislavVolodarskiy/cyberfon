@@ -673,11 +673,16 @@ left:0;
 }
 .comment_form {
     color:#fff;
+    background-color: #fff;
+    height:30px;
 }
 
 .comment_form input {
     width:100%;
     height:30px;
+    font-size: 20px;
+    padding:5px;
+    
     
 }
 
@@ -733,7 +738,7 @@ left:0;
     color:#666666;
 }
 
-.chat_text .named {
+.named {
     color: rgb(0,106,119);
     font-weight: bold;
 }
@@ -776,6 +781,7 @@ left:0;
 
 .conenction_bar {
     margin:5px 10px 5px 10px;
+    height:15px;
 }
 
 .coord_status {
@@ -815,4 +821,8 @@ left:0;
 
 .chat_bottoms .ion-heart-active {
     color:#fde556!important;
+}
+
+.avatar_bar {
+    padding:1px 5px 0 0;
 }

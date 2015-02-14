@@ -74,12 +74,13 @@ Template.main.helpers({
             var favorite = favorite_set(doc._id);
 
             return {
+                '_id': doc._id,
                 'first_name': doc.profile.first_name,
                 'last_name': doc.profile.last_name,
                 'fake_avatar': 'avatars/av1.jpg',
                 'distance_image': neighbour_set(doc._id) ? 'near' : 'far',
                 'favorite': favorite,
-                'favorite_class': favorite ? 'ion-locked': 'ion-unlocked',
+                'favorite_class': favorite ? 'ion-heart-broken': 'ion-heart',
                 'status': Statuses.findOne({'_id': doc.profile.status})
             };
         });
@@ -112,9 +113,13 @@ Template.main_user.events({
             return;
         }
 
+        console.log(template.data);
+
         var op = (template.data.favorite) ? '$pull' : '$addToSet';
         var update = {};
         update[op] = {'profile.favorites': template.data._id};
+        console.log(update);
         Meteor.users.update({'_id': user._id}, update);
+        console.log('done');
     }
 });

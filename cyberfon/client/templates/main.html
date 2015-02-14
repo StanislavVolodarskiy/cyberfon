@@ -1,7 +1,4 @@
-<template name="main_title">Эфир (радиус 1 км)</template>
-
 <template name="main">
-
     <div class="screen-content">
         <div class="conenction_bar">
             <div class="coord_status">lon:57.3113, lat:60.5443</div>
@@ -20,14 +17,7 @@
     </div>
 </template>
 
-
-
-<template name="favorites">
-    <div class="screen-content">
-       {{#each users}} {{> main_user}} {{/each}}
-    </div>
-</template>
-
+<template name="main_title">Эфир (радиус 1 км)</template>
 
 <template name="main_user">
     <div class="chat_row">
@@ -36,6 +26,6 @@
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
         <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}</span><br />{{status.text}}</div>
-        <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart" style="font-size: 30px;"></i> </span></div>
+        <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="{{favorite_class}}" style="font-size: 30px;"></i> </span></div>
     </div>
 </template>

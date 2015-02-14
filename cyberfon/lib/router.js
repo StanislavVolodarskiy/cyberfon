@@ -6,6 +6,7 @@ Router.configure({
 
 Router.route('main', {
     path: '/',
+    layoutTemplate: 'layout',
     onBeforeAction: function() {
         if (!Meteor.user() && !Meteor.loggingIn()) {
           Router.go('sign_in');
@@ -16,6 +17,7 @@ Router.route('main', {
 
 Router.route('dialog', {
     path: '/dialog/:_id',
+    layoutTemplate: 'layout',
     data: function() {
         return {'corr_id': this.params._id};
     }
@@ -41,4 +43,6 @@ Router.route('sign_in');
 Router.route('sign_out');
 Router.route('sign_up');
 Router.route('user_chats');
-Router.route('favorites');
+Router.route('favorites', {
+    layoutTemplate: 'layout'
+});

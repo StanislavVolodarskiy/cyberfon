@@ -6,7 +6,7 @@ Router.configure({
 
 Router.route('main', {
     path: '/',
-    layoutTemplate: 'layout',
+    layoutTemplate: 'layout_main',
     onBeforeAction: function() {
         if (!Meteor.user() && !Meteor.loggingIn()) {
           Router.go('sign_in');
@@ -33,7 +33,9 @@ Router.route('chat', {
 Router.route('change_private');
 Router.route('config_menu');
 Router.route('context_menu');
-Router.route('dialogs');
+Router.route('dialogs', {
+    layoutTemplate: 'layout_main'
+});
 Router.route('image_config');
 Router.route('menu');
 Router.route('new_chat');
@@ -44,5 +46,5 @@ Router.route('sign_out');
 Router.route('sign_up');
 Router.route('user_chats');
 Router.route('favorites', {
-    layoutTemplate: 'layout'
+    layoutTemplate: 'layout_main'
 });

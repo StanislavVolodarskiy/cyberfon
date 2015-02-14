@@ -1,34 +1,4 @@
-Template.main.helpers({
-    'user_id': function() {
-        return Meteor.userId();
-    },
-
-    'status': function() {
-        var null_status = {
-            'status_id' : undefined,
-            'text'      : '-',
-            'date'      : '-',
-            'n_comments': '-'
-        };
-
-        var user = Meteor.user();
-        if (user === undefined || user === null) {
-            return null_status;
-        }
-        if (user.profile.status === undefined) {
-            return null_status;
-        }
-
-        var status = Statuses.findOne({'_id': user.profile.status});
-        if (status === undefined) {
-            return null_status;
-        }
-
-        status['n_comments'] = Comments.find({'status': user.profile.status}).count();
-
-        return status;
-    },
-
+Template.favorites.helpers({
     'users': function() {
         var user_location = function(user) {
             var location = Locations.findOne({'user': user}, {'location': 1});
@@ -84,38 +54,5 @@ Template.main.helpers({
                 'status': Statuses.findOne({'_id': doc.profile.status})
             };
         });
-    }
-});
-
-Template.main.events({
-    'click .js-open-chat': function(event, template) {
-        var user = Meteor.user();
-        if (user === undefined || user === null) {
-            return;
-        }
-
-        var status = user.profile.status;
-        if (status === undefined) {
-            return;
-        }
-
-        Router.go('chat', {'_id': status});
-    }
-});
-
-Template.main_user.events({
-    'click .js-open-chat-2': function(event, template) {
-        Router.go('chat', {'_id': template.data.status._id});
-    },
-    'click .js-toggle-favorite': function(event, template) {
-        var user = Meteor.user();
-        if (user === undefined || user === null) {
-            return;
-        }
-
-        var op = (template.data.favorite) ? '$pull' : '$addToSet';
-        var update = {};
-        update[op] = {'profile.favorites': template.data._id};
-        Meteor.users.update({'_id': user._id}, update);
     }
 });

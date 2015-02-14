@@ -1,0 +1,49 @@
+<template name="layout_main">
+
+    <div class="screen">
+        <div class="navigation-bar fixed-top">
+            <div class="navigation-bar__left">
+                <span class="toolbar-button navigation-bar__line-height">
+                    <i class="ion-chevron-left js-back" style="font-size:32px; vertical-align:-6px;"></i>
+                </span>
+            </div>
+
+            <div class="navigation-bar__center">{{> yield region="title"}}</div>
+            <div class="navigation-bar__right header">
+
+                <div class="tab-bar__label bottom_right_status">
+
+                    <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
+                            <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{> yield}}
+
+        <div class="tab-bar fixed-bottom bottom_bar">
+            <label class="tab-bar__item">
+                <a href="/"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_left_favorites"><span style="font-size:16px;">ЭФИР</span></div>
+                    </button></a>
+            </label>
+            <label class="tab-bar__item">
+                <a href="dialogs"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_middle_dialogs"><span style="font-size:16px;">ДИАЛОГИ</span></div>
+                    </button></a>
+            </label>
+            <label class="tab-bar__item">
+                <button class="tab-bar__button">
+                    <a href="favorites"><span class="toolbar-button navigation-bar__line-height">
+                            <i class="ion-heart" style="font-size:32px; vertical-align:-6px;"></i>
+                        </span>
+                    </a>
+                </button>
+            </label>
+        </div>
+    </div>
+
+</template>
+

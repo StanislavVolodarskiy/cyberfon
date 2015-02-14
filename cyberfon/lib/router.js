@@ -41,3 +41,4 @@ Router.route('sign_in');
 Router.route('sign_out');
 Router.route('sign_up');
 Router.route('user_chats');
+Router.route('favorites');

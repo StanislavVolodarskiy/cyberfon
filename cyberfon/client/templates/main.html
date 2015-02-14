@@ -1,80 +1,28 @@
 <template name="main">
-    <div class="screen">
-        <div class="navigation-bar fixed-top">
-            <div class="navigation-bar__left">
-                <!--<span class="toolbar-button navigation-bar__line-height">
-                    <a href="goback"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
-                </span>-->
-            </div>
 
-            <div class="navigation-bar__center">Эфир (радиус 1 км)</div>
-
-
-            <div class="navigation-bar__right header">
-
-                <div class="tab-bar__label bottom_right_status">
-
-                    <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
-                            <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
+    <div class="screen-content">
+        <div class="conenction_bar">
+            <div class="coord_status">lon:57.3113, lat:60.5443</div>
+            <div class="connect_status">connected</div>
         </div>
-
-
-
-        <div class="screen-content">
-            
-            <div class="conenction_bar">
-                <div class="coord_status">lon:57.3113, lat:60.5443</div>
-                <div class="connect_status">connected</div>
+        <div class="chat_row mystatus">
+            <div class="avapic">
+                <div class="avatar_image"><img src="/avatars/av2.jpg" /></div>
+                <div class="informer"></div>
             </div>
-            
-
-            <div class="chat_row mystatus">
-                <div class="avapic">
-                    <div class="avatar_image"><img src="/avatars/av2.jpg" /></div>
-                    <div class="informer"></div>
-                </div>
-                <div class="chat_text js-open-chat"><span class="translation_online">Трансляция</span><br />{{status.text}} ({{status.n_comments}})</div>
-                <div class="chat_bottoms"><a href="{{pathFor 'new_chat'}}"><span class=""><i class="ion-plus-round newchat_plus" style="font-size: 34px;"></i></span></a></div>
-            </div> 
+            <div class="chat_text js-open-chat"><span class="translation_online">Трансляция</span><br />{{status.text}} ({{status.n_comments}})</div>
+            <div class="chat_bottoms"><a href="{{pathFor 'new_chat'}}"><span class=""><i class="ion-plus-round newchat_plus" style="font-size: 34px;"></i></span></a></div>
+        </div> 
+       {{#each users}} {{> main_user}} {{/each}}
+        <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
+    </div>
+</template>
 
 
 
-            {{#each users}} {{> main_user}} {{/each}}
-
-
-            <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
-        </div>
-
-        <div class="tab-bar fixed-bottom bottom_bar">
-            <label class="tab-bar__item">
-                <a href="/"><button class="tab-bar__button">
-                        <div class="tab-bar__label bottom_left_favorites"><span style="font-size:16px;">ЭФИР</span></div>
-                    </button></a>
-            </label>
-
-            <label class="tab-bar__item">
-                <a href="dialogs"><button class="tab-bar__button">
-                        <div class="tab-bar__label bottom_middle_dialogs"><span style="font-size:16px;">ДИАЛОГИ</span></div>
-                    </button></a>
-            </label>
-
-            <label class="tab-bar__item">
-
-                <button class="tab-bar__button">
-
-                    <a href="favorites"><span class="toolbar-button navigation-bar__line-height">
-                            <i class="ion-heart" style="font-size:32px; vertical-align:-6px;"></i>
-                        </span>
-                    </a>
-
-
-                </button>
-            </label>
-        </div>
+<template name="favorites">
+    <div class="screen-content">
+       {{#each users}} {{> main_user}} {{/each}}
     </div>
 </template>
 

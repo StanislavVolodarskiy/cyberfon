@@ -1,6 +1,10 @@
 Template.chat.helpers({
     'profile': function() {
-        var user = Meteor.user();
+        var status = Statuses.findOne({'_id': this.chat_id}, {'user': 1});
+        if (status === undefined) {
+            return undefined;
+        }
+        var user = Meteor.users.findOne({'_id': status.user});
         return (user === undefined || user === null) ? undefined : user.profile;
     },
     'status': function() {
@@ -53,8 +57,10 @@ Template.chat.helpers({
 
 Template.chat.events({
     'click .js-open-dialog': function(event, template) {
-        console.log(template);
-        // wRouter.go('chat', {'_id': template.data.status._id});
+        var status = Statuses.findOne({'_id': template.data.chat_id}, {'user': 1});
+        if (status !== undefined) {
+            Router.go('dialog', {'_id': status.user});
+        }
     },
     'submit form': function(event, template) {
         event.preventDefault();

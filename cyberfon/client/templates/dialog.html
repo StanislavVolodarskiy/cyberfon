@@ -22,8 +22,8 @@
         <div class="screen-content dialog_list" id="dialog_screen_id">   
             
         {{#each messages}}
-              {{> message}}
-            {{/each}}
+            {{> message}}
+        {{/each}}
    
         </div>
 
@@ -38,18 +38,11 @@
 
 
 
-<template name="message2">
-  <div>
-    {{author.username}}: {{text}}
-  </div>
-</template>
-
 <template name="message">
          
     <div class="dialog_box {{author_class}}">
         <div><span class="namee">{{first_name}} {{last_name}}</span>&nbsp;&nbsp;<span class="dialog_date">{{date}}</span></div>
         <div>{{text}}</div>
     </div>
-
     
 </template>

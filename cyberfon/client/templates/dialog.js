@@ -3,6 +3,17 @@ Template.dialog.helpers({
         return Meteor.users.findOne({'_id': this.corr_id});
     },
     'messages': function() {
+        return [{
+            'from': Meteor.userId(),
+            'to': '2',
+            'date': new Date(),
+            'text': 'UGU'
+        }, {
+            'from': '2',
+            'to': Meteor.userId(),
+            'date': new Date(),
+            'text': 'AGA'
+        }];
         var user_id = Meteor.userId();
         var corr_id = this.corr_id;
         var outgoing = Messages.find({'from': user_id, 'to': corr_id}).fetch();
@@ -49,7 +60,13 @@ Template.dialog.events({
 });
 
 Template.message.helpers({
-    'author': function() {
-        return Meteor.users.findOne({_id: this.from});
+    'first_name': function() {
+        return Meteor.users.findOne({_id: this.from}).profile.first_name;
+    },
+    'last_name': function() {
+        return Meteor.users.findOne({_id: this.from}).profile.last_name;
+    },
+    'author_class': function() {
+        return (this.from == Meteor.userId()) ? 'is_author', 'isnt_author';
     }
 });

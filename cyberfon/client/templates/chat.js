@@ -37,6 +37,7 @@ Template.chat.helpers({
         }).map(function(doc) {
             var author = Meteor.users.findOne({'_id': doc.author});
             return {
+                'author': author._id,
                 'first_name': author.profile.first_name,
                 'last_name': author.profile.last_name,
                 'fake_avatar': '../../avatars/av1.jpg',

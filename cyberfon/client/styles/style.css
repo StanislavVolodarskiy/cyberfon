@@ -891,3 +891,38 @@ left:0;
     text-align: center;
     width:50px;
 }
+
+.dialog_screen, .dialog_screen .screen-content {
+    background-color: #d9fbff;
+}
+
+.dialog_box {
+    background-color: #fff;
+    padding:10px;
+    border:1px #000 solid;
+    width:auto;
+    display:inline-block;
+    margin:10px;
+}
+
+.dialog_list .is_author {
+    float:left;
+    text-align: left;
+}
+.dialog_list .isnt_author {
+    float:right;
+    text-align:right;
+}
+.dialog_date {
+    color:#ccc;
+    font-size: 14px;
+}
+
+.dialog_list .is_author .namee {
+    color:#006c79;
+    font-weight: bold;
+}
+.dialog_list .isnt_author  .namee {
+    color:#d50101;
+    font-weight: bold;
+}

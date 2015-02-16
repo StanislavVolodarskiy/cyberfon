@@ -20,7 +20,6 @@ Router.route('main', {
 
 Router.route('dialog', {
     'path': '/dialog/:_id',
-    'layoutTemplate': 'layout_main',
     'yieldTemplates': {
         'dialog_title': {'to': 'title'}
     },

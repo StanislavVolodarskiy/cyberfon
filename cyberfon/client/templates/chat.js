@@ -42,7 +42,7 @@ Template.chat.helpers({
                 'fake_avatar': '../../avatars/av1.jpg',
                 'author_class': (author._id === Meteor.userId()) ? 'is_author' : 'isnt_author',
                 'distance_image': near(doc.author) ? 'near' : 'far',
-                'date': doc.date,
+                'date': formatdate(doc.date),
                 'text': doc.text,
                 'delete_comment_class': 'delete_twit'
             };
@@ -72,9 +72,13 @@ Template.chat.events({
         });
 
         event.target.comment.value = '';
+        
         var scrollChat = document.getElementById("chat_screen");
         scrollChat.scrollTop = scrollChat.scrollHeight;
         
     }
 });
 
+function formatdate (date) {
+   return ('0' + date.getDate()).slice(-2) + '.' + ('0' + (date.getMonth() + 1)).slice(-2) +  '.' + date.getFullYear();
+}

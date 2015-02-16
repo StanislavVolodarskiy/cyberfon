@@ -42,6 +42,9 @@ Template.dialog.events({
             'date': new Date(),
             'text': event.target.value
         });
+        
+        var scrollChat = document.getElementById("dialog_screen_id");
+        scrollChat.scrollTop = scrollChat.scrollHeight;
     }
 });
 

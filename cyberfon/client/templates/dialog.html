@@ -1,53 +1,17 @@
-<template name="dialog1">
-  <div><a href="{{pathFor 'main'}}">Назад</a></div>
-  <div><a href="{{pathFor 'menu'}}">Меню</a></div>
-  <div>Диалог с {{correspondent.username}}</div>
-  <div>
-    {{#each messages}}
-      {{> message}}
-    {{/each}}
-  </div>
-  <div>
-    <form class="js-new-message">
-      <input type="text" placeholder="Написать...">
-    </form> 
-  </div>
-</template>
-
-<template name="message2">
-  <div>
-    {{author.username}}: {{text}}
-  </div>
-</template>
-
-<template name="message">
-              <div class="twit_answer">
-                <div class="twit_avatar">
-                    <div class="avatar_image"><img src="/avatars/av1.jpg" /></div>
-                    <div class="informer"><img src="/images/inradius.png" /></div>
-                </div>
-                <div class="twit_text">{{text}} <div class="twit_date">сегодня в 13.15</div></div>
-            </div>
-    
-</template>
-
-
-
 <template name="dialog">
-    <div class="screen chat">    
+    <div class="screen chat dialog_screen">    
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
                 <span class="navigation-bar__line-height">
-                    <a href="goback"><i class="ion-chevron-left" style="font-size:32px; vertical-align:-6px;"></i></a>
+                    <a href="/user/"><img src="/avatars/av2.jpg" /></a>
                 </span>
             </div>
 
-            <div class="navigation-bar__center">Диалог с {{correspondent.username}}</div>
+            <div class="navigation-bar__center">Личная переписка</div>
 
             <div class="navigation-bar__right">
                 <span class="navigation-bar__line-height">
-                    <!-- TODO: Его аватарка, при клике должна по идее открываться увеличенное изображение  -->
-                    <a href="#avatar"><img src="{{fake_avatar}}" /></a>
+                    <a href="{{pathFor 'user_chats'}}"><img src="/avatars/av3.jpg" /></a>
                 </span>
             </div>
 
@@ -55,7 +19,7 @@
 
         
         
-        <div class="screen-content">   
+        <div class="screen-content dialog_list" id="dialog_screen_id">   
             
         {{#each messages}}
               {{> message}}
@@ -70,4 +34,22 @@
             </form> 
         </div>
     </div>
+</template>
+
+
+
+<template name="message2">
+  <div>
+    {{author.username}}: {{text}}
+  </div>
+</template>
+
+<template name="message">
+         
+    <div class="dialog_box {{author_class}}">
+        <div><span class="namee">{{first_name}} {{last_name}}</span>&nbsp;&nbsp;<span class="dialog_date">{{date}}</span></div>
+        <div>{{text}}</div>
+    </div>
+
+    
 </template>

@@ -67,6 +67,6 @@ Template.message.helpers({
         return Meteor.users.findOne({_id: this.from}).profile.last_name;
     },
     'author_class': function() {
-        return (this.from == Meteor.userId()) ? 'is_author', 'isnt_author';
+        return (this.from == Meteor.userId()) ? 'is_author' : 'isnt_author';
     }
 });

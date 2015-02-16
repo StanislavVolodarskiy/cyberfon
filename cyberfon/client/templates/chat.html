@@ -6,9 +6,9 @@
                     <a href="{{pathFor 'user'}}"><img src="/avatars/av2.jpg" /></a>
                 </span>
             </div>
-            <div class="navigation-bar__center">Василиса Степанова</div>
+            <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
             <div class="navigation-bar__right avatar_bar">
-                <a href="/dialog/{{profile.id}}"><i class="ion-email ion-email-style" style="font-size:35px;"></i></a>
+                <i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                 <div class="rowfirst">
                     <div class="avatar_image"><i class="ion-wifi twit_passive" style="font-size:35px;"></i></div>
                 </div>
-                <div class="rowsecond">Труляля<br> <div class="twit_date">вчера в 20.05</div></div>
+                <div class="rowsecond">{{status.text}}<br> <div class="twit_date">{{status.date}}</div></div>
                 <div class="rowthird js-toggle-favorite">
                     <div class="control_block"><i class="ion-heart ion-heart-active" style="font-size: 30px;"></i></div>
                     <div class="control_block"><i class="ion-close-round delete_twit" style="font-size:20px;"></i></div>

@@ -52,6 +52,10 @@ Template.chat.helpers({
 });
 
 Template.chat.events({
+    'click .js-open-dialog': function(event, template) {
+        console.log(template);
+        // wRouter.go('chat', {'_id': template.data.status._id});
+    },
     'submit form': function(event, template) {
         event.preventDefault();
 

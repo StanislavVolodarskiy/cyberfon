@@ -26,25 +26,26 @@ Template.dialog.helpers({
 });
 
 Template.dialog.events({
-    'keydown input[type=text]': function(event) {
-        if (event.which === 13 /* Enter */) {
-            event.preventDefault();
-            event.target.blur();
-        }
-    },
-    'blur input[type=text]': function(event) {
+    'submit form': function(event, template) {
+        event.preventDefault();
+
         var user_id = Meteor.userId();
         var corr_id = this.corr_id;
+
+        var message = template.$('[name=message]').val().trim();
+        if (message === '') {
+            return;
+        }
 
         Messages.insert({
             'from': user_id,
             'to': corr_id,
             'date': new Date(),
-            'text': event.target.value
+            'text': message
         });
-        
-        event.target.comment.value = '';
 
+        event.target.message.value = '';
+        
         var scrollChat = document.getElementById("dialog_screen_id");
         scrollChat.scrollTop = scrollChat.scrollHeight;
     }

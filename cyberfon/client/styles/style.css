@@ -727,8 +727,8 @@ left:0;
     height:50px;
     width:100%;
 }
-.favorite-yes {
-    color: yellow;
+.favorit {
+    color: #ffd200!important;
 }
 
 .chat_row {
@@ -944,4 +944,61 @@ left:0;
     right:24px;
     top: 13px;
     height:16px;
+}
+
+
+
+
+.dialogs_row {
+    width:100%;
+    position:relative;
+    min-height: 50px;
+    padding: 12px 0 6px 0;
+    border-bottom:1px #ccc solid;
+    line-height: 1.4;
+}
+.dialogs_row .rowfirst {
+    position: absolute;
+    width: 50px;
+    padding:0 0 0 5px;
+
+}
+.dialogs_row .rowsecond {
+    
+    padding:0 0 0 50px;
+}
+
+.rowthird {
+    text-align: center;
+}
+
+.dnamedate {
+    width:100%;
+    position:relative;
+}
+.dname {
+    padding: 0 50px 0 0;
+    color:rgb(0,106,119);
+    font-weight: bold;
+}
+.ddate {
+    position:absolute;
+    right:0;
+    top:0;
+    width:50px;
+    font-size: 14px;
+    color:#bbb;
+}
+
+.dtext {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    padding: 2px; /* Поля вокруг текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+.dialogs_screen .unread {
+    background: #d9e9eb; 
+}
+.dtext {
+    margin-top:0px;
 }

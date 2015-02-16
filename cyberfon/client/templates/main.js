@@ -80,7 +80,7 @@ Template.main.helpers({
                 'fake_avatar': 'avatars/av1.jpg',
                 'distance_image': neighbour_set(doc._id) ? 'near' : 'far',
                 'favorite': favorite,
-                'favorite_class': favorite ? 'ion-heart-broken': 'ion-heart',
+                'favorite_class': favorite ? 'favorit': '',
                 'status': Statuses.findOne({'_id': doc.profile.status})
             };
         });

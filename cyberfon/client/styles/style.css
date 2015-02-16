@@ -413,6 +413,16 @@ a {
 }
 
 .status_invisible {
+    background: blue;
+    height: 20px!important;
+    padding:5px 10px!important;
+    margin:-10px!important;
+    color:white;
+    line-height: 10px;
+    font-size: 12px;
+}
+
+.status_offline {
     background: red;
     height: 20px!important;
     padding:5px 10px!important;
@@ -421,6 +431,17 @@ a {
     line-height: 10px;
     font-size: 12px;
 }
+.status_connecting {
+    background: #fde556;
+    height: 20px!important;
+    padding:5px 10px!important;
+    margin:-10px!important;
+    color:white;
+    line-height: 10px;
+    font-size: 12px;
+}
+
+
 
 .readed {
     /*background: #ccc!important;*/
@@ -578,7 +599,6 @@ top:0;
 left:0;
 }
 .delete_twit {
-    margin-top:15px;
     color:#d50101;
 }
 
@@ -628,7 +648,10 @@ left:0;
     color: #329117;
 }
 .invisible {
-    color: #dc5236;
+    color: blue;
+}
+.offline {
+    color: red;
 }
 .navigation-bar {
     background: rgb(0,106,119);
@@ -825,4 +848,46 @@ left:0;
 
 .avatar_bar {
     padding:1px 5px 0 0;
+}
+.ion-email-style {
+    color:#ffffff;
+}
+
+
+.chat_row {
+    width:100%;
+    position:relative;
+    min-height: 50px;
+    padding: 12px 0 6px 0;
+    border-bottom:1px #ccc solid;
+    line-height: 1.4;
+}
+.chat_row .rowfirst {
+    position: absolute;
+    width: 50px;
+    padding:0 0 0 5px;
+
+}
+.chat_row .rowsecond {
+    
+    padding:0 40px 0 50px;
+
+   
+}
+.chat_row .rowthird {
+    position: absolute;
+    width: 50px;
+    padding:0px;
+    right:0;
+    top:0;
+    margin-top:12px;
+    text-align: center;
+    
+}
+.rowthird {
+    text-align: center;
+}
+.control_block {
+    text-align: center;
+    width:50px;
 }

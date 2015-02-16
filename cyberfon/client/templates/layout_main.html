@@ -3,8 +3,8 @@
     <div class="screen">
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
-                <span class="toolbar-button navigation-bar__line-height">
-                    <i class="ion-chevron-left js-back" style="font-size:32px; vertical-align:-6px;"></i>
+                <span class="navigation-bar__line-height">
+                    <a href="{{pathFor 'user_chats'}}"><img src="/avatars/av2.jpg" /></a>
                 </span>
             </div>
 
@@ -26,21 +26,22 @@
         <div class="tab-bar fixed-bottom bottom_bar">
             <label class="tab-bar__item">
                 <a href="/"><button class="tab-bar__button">
-                        <div class="tab-bar__label bottom_left_favorites"><span style="font-size:16px;">ЭФИР</span></div>
-                    </button></a>
-            </label>
-            <label class="tab-bar__item">
-                <a href="dialogs"><button class="tab-bar__button">
-                        <div class="tab-bar__label bottom_middle_dialogs"><span style="font-size:16px;">ДИАЛОГИ</span></div>
+                        <div class="tab-bar__label bottom_left_favorites"><span style="font-size:14px;">ЭФИР</span></div>
                     </button></a>
             </label>
             <label class="tab-bar__item">
                 <button class="tab-bar__button">
                     <a href="favorites"><span class="toolbar-button navigation-bar__line-height">
-                            <i class="ion-heart" style="font-size:32px; vertical-align:-6px;"></i>
+                            <span style="font-size:14px;">ИЗБРАННОЕ</span>
                         </span>
                     </a>
                 </button>
+            </label>
+
+            <label class="tab-bar__item">
+                <a href="dialogs"><button class="tab-bar__button">
+                        <div class="tab-bar__label bottom_middle_dialogs"><span style="font-size:14px;">ПОЧТА</span></div>
+                    </button></a>
             </label>
         </div>
     </div>

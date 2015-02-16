@@ -53,7 +53,7 @@ Router.route('profile');
 Router.route('sign_in');
 Router.route('sign_out');
 Router.route('sign_up');
-Router.route('user_chats');
+Router.route('user');
 Router.route('favorites', {
     'layoutTemplate': 'layout_main',
     'yieldTemplates': {

@@ -6,10 +6,9 @@
         </div>
         <div class="chat_row mystatus">
             <div class="avapic">
-                <div class="avatar_image"><img src="/avatars/av2.jpg" /></div>
-                <div class="informer"></div>
+                <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:40px;"></i></div>
             </div>
-            <div class="chat_text js-open-chat"><span class="translation_online">Трансляция</span><br />{{status.text}} ({{status.n_comments}})</div>
+            <div class="chat_text js-open-chat">{{status.text}} ({{status.n_comments}})</div>
             <div class="chat_bottoms"><a href="{{pathFor 'new_chat'}}"><span class=""><i class="ion-plus-round newchat_plus" style="font-size: 34px;"></i></span></a></div>
         </div> 
        {{#each users}} {{> main_user}} {{/each}}
@@ -22,7 +21,7 @@
 <template name="main_user">
     <div class="chat_row">
         <div class="avapic">
-            <div class="avatar_image"><img src="{{fake_avatar}}" /></div>
+            <div class="avatar_image js-open-user"><img src="{{fake_avatar}}" /></div>
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
         <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}</span><br />{{status.text}}</div>

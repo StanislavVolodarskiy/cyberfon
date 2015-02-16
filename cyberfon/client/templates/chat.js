@@ -72,6 +72,9 @@ Template.chat.events({
         });
 
         event.target.comment.value = '';
+        var scrollChat = document.getElementById("chat_screen");
+        scrollChat.scrollTop = scrollChat.scrollHeight;
+        
     }
 });
 

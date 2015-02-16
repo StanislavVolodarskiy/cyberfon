@@ -3,17 +3,6 @@ Template.dialog.helpers({
         return Meteor.users.findOne({'_id': this.corr_id});
     },
     'messages': function() {
-        return [{
-            'from': Meteor.userId(),
-            'to': '2',
-            'date': new Date(),
-            'text': 'UGU'
-        }, {
-            'from': '2',
-            'to': Meteor.userId(),
-            'date': new Date(),
-            'text': 'AGA'
-        }];
         var user_id = Meteor.userId();
         var corr_id = this.corr_id;
         var outgoing = Messages.find({'from': user_id, 'to': corr_id}).fetch();

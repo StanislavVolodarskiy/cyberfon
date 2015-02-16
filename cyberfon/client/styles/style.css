@@ -558,8 +558,12 @@ a {
 
 .informer {
     position: absolute;
-    top:22px;
-    right:10px;
+    bottom:0px;
+    left:5px;
+}
+
+.chat .informer {
+    left:0px;
 }
 
 .twit .twit_text, .twit .twit_person {
@@ -925,4 +929,19 @@ left:0;
 .dialog_list .isnt_author  .namee {
     color:#d50101;
     font-weight: bold;
+}
+.avatar_header {
+    width: 40px;
+    
+}
+.avatar_header_img {
+    position: absolute;
+    right:0;
+    
+}
+.informer_header {
+    position: absolute;
+    right:24px;
+    top: 13px;
+    height:16px;
 }

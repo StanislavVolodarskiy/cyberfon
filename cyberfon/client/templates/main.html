@@ -1,30 +1,30 @@
 <template name="main">
-    <div class="screen-content">
+    <div class="screen-content main-screen">
         <div class="conenction_bar">
-            <div class="coord_status">lon:57.3113, lat:60.5443</div>
-            <div class="connect_status">connected</div>
+            <div class="coord_status">lon:57.3113, lat:60.5443<br><span class="connect_status">connected</span></div>
+            <div class="connection_bar_right"><a href="/user">МОИ ЧАТЫ</a></div>
         </div>
-        <div class="chat_row mystatus">
+        <div class="trans_row mystatus">
             <div class="avapic">
                 <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:40px;"></i></div>
             </div>
             <div class="chat_text js-open-chat">{{status.text}} ({{status.n_comments}})</div>
-            <div class="chat_bottoms"><a href="{{pathFor 'new_chat'}}"><span class=""><i class="ion-plus-round newchat_plus" style="font-size: 34px;"></i></span></a></div>
+            <div class="chat_bottoms"><a href="#"><span class="new_messages">2</span></a></div>
         </div> 
        {{#each users}} {{> main_user}} {{/each}}
-        <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
+       <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
     </div>
 </template>
 
 <template name="main_title">Эфир (радиус 1 км)</template>
 
 <template name="main_user">
-    <div class="chat_row">
+    <div class="main_row">
         <div class="avapic">
             <div class="avatar_image js-open-user"><img src="{{fake_avatar}}" /></div>
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
-        <div class="chat_text js-open-chat-2"><span class="named">{{first_name}} {{last_name}}</span><br />{{status.text}}</div>
+        <div class="chat_text js-open-chat-2">{{status.text}}</div>
         <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart {{favorite_class}}" style="font-size: 30px;"></i> </span></div>
     </div>
 </template>

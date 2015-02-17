@@ -747,17 +747,21 @@ left:0;
 }
 .chat_row .chat_text {
     
-    padding:0 30px 0 60px;
+    padding:0 40px 0 60px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
 
    
 }
 .chat_row .chat_bottoms {
     position: absolute;
-    width: 30px;
+    width: 40px;
     padding:0px;
     right:0;
     top:0;
     margin-top:12px;
+    text-align: center;
     
 }
 
@@ -808,23 +812,29 @@ left:0;
 
 .conenction_bar {
     margin:5px 10px 5px 10px;
-    height:15px;
+    height:30px;
 }
 
-.coord_status {
+.connection_bar_right {
     font-size: 12px;
     position: absolute;
     left:10px;
     text-align: left;
     color:#999999;
 }
-.connect_status {
-    font-size: 12px;
+.connection_bar_right {
+    font-size: 22px;
+    font-weight: bold;
     position: absolute;
     right:10px;
     text-align: right;
+    color:#bbb;
+}
+.connect_status {
     color:#329117;
 }
+
+
 
 .translation_online {
     color: #329117;
@@ -838,7 +848,7 @@ left:0;
 }
 
 .mystatus {
-    background-color: #d9e9eb;
+    background-color: #FFFEB6;
     border-bottom: 0!important;
 }
 
@@ -858,14 +868,7 @@ left:0;
 }
 
 
-.chat_row {
-    width:100%;
-    position:relative;
-    min-height: 50px;
-    padding: 12px 0 6px 0;
-    border-bottom:1px #ccc solid;
-    line-height: 1.4;
-}
+
 .chat_row .rowfirst {
     position: absolute;
     width: 50px;
@@ -1001,4 +1004,94 @@ left:0;
 }
 .dtext {
     margin-top:0px;
+}
+.main-screen .new_messages {
+    color:#f6a201;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.main-screen .no_messages {
+    color:#000;
+    font-size: 26px;
+    
+}
+
+
+.trans_row {
+    width:100%;
+    position:relative;
+    min-height: 50px;
+    padding: 3px 0 3px 0;
+    border-bottom:1px #ccc solid;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+
+.mystatus {
+    background-color: #FFFEB6;
+    border-bottom: 0!important;
+}
+
+.trans_row .avapic {
+    position: absolute;
+    width: 50px;
+    padding:5px 0 0 5px;
+
+}
+.trans_row .chat_text {
+    
+    padding:15px 40px 10px 60px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+
+   
+}
+.trans_row .chat_bottoms {
+    position: absolute;
+    width: 40px;
+    padding:4px 0 0 0;
+    right:0;
+    top:0;
+    margin-top:6px;
+    text-align: center;
+    
+}
+
+
+
+.main_row {
+    width:100%;
+    position:relative;
+    min-height: 40px;
+    padding: 3px 0 3px 0;
+    border-bottom:1px #ccc solid;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+.main_row .avapic {
+    position: absolute;
+    width: 50px;
+    padding:0 0 0 5px;
+
+}
+.main_row .chat_text {
+    
+    padding:10px 40px 10px 60px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+
+   
+}
+.main_row .chat_bottoms {
+    position: absolute;
+    width: 40px;
+    padding:0px;
+    right:0;
+    top:0;
+    margin-top:6px;
+    text-align: center;
+    
 }

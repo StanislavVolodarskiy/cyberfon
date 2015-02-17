@@ -1,9 +1,10 @@
 <template name="main">
     <div class="screen-content main-screen">
         <div class="conenction_bar">
-            <div class="coord_status">lon:57.3113, lat:60.5443<br><span class="connect_status">connected</span></div>
-            <div class="connection_bar_right"><a href="/user">МОИ ЧАТЫ</a></div>
-        </div>
+           <div class="coord_status">lon:57.3113, lat:60.5443<br><a href="{{pathFor 'new_chat'}}">connected</a></div>
+            <div class="connect_status"><a href="/user">МОИ ЧАТЫ</a></div>
+        </div> 
+
         <div class="trans_row mystatus">
             <div class="avapic">
                 <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:40px;"></i></div>

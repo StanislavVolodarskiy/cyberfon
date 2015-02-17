@@ -556,11 +556,17 @@ a {
     position: relative;
 }
 
+.main-screen .informer {
+    position: absolute;
+    top:10px;
+    left:50px;
+} 
+
 .informer {
     position: absolute;
     bottom:0px;
     left:5px;
-}
+} 
 
 .chat .informer {
     left:0px;
@@ -815,26 +821,29 @@ left:0;
     height:30px;
 }
 
-.connection_bar_right {
+.coord_status {
     font-size: 12px;
     position: absolute;
     left:10px;
     text-align: left;
     color:#999999;
 }
-.connection_bar_right {
-    font-size: 22px;
+.connect_status {
+    font-size: 27px;
     font-weight: bold;
     position: absolute;
     right:10px;
     text-align: right;
     color:#bbb;
 }
-.connect_status {
-    color:#329117;
+
+.connect_status a {
+    color:#bbb;
 }
 
-
+.network_connected {
+    color:#329117;
+}
 
 .translation_online {
     color: #329117;
@@ -1078,7 +1087,7 @@ left:0;
 }
 .main_row .chat_text {
     
-    padding:10px 40px 10px 60px;
+    padding:10px 40px 10px 70px;
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis; /* Добавляем многоточие */
@@ -1094,4 +1103,14 @@ left:0;
     margin-top:6px;
     text-align: center;
     
+}
+
+.bottom_efir {
+    padding-top:3px;
+}
+.bottom_hearts {
+    padding-top:5px;
+}
+.bottom_mails {
+    padding-top:3px;
 }

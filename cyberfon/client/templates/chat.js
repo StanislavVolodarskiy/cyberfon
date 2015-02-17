@@ -44,7 +44,6 @@ Template.chat.helpers({
                 'author': author._id,
                 'first_name': author.profile.first_name,
                 'last_name': author.profile.last_name,
-                'fake_avatar': '../../avatars/av1.jpg',
                 'author_class': (author._id === Meteor.userId()) ? 'is_author' : 'isnt_author',
                 'distance_image': near(doc.author) ? 'near' : 'far',
                 'date': formatdate(doc.date),

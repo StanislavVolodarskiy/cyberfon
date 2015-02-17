@@ -40,7 +40,7 @@
 <template name="chat_comment">
 <div class="twit_answer {{author_class}}">
     <div class="twit_avatar">
-        <div class="avatar_image"><img src="{{fake_avatar}}" /></div>
+        {{> avatar user_id=author}}
         <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
     </div>
     <div class="twit_person"><span class="named">{{first_name}} {{last_name}}</span></div>

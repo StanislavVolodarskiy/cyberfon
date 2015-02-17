@@ -74,10 +74,9 @@ Template.main.helpers({
             var favorite = favorite_set(doc._id);
 
             return {
-                '_id': doc._id,
+                'user_id': doc._id,
                 'first_name': doc.profile.first_name,
                 'last_name': doc.profile.last_name,
-                'fake_avatar': 'avatars/av1.jpg',
                 'distance_image': neighbour_set(doc._id) ? 'near' : 'far',
                 'favorite': favorite,
                 'favorite_class': favorite ? 'favorit': '',
@@ -115,7 +114,7 @@ Template.main_user.events({
 
         var op = (template.data.favorite) ? '$pull' : '$addToSet';
         var update = {};
-        update[op] = {'profile.favorites': template.data._id};
+        update[op] = {'profile.favorites': template.data.user_id};
         Meteor.users.update({'_id': user._id}, update);
     }
 });

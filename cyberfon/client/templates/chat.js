@@ -1,4 +1,11 @@
 Template.chat.helpers({
+    'user_id': function() {
+        var status = Statuses.findOne({'_id': this.chat_id}, {'user': 1});
+        if (status === undefined) {
+            return undefined;
+        }
+        return status.user;
+    },
     'profile': function() {
         var status = Statuses.findOne({'_id': this.chat_id}, {'user': 1});
         if (status === undefined) {

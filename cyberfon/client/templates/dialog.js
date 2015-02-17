@@ -1,4 +1,7 @@
 Template.dialog.helpers({
+    'user_id': function() {
+        return Meteor.userId();
+    },
     'correspondent': function() {
         return Meteor.users.findOne({'_id': this.corr_id});
     },

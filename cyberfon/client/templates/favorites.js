@@ -44,7 +44,7 @@ Template.favorites.helpers({
             var favorite = favorite_set(doc._id);
 
             return {
-                '_id': doc._id,
+                'user_id': doc._id,
                 'first_name': doc.profile.first_name,
                 'last_name': doc.profile.last_name,
                 'fake_avatar': 'avatars/av1.jpg',

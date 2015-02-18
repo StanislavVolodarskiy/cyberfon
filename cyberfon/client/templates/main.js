@@ -100,6 +100,7 @@ Template.main.events({
 
         Router.go('chat', {'_id': status});
     }
+    
 });
 
 Template.main_user.events({
@@ -118,3 +119,18 @@ Template.main_user.events({
         Meteor.users.update({'_id': user._id}, update);
     }
 });
+
+
+Template.main.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      var height = window.innerHeight - 110 - 49;
+      document.getElementById('mainscreen').style.height = height + 'px';
+    }
+};
+
+window.onresize = function(){
+   var height = window.innerHeight - 110 - 49;
+   document.getElementById('mainscreen').style.height = height + 'px';
+};  
+

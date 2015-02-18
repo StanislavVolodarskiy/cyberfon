@@ -818,7 +818,7 @@ left:0;
 
 .conenction_bar {
     margin:5px 10px 5px 10px;
-    height:30px;
+    height:15px;
 }
 
 .coord_status {
@@ -829,17 +829,17 @@ left:0;
     color:#999999;
 }
 .connect_status {
-    font-size: 27px;
-    font-weight: bold;
+    font-size: 12px;
     position: absolute;
     right:10px;
     text-align: right;
     color:#bbb;
 }
 
-.connect_status a {
-    color:#bbb;
+.connect_status .connected {
+    color:#329117;
 }
+
 
 .network_connected {
     color:#329117;
@@ -1030,7 +1030,7 @@ left:0;
 .trans_row {
     width:100%;
     position:relative;
-    min-height: 50px;
+    min-height: 25px;
     padding: 3px 0 3px 0;
     border-bottom:1px #ccc solid;
     line-height: 1.4;
@@ -1045,12 +1045,12 @@ left:0;
 .trans_row .avapic {
     position: absolute;
     width: 50px;
-    padding:5px 0 0 5px;
+    padding:2px 0 0 5px;
 
 }
 .trans_row .chat_text {
     
-    padding:15px 40px 10px 60px;
+    padding:2px 60px 2px 30px;
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis; /* Добавляем многоточие */
@@ -1060,13 +1060,24 @@ left:0;
 .trans_row .chat_bottoms {
     position: absolute;
     width: 40px;
-    padding:4px 0 0 0;
+    padding:0;
     right:0;
     top:0;
-    margin-top:6px;
+    margin-top:4px;
     text-align: center;
-    
 }
+
+.trans_row .chat_counter {
+    position: absolute;
+    width: 25px;
+    padding:0;
+    right:40px;
+    top:0;
+    margin-top:4px;
+    text-align: left;
+}
+
+
 
 
 
@@ -1113,4 +1124,24 @@ left:0;
 }
 .bottom_mails {
     padding-top:3px;
+}
+.n_main_trans {
+    background-color:#ffd200;
+    color:#fff;
+}
+.n_new_mail {
+    background-color:#dc5236;
+    font-weight: bold;
+}
+
+.main_fixed {
+    position: absolute;
+    top:45px;
+    width:100%;
+}
+.main-screen {
+    
+    top:110px;
+    width:100%;
+
 }

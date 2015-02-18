@@ -1,17 +1,20 @@
 <template name="main">
-    <div class="screen-content main-screen">
+    <div class="main_fixed">
         <div class="conenction_bar">
-           <div class="coord_status">lon:57.3113, lat:60.5443<br><a href="{{pathFor 'new_chat'}}">connected</a></div>
-            <div class="connect_status"><a href="/user">МОИ ЧАТЫ</a></div>
+           <div class="coord_status">lon:57.3113, lat:60.5443</div>
+           <div class="connect_status"><span class="connected">connected</span></div>
         </div> 
 
         <div class="trans_row mystatus">
             <div class="avapic">
-                <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:40px;"></i></div>
+                <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:20px;"></i></div>
             </div>
-            <div class="chat_text js-open-chat">{{status.text}} ({{status.n_comments}})</div>
-            <div class="chat_bottoms"><a href="#"><span class="new_messages">2</span></a></div>
-        </div> 
+            <div class="chat_text js-open-chat">{{status.text}}</div>
+            <div class="chat_counter"><span class="notification n_main_trans n_new_mail">{{status.n_comments}}</span></div>
+            <div class="chat_bottoms"><a href="/new_chat"><img src="/images/list.png" /></a></div>
+        </div>
+    </div>
+    <div class="screen-content main-screen" id="mainscreen">
        {{#each users}} {{> main_user}} {{/each}}
        <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
     </div>

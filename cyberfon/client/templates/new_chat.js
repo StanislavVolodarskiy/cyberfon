@@ -8,7 +8,10 @@ Template.new_chat.events({
             return;
         }
 
-        var status = template.$('[name=status]').val();
+        var status = template.$('[name=status]').val().trim();
+        if (status === '') {
+            return;
+        }
 
         var result = Statuses.insert({
             'user': user_id,

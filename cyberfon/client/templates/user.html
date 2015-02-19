@@ -1,38 +1,43 @@
 <template name="user">
-    <div class="screen user">    
-        <div class="navigation-bar fixed-top">
-            <div class="navigation-bar__left">
-                <span class="navigation-bar__line-height">
-                    {{> avatar user_id=user_id}}
-                </span>
+    <div class="screen user">
+        <div class="not_author">
+            <div class="navigation-bar fixed-top">
+                <div class="navigation-bar__left">
+                    <span class="navigation-bar__line-height">
+                        {{> avatar user_id=user_id}}
+                    </span>
+                </div>
+                <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
+                <div class="navigation-bar__right avatar_bar">
+                    <i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>
+                </div>
             </div>
-            <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
-            <div class="navigation-bar__right avatar_bar">
-                <i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>
+
+            <div class="screen-content">   
+                {{#each statuses}} {{> user_status}} {{/each}}
+                <div class="substatus addchat"><a href="{{pathFor 'new_chat'}}">ДОБАВИТЬ ЧАТ</a></div> 
             </div>
-        </div>
-
-
-
-        <div class="screen-content">   
-            {{#each statuses}} {{> user_status}} {{/each}}
-            <div class="substatus"><a href="{{pathFor 'new_chat'}}">ДОБАВИТЬ ЧАТ</a></div> 
         </div>
     </div>
 </template>
 
 <template name="user_status">
-<div class="chat_row user">
-    <div class="rowfirst">
-        <div class="avatar_image"><i class="ion-wifi {{active_class}}" style="font-size:35px;"></i></div>
+    <div class="chat_row user">
+        <div class="rowfirst">
+            <div class="avatar_image">
+                <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
+                <i class="ion-connection-bars {{inradius}}" style="font-size:35px;"></i>
+            </div>
+        </div>
+        <div class="rowsecond js-open-chat">
+            {{text}}
+            <br>
+            <div class="twit_date"><i class="ion-android-chat" style="font-size: 20px;"></i> <span style="font-size: 16px;">{{n_comments}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{date}}</div>
+
+        </div>
+        <div class="rowthird js-toggle-favorite">
+           <i class="ion-heart ion-heart-active" style="font-size: 30px;"></i>
+           <i class="ion-close-round" style="font-size: 22px;"></i>
+         </div>
     </div>
-    <div class="rowsecond js-open-chat">
-        {{text}}
-        <br>
-        <div class="twit_date">{{date}}</div>
-        <br>
-        {{n_comments}}
-    </div>
-    <div class="rowthird js-toggle-favorite"><span class=""><i class="ion-heart ion-heart-active" style="font-size: 30px;"></i> </span></div>
-</div>
 </template>

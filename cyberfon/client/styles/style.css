@@ -627,7 +627,7 @@ left:0;
     left:0px;
 }
 .twit_date {
-    font-size: 12px;
+    font-size: 14px;
     color:#999999;
     margin:5px 0 0 0;
 
@@ -1195,3 +1195,47 @@ left:0;
 .edit_avatar {
     padding:10px 0 0 10px;
 }
+
+.userblock .is_author .ion-email {
+    display: none;
+}
+
+.userblock .is_author .ion-wifi {
+    display: inline;
+}
+.userblock .is_author .ion-connection-bars {
+    display: none;
+}
+
+.userblock .not_author .ion-wifi {
+    display: none;
+}
+.userblock .not_author .ion-connection-bars {
+    display: inline;
+}
+
+.userblock .is_author .ion-heart {
+    display: none;
+}
+.userblock .not_author .ion-heart {
+    display: inline;
+}
+.userblock .ion-close-round {
+    color:#d50101;
+}
+
+.userblock .not_author .ion-close-round {
+    
+    display: none;
+}
+.userblock .is_author .ion-close-round {
+    display: inline;
+}
+.userblock .is_author .addchat {
+    display: inline;
+}
+.userblock .not_author .addchat {
+    display: none;
+}
+
+

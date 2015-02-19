@@ -14,15 +14,19 @@
 
         <div class="screen-content" id="chat_screen">   
             
-            
-            <div class="chat_row user">
-                <div class="rowfirst">
-                    <div class="avatar_image"><i class="ion-wifi twit_passive" style="font-size:35px;"></i></div>
-                </div>
-                <div class="rowsecond">{{status.text}}<br> <div class="twit_date">{{status.date}}</div></div>
-                <div class="rowthird js-toggle-favorite">
-                    <div class="control_block"><i class="ion-heart ion-heart-active" style="font-size: 30px;"></i></div>
-                    <div class="control_block"><i class="ion-close-round delete_twit" style="font-size:20px;"></i></div>
+            <div class="userblock">
+                <div class="chat_row user is_author">
+                    <div class="rowfirst">
+                        <div class="avatar_image">
+                            <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
+                            <i class="ion-connection-bars {{inradius}}" style="font-size:35px;"></i>
+                        </div>
+                    </div>
+                    <div class="rowsecond">{{status.text}}<br> <div class="twit_date">{{status.date}}</div></div>
+                    <div class="rowthird js-toggle-favorite">
+                        <div class="control_block"><i class="ion-heart ion-heart-active" style="font-size: 30px;"></i></div>
+                        <div class="control_block"><i class="ion-close-round delete_twit" style="font-size:20px;"></i></div>
+                    </div>
                 </div>
             </div>
 

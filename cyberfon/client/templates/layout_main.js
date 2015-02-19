@@ -4,13 +4,8 @@ Template.layout_main.helpers({
     }
 });
 Template.layout_main.events({
-    'click .js-back': function() {
-        window.history.back();
-    },
-    'click .js-open-favorites': function() {
-        Router.go('favorites');
-    },
-    'click .js-open-dialogs': function() {
-        Router.go('dialogs');
-    }
+    'click .js-back'          : function() { window.history.back() ; },
+    'click .js-open-main'     : function() { Router.go('main'     ); },
+    'click .js-open-favorites': function() { Router.go('favorites'); },
+    'click .js-open-dialogs'  : function() { Router.go('dialogs'  ); }
 });

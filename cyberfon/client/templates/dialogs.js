@@ -86,36 +86,9 @@ Template.dialogs.helpers({
     }
 });
 
-Template.dialogs.events({
-    'click .js-open-chat': function(event, template) {
-        var user = Meteor.user();
-        if (user === undefined || user === null) {
-            return;
-        }
-
-        var status = user.profile.status;
-        if (status === undefined) {
-            return;
-        }
-
-        Router.go('chat', {'_id': status});
-    }
-});
-
 Template.dialogs_user.events({
-    'click .js-open-chat-2': function(event, template) {
-        Router.go('chat', {'_id': template.data.status._id});
-    },
-    'click .js-toggle-favorite': function(event, template) {
-        var user = Meteor.user();
-        if (user === undefined || user === null) {
-            return;
-        }
-
-        var op = (template.data.favorite) ? '$pull' : '$addToSet';
-        var update = {};
-        update[op] = {'profile.favorites': template.data._id};
-        Meteor.users.update({'_id': user._id}, update);
+    'click .js-open-dialog': function(event, template) {
+        Router.go('dialog', {'_id': template.data.user_id});
     }
 });
 

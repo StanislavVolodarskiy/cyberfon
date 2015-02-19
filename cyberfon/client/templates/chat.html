@@ -15,7 +15,7 @@
         <div class="screen-content" id="chat_screen">   
             
             <div class="userblock">
-                <div class="chat_row user is_author">
+                <div class="chat_row user not_author">
                     <div class="rowfirst">
                         <div class="avatar_image">
                             <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="rowsecond">{{status.text}}<br> <div class="twit_date">{{status.date}}</div></div>
                     <div class="rowthird js-toggle-favorite">
-                        <div class="control_block"><i class="ion-heart ion-heart-active" style="font-size: 30px;"></i></div>
+                        <div class="control_block"><i class="ion-heart favorit" style="font-size: 30px;"></i></div>
                         <div class="control_block"><i class="ion-close-round delete_twit" style="font-size:20px;"></i></div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
     <div class="twit_person"><span class="named">{{first_name}} {{last_name}}</span></div>
     <div class="twit_text">{{text}}<div class="twit_date">{{date}}</div></div>
     <div class="twit_apply">
-        <i class="ion-close-round {{delete_comment_class}}" style="font-size:20px;"></i>
+        <i class="ion-close-round comment_delete" style="font-size:20px;"></i>
     </div>
 </div>
 </template> 

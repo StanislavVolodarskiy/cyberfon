@@ -1220,7 +1220,7 @@ left:0;
 .userblock .not_author .ion-heart {
     display: inline;
 }
-.userblock .ion-close-round {
+.userblock .ion-close-round, .twit_answer .ion-close-round {
     color:#d50101;
 }
 
@@ -1239,3 +1239,22 @@ left:0;
 }
 
 
+
+.userblock .inradius .ion-connection-bars {
+    color:#329117;
+}
+.userblock .rowfirst .avatar_image {
+    margin-left:5px;
+    color:#bbb;
+}
+
+
+.isnt_author .comment_delete  {
+    display:none!important;
+}
+.is_author .comment_delete  {
+    display:inline!important;
+}
+.comment_delete {
+    color:#d50101;
+}

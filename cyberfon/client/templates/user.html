@@ -1,6 +1,6 @@
 <template name="user">
-    <div class="screen user">
-        <div class="not_author">
+    <div class="screen user userblock">
+        <div class="not_author inradius">
             <div class="navigation-bar fixed-top">
                 <div class="navigation-bar__left">
                     <span class="navigation-bar__line-height">
@@ -26,7 +26,7 @@
         <div class="rowfirst">
             <div class="avatar_image">
                 <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
-                <i class="ion-connection-bars {{inradius}}" style="font-size:35px;"></i>
+                <i class="ion-connection-bars" style="font-size:35px;"></i>
             </div>
         </div>
         <div class="rowsecond js-open-chat">
@@ -36,7 +36,7 @@
 
         </div>
         <div class="rowthird js-toggle-favorite">
-           <i class="ion-heart ion-heart-active" style="font-size: 30px;"></i>
+           <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>
            <i class="ion-close-round" style="font-size: 22px;"></i>
          </div>
     </div>

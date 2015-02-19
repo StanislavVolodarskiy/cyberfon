@@ -1145,3 +1145,44 @@ left:0;
     width:100%;
 
 }
+
+.form_item {
+    width:100%;
+    border-bottom: 1px solid #bbb;
+    margin: 10px 2px 10px 2px;
+}
+.form_item .form_label {
+    position:absolute;
+    width:150px;
+    padding:7px 0 0 5px;
+    font-size: 16px;
+    color:#666;
+}
+.form_item .form_element {
+    padding:0 0 0 150px;
+}
+.form_item input {
+    font-size: 16px;
+}
+
+.password_edit .form_element {
+    padding:0 0 0 160px;
+}
+.password_edit .form_label {
+    width:160px;
+}
+
+.form_section {
+    width:100%;
+    font-size: 22px;
+    padding:10px 0 0 0;
+    color:#006c79;
+    border-bottom: 2px solid #006c79;
+}
+
+.form_profile button {
+    margin: 10px 0 20px 0;
+}
+.edit_avatar {
+    padding:10px 0 0 10px;
+}

@@ -1,21 +1,117 @@
-<template name="profile">
-  <div class="page auth">
-    <div class="content-scrollable">
-      <div class="wrapper-auth">
-        <div><a href="{{pathFor 'menu'}}" class="btn-secondary">Меню</a></div>
-        <form>
-          <div class="input-no-symbol"><input type="text" name="username"    value="{{username}}"            disabled              /></div>
-          <div class="input-no-symbol"><input type="text" name="first_name"  value="{{profile.first_name}}"  placeholder="Имя"     /></div>
-          <div class="input-no-symbol"><input type="text" name="second_name" value="{{profile.second_name}}" placeholder="Отчество"/></div>
-          <div class="input-no-symbol"><input type="text" name="last_name"   value="{{profile.last_name}}"   placeholder="Фамилия" /></div>
-          <p>&nbsp;</p>
-          <div class="input-no-symbol"><input type="password" name="old_password"   placeholder="Текущий пароль"      /></div>
-          <div class="input-no-symbol"><input type="password" name="password"       placeholder="Новый пароль"        /></div>
-          <div class="input-no-symbol"><input type="password" name="password_again" placeholder="Новый пароль ещё раз"/></div>
-   
-          <button type="submit" class="btn-primary">Сохранить</button>
-        </form>
-      </div>
+<template name="profile_old">
+    <div class="page auth">
+        <div class="content-scrollable">
+            <div class="wrapper-auth">
+                <div><a href="{{pathFor 'menu'}}" class="btn-secondary">Меню</a></div>
+                <form>
+                    <div class="input-no-symbol"><input type="text" name="username"    value="{{username}}"            disabled              /></div>
+                    <div class="input-no-symbol"><input type="text" name="first_name"  value="{{profile.first_name}}"  placeholder="Имя"     /></div>
+                    <div class="input-no-symbol"><input type="text" name="second_name" value="{{profile.second_name}}" placeholder="Отчество"/></div>
+                    <div class="input-no-symbol"><input type="text" name="last_name"   value="{{profile.last_name}}"   placeholder="Фамилия" /></div>
+                    <p>&nbsp;</p>
+                    <div class="input-no-symbol"><input type="password" name="old_password"   placeholder="Текущий пароль"      /></div>
+                    <div class="input-no-symbol"><input type="password" name="password"       placeholder="Новый пароль"        /></div>
+                    <div class="input-no-symbol"><input type="password" name="password_again" placeholder="Новый пароль ещё раз"/></div>
+
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
+
+
+<template name="profile">
+    <form>
+        {{#if errors}}
+        <div>
+            {{#each errors}}
+            <div>{{this}}</div>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="form_list form_profile">
+            <form>
+                <div class="form_section">Настройки профиля</div>
+
+                <div class="form_item">
+                    <div class="form_label">Телефон</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="username" placeholder="Телефон" value="{{username}}" >
+                    </div>
+                </div>
+
+                <div class="form_item">
+                    <div class="form_label">Имя</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="first_name" placeholder="Василий" value="{{profile.first_name}}" >
+                    </div>
+                </div>
+
+                <div class="form_item">
+                    <div class="form_label">Фамилия</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="last_name" placeholder="Петров" value="{{profile.last_name}}" >
+                    </div>
+                </div>
+                <button class="button button--large" type="submit">Сохранить</button>
+            </form>
+            
+            
+            
+            <form>
+                <div class="form_section">Аватарка</div>
+                <div class="edit_avatar" id="profile_avatar"><img src="/avatars/av1.jpg" /></div>
+                <button class="button button--large" type="submit">Выбрать изображение</button>
+            </form>
+            
+            <form>
+                <div class="form_section">Загрузить аватарку с Вконтакте</div>
+                <div class="form_item">
+                    <div class="form_label">Логин ВК</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="username" placeholder="Логин ВК" value="" >
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="form_label">Пароль ВК</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="username" placeholder="Пароль ВК" value="" >
+                    </div>
+                </div>
+                <button class="button button--large" type="submit">Загрузить</button>
+                
+                
+            </form>
+
+            <form class="password_edit">
+                <div class="form_section">Смена пароля</div>
+
+
+                <div class="form_item">
+                    <div class="form_label">Текущий пароль</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="old_password">
+                    </div>
+                </div>
+
+                <div class="form_item">
+                    <div class="form_label">Новый пароль</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="old_password" >
+                    </div>
+                </div>
+
+                <div class="form_item">
+                    <div class="form_label">Повторите пароль</div>
+                    <div class="form_element">
+                        <input type="text" class="text-input text-input--transparent" name="password"  >
+                    </div>
+                </div>
+            </form>
+            <button class="button button--large" type="submit">Сохранить</button>
+            <div class="button--large--quiet"><a href="{{pathFor 'main'}}">Отмена</a></div>
+        </div>
+    </form>
+</template>
+

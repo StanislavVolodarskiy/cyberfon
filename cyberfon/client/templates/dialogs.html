@@ -1,56 +1,23 @@
-<template name="dialogs_title">Диалоги</template>
-
 <template name="dialogs">
     <div class="screen-content dialogs_screen">   
-
-        
-        <div class="dialogs_row">
-            <div class="rowfirst">
-                <div class="avatar_image js-open-user"><img src="/avatars/av4.jpg" /></div>
-                <div class="informer"><img src="/images/near.png" /></div>
-            </div>
-            <div class="rowsecond">
-                <div class="dnamedate">
-                    <div class="dname">Степан Михайлович</div>
-                    <div class="ddate">15.12.2014</div>
-                </div>
-                <div class="dtext unread">Я там отписался по поводу проекта. Можете посмотреть абырвалг в почте у себя</div>
-            </div>
-        </div>
-        
-        <div class="dialogs_row">
-            <div class="rowfirst">
-                <div class="avatar_image js-open-user"><img src="/avatars/av4.jpg" /></div>
-                <div class="informer"><img src="/images/near.png" /></div>
-            </div>
-            <div class="rowsecond">
-                <div class="dnamedate">
-                    <div class="dname">Степан Михайлович</div>
-                    <div class="ddate">15.12.2014</div>
-                </div>
-                <div class="dtext unread">Тут у нас не очень много завихляев. Можно бы еще немного в авоську засунуть, там места еть для пассажиров.</div>
-            </div>
-        </div>
-        
-        
-        <div class="dialogs_row">
-            <div class="rowfirst">
-                <div class="avatar_image js-open-user"><img src="/avatars/av4.jpg" /></div>
-                <div class="informer"><img src="/images/near.png" /></div>
-            </div>
-            <div class="rowsecond">
-                <div class="dnamedate">
-                    <div class="dname">Степан Михайлович</div>
-                    <div class="ddate">15.12.2014</div>
-                </div>
-                <div class="dtext">Можете посмотреть абырвалг в почте у себя</div>
-            </div>
-        </div>
-        
-
-
+        {{#each users}} {{> dialogs_user}} {{/each}}        
     </div>
 </template>
 
-<template name="dialog_user">
+<template name="dialogs_title">Диалоги</template>
+
+<template name="dialogs_user">
+<div class="dialogs_row">
+    <div class="rowfirst">
+        {{> avatar user_id=user_id}}
+        <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
+    </div>
+    <div class="rowsecond">
+        <div class="dnamedate">
+            <div class="dname">{{first_name}} {{last_name}}</div>
+            <div class="ddate">{{status.date}}</div>
+        </div>
+        <div class="dtext unread">{{status.text}}</div>
+    </div>
+</div>
 </template>

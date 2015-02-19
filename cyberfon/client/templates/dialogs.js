@@ -72,8 +72,8 @@ Template.dialogs.helpers({
             '_id': {'$in': user_ids}
         }).map(function(doc) {
             var favorite = favorite_set(doc._id);
-
             return {
+                'user_id': doc._id,
                 'first_name': doc.profile.first_name,
                 'last_name': doc.profile.last_name,
                 'fake_avatar': 'avatars/av1.jpg',
@@ -102,7 +102,7 @@ Template.dialogs.events({
     }
 });
 
-Template.dialog_user.events({
+Template.dialogs_user.events({
     'click .js-open-chat-2': function(event, template) {
         Router.go('chat', {'_id': template.data.status._id});
     },

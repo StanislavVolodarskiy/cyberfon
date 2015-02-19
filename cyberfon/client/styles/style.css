@@ -1175,9 +1175,18 @@ left:0;
 .form_section {
     width:100%;
     font-size: 22px;
-    padding:10px 0 0 0;
+    font-weight: bold;
+    padding:10px 7px 0 7px;
     color:#006c79;
     border-bottom: 2px solid #006c79;
+}
+
+.form_subsection {
+    width:100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding:10px 7px 0 7px;
+    color:#006c79;
 }
 
 .form_profile button {

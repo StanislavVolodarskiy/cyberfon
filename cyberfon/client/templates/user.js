@@ -20,3 +20,9 @@ Template.user.events({
         Router.go('dialog', {'_id': template.data.user_id});
     }
 });
+
+Template.user_status.events({
+    'click .js-open-chat': function(event, template) {
+        Router.go('chat', {'_id': template.data._id});
+    }
+});

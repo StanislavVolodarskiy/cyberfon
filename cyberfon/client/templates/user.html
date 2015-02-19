@@ -6,9 +6,9 @@
                     {{> avatar user_id=user_id}}
                 </span>
             </div>
-            <div class="navigation-bar__center">Василиса Степанова</div>
+            <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
             <div class="navigation-bar__right avatar_bar">
-                <a href="/dialog/{{profile.id}}"><i class="ion-email ion-email-style" style="font-size:35px;"></i></a>
+                <i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>
             </div>
         </div>
 

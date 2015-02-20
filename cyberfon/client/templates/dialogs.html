@@ -1,23 +1,23 @@
 <template name="dialogs">
     <div class="screen-content dialogs_screen">   
-        {{#each users}} {{> dialogs_user}} {{/each}}        
+        {{#each dialogs}} {{> dialogs_dialog}} {{/each}}        
     </div>
 </template>
 
 <template name="dialogs_title">Диалоги</template>
 
-<template name="dialogs_user">
+<template name="dialogs_dialog">
 <div class="dialogs_row">
     <div class="rowfirst">
-        {{> avatar user_id=user_id}}
+        {{> avatar user_id=corr_id}}
         <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
     </div>
     <div class="rowsecond js-open-dialog">
         <div class="dnamedate">
             <div class="dname">{{first_name}} {{last_name}}</div>
-            <div class="ddate">{{status.date}}</div>
+            <div class="ddate">{{date}}</div>
         </div>
-        <div class="dtext unread">{{status.text}}</div>
+        <div class="dtext unread">{{text}}</div>
     </div>
 </div>
 </template>

@@ -1,22 +1,35 @@
 <template name="main">
     <div class="main_fixed">
         <div class="conenction_bar">
-           <div class="coord_status">lon:57.3113, lat:60.5443</div>
-           <div class="connect_status"><span class="connected">connected</span></div>
+           <div class="coord_status">
+               <span class="gpsoff">Отключен GPS</span>
+               <span class="looking_coord">Поиск местоположения...</span>
+               <span class="show_coord">Д:57.3113, Ш:60.5443</span>
+           </div>
+           <div class="connect_status">
+               <span class="connected">подключено</span>
+               <span class="disconnected">отключено</span>
+               <span class="connecting">подключение...</span>
+           </div>
         </div> 
 
         <div class="trans_row mystatus">
             <div class="avapic">
                 <div class="avatar_image"><i class="ion-wifi twit_active" style="font-size:20px;"></i></div>
             </div>
-            <div class="chat_text js-open-chat">{{status.text}}</div>
+            <div class="chat_text js-open-chat">
+                <span class="trans_text">{{status.text}}</span>
+                <span class="no_trans_text">Нет трансляции</span>
+                <span class="no_trans_text_invisible">Нет трансляции</span>
+            </div>
             <div class="chat_counter"><span class="notification n_main_trans n_new_mail">{{status.n_comments}}</span></div>
             <div class="chat_bottoms"><a href="/profile"><img src="/images/list.png" /></a></div>
         </div>
     </div>
     <div class="screen-content main-screen" id="mainscreen">
-       {{#each users}} {{> main_user}} {{/each}}
-       <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div> 
+        <div class="main_list">{{#each users}} {{> main_user}} {{/each}}</div>
+       <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div>
+       <div class="substatus substatus2">OFFLINE</div> 
     </div>
 </template>
 

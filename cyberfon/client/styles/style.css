@@ -836,14 +836,6 @@ left:0;
     color:#bbb;
 }
 
-.connect_status .connected {
-    color:#329117;
-}
-
-
-.network_connected {
-    color:#329117;
-}
 
 .translation_online {
     color: #329117;
@@ -1279,4 +1271,148 @@ left:0;
     font-size: 12px;
     color:#bbb;
     
+}
+
+/*  СТАТУСЫ    */
+
+.substatus  {
+    display: none;
+}
+
+.status_switcher {
+    margin:7px 3px 0 0;
+    height:30px;
+    line-height: normal;
+    padding-top:0px;
+}
+
+.status_switcher .ion-eye {
+    color:#fff;
+}
+.no_trans_text {
+    display:none;
+}
+
+.no_trans_text_invisible {
+    display:none;
+}
+
+.global_offline .status_switcher {
+    background-color: #d50101;
+}
+
+.global_offline .mystatus .ion-wifi {
+    color:#bbb;
+}
+
+.global_offline .chat_counter {
+    display:none;
+}
+
+.global_offline .trans_text {
+    display:none;
+}
+
+.global_offline .no_trans_text {
+    display:inline;
+    color:#d50101;
+}
+
+.global_offline .main_list {
+    display:none;
+}
+.global_offline .substatus2  {
+    display:block;
+}
+
+
+/*GLOBAL CONNECTING*/
+
+.global_connecting .status_switcher {
+    background-color: #ffd200;
+}
+
+
+.global_connecting .mystatus .ion-wifi {
+    color:#bbb;
+}
+.global_connecting .chat_counter {
+    display:none;
+}
+
+.global_connecting .trans_text {
+    display:none;
+}
+
+.global_connecting .no_trans_text {
+    display:inline;
+    color:#d50101;
+}
+
+.global_connecting .main_list {
+    display:none;
+}
+.global_connecting .substatus2  {
+    display:block;
+}
+
+
+
+/*GLOBAL INVISIBLE*/
+
+.global_invisible .status_switcher {
+    background-color: #060df9;
+}
+
+
+.global_invisible .mystatus .ion-wifi {
+    color:#bbb;
+}
+.global_invisible .chat_counter {
+    display:none;
+}
+
+.global_invisible .trans_text {
+    display:none;
+}
+
+.global_invisible .no_trans_text_invisible {
+    display:inline;
+    color:#060df9;
+}
+
+.global_connecting .substatus2  {
+    display:block;
+}
+
+
+
+/* СТАТУС БАР*/
+
+.connect_status span {
+    display:none;
+}
+
+.coord_status span {
+    display:none;
+}
+
+.network_connecting .connect_status .connecting {
+    display:inline;
+}
+.network_connected .connect_status .connected {
+    display:inline;
+}
+.network_disconnected .connect_status .disconnected {
+    display:inline;
+}
+
+.gps_looking_coord .coord_status .looking_coord {
+    display:inline;
+}
+.gps_show_coord .coord_status .show_coord {
+    display:inline;
+}
+.gps_off .coord_status .gpsoff {
+    display:inline;
 }

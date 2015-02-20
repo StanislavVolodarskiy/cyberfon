@@ -1,6 +1,5 @@
 <template name="layout_main">
-
-    <div class="screen">
+    <div class="screen {{global_status}} {{gps_status}} {{network_status}}  global_invisible network_connecting gps_show_coord">
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
                 <span class="navigation-bar__line-height">
@@ -13,10 +12,10 @@
 
                 <div class="tab-bar__label bottom_right_status">
 
-                    <a href="change_private"><span class="toolbar-button navigation-bar__line-height visible">
-                            <i class="ion-eye" style="font-size:32px; vertical-align:-6px;"></i>
-                        </span>
-                    </a>
+                    <button class="toolbar-button navigation-bar__line-height status_switcher">
+                            <i class="ion-eye" style="font-size:32px;"></i>
+                        </button>
+                    
                 </div>
             </div>
         </div>

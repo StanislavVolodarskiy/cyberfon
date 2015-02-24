@@ -32,27 +32,31 @@ Template.favorites.helpers({
             return [];
         }
 
-        var neighbour_ids = neighbours(user._id, 1000);
-        var user_ids = user.profile.favorites.concat(neighbour_ids);
-
-        var neighbour_set = make_set(neighbour_ids         );
-        var favorite_set  = make_set(user.profile.favorites);
+        var neighbour_set = make_set(neighbours(user._id, 1000));
 
         return Meteor.users.find({
-            '_id': {'$in': user_ids}
+            '_id': {'$in': user.profile.favorites}
         }).map(function(doc) {
-            var favorite = favorite_set(doc._id);
-
             return {
                 'user_id': doc._id,
                 'first_name': doc.profile.first_name,
                 'last_name': doc.profile.last_name,
                 'fake_avatar': 'avatars/av1.jpg',
                 'distance_image': neighbour_set(doc._id) ? 'near' : 'far',
-                'favorite': favorite,
-                'favorite_class': favorite ? 'favorit': '',
                 'status': Statuses.findOne({'_id': doc.profile.status})
             };
         });
+    }
+});
+
+Template.favorit_user.events({
+    'click .js-toggle-favorite': function(event, template) {
+        console.log('UGU');
+        var user = Meteor.user();
+        if (user === undefined || user === null) {
+            return;
+        }
+
+        Meteor.users.update({'_id': user._id}, {'$pull': {'profile.favorites': template.data.user_id}});
     }
 });

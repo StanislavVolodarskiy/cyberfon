@@ -571,6 +571,9 @@ a {
 .chat .informer {
     left:0px;
 }
+.group .informer {
+    left:0px;
+}
 
 .twit .twit_text, .twit .twit_person {
     padding:0 5px 0 5px;
@@ -1296,6 +1299,17 @@ left:0;
 .no_trans_text_invisible {
     display:none;
 }
+
+
+/*GLOBAL ONLINE*/
+
+.global_online .status_switcher {
+    background-color: #329117;
+}
+
+/*GLOBAL OFFLINE*/
+
+
 
 .global_offline .status_switcher {
     background-color: #d50101;

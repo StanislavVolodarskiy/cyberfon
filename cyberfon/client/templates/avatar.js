@@ -1,6 +1,6 @@
 Template.avatar.helpers({
     'fake_avatar': function() {
-        return (this.user_id === Meteor.userId()) ? '/avatars/av1.jpg' : '/avatars/av2.jpg';
+        return (this.user_id === Meteor.userId()) ? '/avatars/nophoto.jpg' : '/avatars/nophoto.jpg';
     }
 });
 

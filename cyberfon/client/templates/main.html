@@ -1,16 +1,16 @@
 <template name="main">
     <div class="main_fixed">
         <div class="conenction_bar">
-           <div class="coord_status">
-               <span class="gpsoff">Отключен GPS</span>
-               <span class="looking_coord">Поиск местоположения...</span>
-               <span class="show_coord">Д:57.3113, Ш:60.5443</span>
-           </div>
-           <div class="connect_status">
-               <span class="connected">подключено</span>
-               <span class="disconnected">отключено</span>
-               <span class="connecting">подключение...</span>
-           </div>
+            <div class="coord_status">
+                <span class="gpsoff">Отключен GPS</span>
+                <span class="looking_coord">Поиск местоположения...</span>
+                <span class="show_coord">Д:57.3113, Ш:60.5443</span>
+            </div>
+            <div class="connect_status">
+                <span class="connected">подключено</span>
+                <span class="disconnected">отключено</span>
+                <span class="connecting">подключение...</span>
+            </div>
         </div> 
 
         <div class="trans_row mystatus">
@@ -27,9 +27,21 @@
         </div>
     </div>
     <div class="screen-content main-screen" id="mainscreen">
-        <div class="main_list">{{#each users}} {{> main_user}} {{/each}}</div>
-       <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div>
-       <div class="substatus substatus2">OFFLINE</div> 
+        <div class="main_list">
+            
+            <div class="main_row">
+                <div class="avapic">
+                    <img src="/avatars/ava_kommunar.jpg" />
+                    <div class="informer"><img src="/images/icon_group.png" /></div>
+                </div>
+                <div class="chat_text js-open-chat-2"><a href="/group"><span class="named">Коммунар</span></a></div>
+                <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart {{favorite_class}}" style="font-size: 30px;"></i> </span></div>
+            </div>
+            
+            {{#each users}} {{> main_user}} {{/each}}
+        </div>
+        <div class="substatus">КАК ДОБАВИТЬ СЮДА ЛЮДЕЙ</div>
+        <div class="substatus substatus2">OFFLINE</div> 
     </div>
 </template>
 

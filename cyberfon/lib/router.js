@@ -50,6 +50,7 @@ Router.route('profile');
 Router.route('sign_in');
 Router.route('sign_out');
 Router.route('sign_up');
+Router.route('group');
 
 Router.route('user', {
     'path': '/user/:_id',

@@ -1427,3 +1427,21 @@ left:0;
 .gps_off .coord_status .gpsoff {
     display:inline;
 }
+.two_buttons {
+    width:100%;
+}
+
+.two_buttons td {
+    width:50%;
+    text-align: center;
+}
+
+.two_buttons button {
+    width:80%;
+}
+
+.group_description {
+    font-size: 16px;
+    text-align: center;
+    padding:10px 20px 10px 20px;
+}

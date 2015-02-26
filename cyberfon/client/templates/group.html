@@ -1,6 +1,6 @@
 <template name="group">
     <div class="screen group userblock">
-        <div class="not_author inradius">
+        <div class="not_author inradius can_message can_create">
             <div class="navigation-bar fixed-top">
                 <div class="navigation-bar__left">
                     <span class="navigation-bar__line-height">
@@ -13,10 +13,19 @@
                 </div>
             </div>
 
-            <div class="screen-content">   
+            <div class="screen-content">
+                <div class="group_description">Cтруктурное подразделение «Технопарка Санкт-Петербурга»<br>СПб, пр. Обуховской об. 70, к.2<br><a href="http://ingria-startup.ru/" target="_blank">http://ingria-startup.ru/</a></div>
+                <table class="two_buttons">
+                    <tr>
+                        <td><button class="button button_message js-open-dialog">Личная связь</button></td>
+                        <td><button class="button button_create">Новая тема</button></td>
+                    </tr>
+                </table>
                 {{#each statuses}} {{> user_status}} {{/each}}
-                <div class="substatus addchat"><a href="{{pathFor 'new_chat'}}">ДОБАВИТЬ ЧАТ</a></div> 
+                
             </div>
+
+
         </div>
     </div>
 </template>
@@ -36,8 +45,8 @@
 
         </div>
         <div class="rowthird js-toggle-favorite">
-           <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>
-           <i class="ion-close-round" style="font-size: 22px;"></i>
-         </div>
+            <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>
+            <i class="ion-close-round" style="font-size: 22px;"></i>
+        </div>
     </div>
 </template>

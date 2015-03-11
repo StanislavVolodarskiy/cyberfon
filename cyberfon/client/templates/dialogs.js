@@ -49,20 +49,12 @@ Template.dialogs.helpers({
             }).map(function(doc) { return doc.user; });
         };
 
-        var make_set = function(array) {
-            var dict = {};
-            _.each(array, function(v) {
-                dict[v] = undefined;
-            });
-            return function(v) {return dict.hasOwnProperty(v);};
-        };
-
         var user = Meteor.user();
         if (user === undefined || user === null) {
             return [];
         }
 
-        var neighbour_set = make_set(neighbours(user._id, 1000));
+        var neighbour_set = Utils.make_set(neighbours(user._id, 1000));
 
         var last = {};
         var update_last = function(corr_id, date, text) {

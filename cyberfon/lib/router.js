@@ -51,7 +51,10 @@ Router.route('sign_in');
 Router.route('sign_out');
 Router.route('sign_up');
 Router.route('group');
-Router.route('local_news');
+Router.route('local_news', {
+    'path': '/local_news/:_id',
+    'data': function() { return {'region_id': this.params._id}; }
+});
 
 Router.route('user', {
     'path': '/user/:_id',

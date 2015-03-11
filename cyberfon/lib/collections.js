@@ -19,3 +19,8 @@ if (Meteor.isServer) {
     Messages._ensureIndex({'from': 1, 'to'  : 1, 'date': 1});
     Messages._ensureIndex({'to'  : 1, 'from': 1           });
 }
+
+Regions = new Meteor.Collection('regions');
+if (Meteor.isServer) {
+    Locations._ensureIndex({'location': '2dsphere'});
+}

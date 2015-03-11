@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 e
-for f in $DIR/log $DIR/cyberfon/lib/* $DIR/cyberfon/client/templates/* $DIR/cyberfon/client/styles/*; do
+for f in $DIR/log $DIR/cyberfon/lib/* $DIR/cyberfon/client/* $DIR/cyberfon/client/templates/* $DIR/cyberfon/client/styles/*; do
     if [ -f $f ]; then
         e $f
     fi

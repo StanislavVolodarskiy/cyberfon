@@ -49,14 +49,6 @@ Template.main.helpers({
             }).map(function(doc) { return doc.user; });
         };
 
-        var make_set = function(array) {
-            var dict = {};
-            _.each(array, function(v) {
-                dict[v] = undefined;
-            });
-            return function(v) {return dict.hasOwnProperty(v);};
-        };
-
         var user = Meteor.user();
         if (user === undefined || user === null) {
             return [];
@@ -65,8 +57,8 @@ Template.main.helpers({
         var neighbour_ids = neighbours(user._id, 1000);
         var user_ids = user.profile.favorites.concat(neighbour_ids);
 
-        var neighbour_set = make_set(neighbour_ids         );
-        var favorite_set  = make_set(user.profile.favorites);
+        var neighbour_set = Utils.make_set(neighbour_ids         );
+        var favorite_set  = Utils.make_set(user.profile.favorites);
 
         return Meteor.users.find({
             '_id': {'$in': user_ids}
@@ -81,6 +73,25 @@ Template.main.helpers({
                 'favorite': favorite,
                 'favorite_class': favorite ? 'favorit': '',
                 'status': Statuses.findOne({'_id': doc.profile.status})
+            };
+        });
+    },
+    'regions': function() {
+        var user = Meteor.user();
+        if (user === undefined || user === null) {
+            return [];
+        }
+
+        var favorite_set = Utils.make_set(user.profile.favorite_regions);
+
+        return _.map(['ID1', 'ID2'], function(value) {
+            var favorite = favorite_set(value);
+            return {
+               'region_id' : value, 
+               'fake_avatar': '/avatars/ava_kommunar.jpg',
+               'name': 'Коммунар' + value,
+               'favorite': favorite,
+               'favorite_class': favorite ? 'favorit': ''
             };
         });
     }
@@ -116,6 +127,24 @@ Template.main_user.events({
         var op = (template.data.favorite) ? '$pull' : '$addToSet';
         var update = {};
         update[op] = {'profile.favorites': template.data.user_id};
+        Meteor.users.update({'_id': user._id}, update);
+    }
+});
+
+Template.main_region.events({
+    'click .js-open-region': function(event, template) {
+        Router.go('local_news', {'_id': template.data.region_id});
+    },
+    'click .js-toggle-favorite': function(event, template) {
+        console.log('UGU', template.data);
+        var user = Meteor.user();
+        if (user === undefined || user === null) {
+            return;
+        }
+
+        var op = (template.data.favorite) ? '$pull' : '$addToSet';
+        var update = {};
+        update[op] = {'profile.favorite_regions': template.data.region_id};
         Meteor.users.update({'_id': user._id}, update);
     }
 });

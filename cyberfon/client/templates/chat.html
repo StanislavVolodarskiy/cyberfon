@@ -2,13 +2,15 @@
     <div class="screen chat">    
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
+                <span class="navigation-bar__line-height ">
+                        <a href="/user/{{user_id}}"><i class="ion-chevron-left " style="font-size:30px; color:white"></i></a>
+                    </span>
+            </div>
+            <div class="navigation-bar__center">Чат {{profile.first_name}} {{profile.last_name}}</div>
+            <div class="navigation-bar__right avatar_bar">
                 <span class="navigation-bar__line-height">
                     {{> avatar user_id=user_id}}
                 </span>
-            </div>
-            <div class="navigation-bar__center">Личный чат</div>
-            <div class="navigation-bar__right avatar_bar">
-                
             </div>
         </div>
 

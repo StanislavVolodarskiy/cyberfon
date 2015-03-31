@@ -922,26 +922,56 @@ background-color: #ccc;
     border-radius: 10px;
 }
 
-.dialog_list .is_author {
+.dialog_row {
+    width:100%;
+}
+
+.is_author .dialog_box  {
     float:left;
     text-align: left;
+    
 }
-.dialog_list .isnt_author {
+.isnt_author .dialog_box  {
     float:right;
     text-align:right;
+    margin-right:34px;
 }
+
+.is_author .dialog_box  {
+    float:left;
+    text-align:left;
+    margin-left:34px;
+}
+
+.avatar_right {
+    position:absolute;
+    right:2px;
+}
+
+.avatar_left {
+    position:absolute;
+    left:2px;
+}
+
+.dialog_box .avva {
+    display:none;
+}
+.is_author .avatar_left {
+    display:block!important;
+}
+.isnt_author .avatar_right {
+    display:block!important;
+}
+
+
+
+
 .dialog_date {
     color:#ccc;
     font-size: 14px;
 }
 
-.dialog_list .is_author .namee {
-    color:#006c79;
-    font-weight: bold;
-}
-.dialog_list .isnt_author  .namee {
-    color:#d50101;
-    font-weight: bold;
+ font-weight: bold;
 }
 .avatar_header {
     width: 40px;
@@ -992,25 +1022,30 @@ background-color: #ccc;
 .dname {
     padding: 0 50px 0 0;
     color:rgb(0,106,119);
-    font-weight: bold;
+    
 }
 .ddate {
     position:absolute;
     right:0;
     top:0;
     width:50px;
-    font-size: 14px;
+    font-size: 12px;
     color:#bbb;
 }
 
 .dtext {
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
-    padding: 2px; /* Поля вокруг текста */
     text-overflow: ellipsis; /* Добавляем многоточие */
+    margin-right:4px;
 }
+.dtext .unread {
+    background: #eee; 
+    padding:0 10px 0 10px;
+}
+
 .dialogs_screen .unread {
-    background: #d9e9eb; 
+    
 }
 .dtext {
     margin-top:0px;
@@ -1549,3 +1584,11 @@ background-color: #ccc;
 .dialog_text {
     margin:5px 0 0 5px;
 }
+
+.goback {
+    padding-left:10px;
+}
+.navigation-bar .avatar_image {
+    margin-top:1px;
+}
+

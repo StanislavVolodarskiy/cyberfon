@@ -2,14 +2,17 @@
     <div class="screen user userblock user_chatlist">
         <div class="">
             <div class="navigation-bar fixed-top">
-                <div class="navigation-bar__left">
-                    <span class="navigation-bar__line-height">
-                        {{> avatar user_id=user_id}}
+                <div class="navigation-bar__left goback">
+                    <span class="navigation-bar__line-height ">
+                        <a href="/"><i class="ion-chevron-left " style="font-size:30px; color:white"></i></a>
                     </span>
                 </div>
                 <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
                 <div class="navigation-bar__right avatar_bar">
                     <!--<i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>-->
+                    <span class="navigation-bar__line-height">
+                        {{> avatar user_id=user_id}}
+                    </span>
                 </div>
             </div>
 

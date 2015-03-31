@@ -1,5 +1,5 @@
 <template name="dialogs">
-    <div class="screen-content dialogs_screen">   
+    <div class="screen-content dialogs_screen" id="dialogs">   
         {{#each dialogs}} {{> dialogs_dialog}} {{/each}}        
     </div>
 </template>
@@ -17,7 +17,7 @@
             <div class="dname">{{first_name}} {{last_name}}</div>
             <div class="ddate">{{date}}</div>
         </div>
-        <div class="dtext unread">{{text}}</div>
+        <div class="dtext"><span class="unread">{{text}}</span></div>
     </div>
 </div>
 </template>

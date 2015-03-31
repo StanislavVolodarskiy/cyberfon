@@ -2,9 +2,9 @@
     <div class="screen chat dialog_screen">    
         <div class="navigation-bar fixed-top">
             <div class="navigation-bar__left">
-                <span class="navigation-bar__line-height">
-                    {{> avatar user_id=user_id}}
-                </span>
+                <span class="navigation-bar__line-height ">
+                   <a href="/user/{{corr_id}}"><i class="ion-chevron-left " style="font-size:30px; color:white"></i></a>
+                 </span>
             </div>
 
             <div class="navigation-bar__center">Личная переписка</div>
@@ -44,11 +44,15 @@
 
 <template name="message">
     
-    
-    <div class="dialog_box {{author_class}}">
-        <div class='dialog_author'><span class="namee">{{first_name}} {{last_name}}</span>&nbsp;&nbsp;<span class="dialog_date">{{date}}</span></div>
-        <div class='dialog_text'>{{text}}</div>
+    <div class='{{author_class}} dialog_row'>
+        <div class="dialog_box">
+            <div class='avva avatar_right'>{{> avatar user_id=corr_id width="30"}}</div>
+            <div class='avva avatar_left'>{{> avatar user_id=user_id width="30"}}</div>
+            <div class='dialog_author'><span class="dialog_date">{{date}}</span></div>
+            <div class='dialog_text'>{{text}}</div>
+        </div>
     </div>
+        
     <div style="clear:both"></div>
     
 </template>

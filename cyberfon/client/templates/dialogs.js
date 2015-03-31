@@ -60,11 +60,11 @@ Template.dialogs.helpers({
         var update_last = function(corr_id, date, text) {
             if (last.hasOwnProperty(corr_id)) {
                 if (date > last[corr_id].date) {
-                    last[corr_id].date = date;
+                    last[corr_id].date = formatdate(date);
                     last[corr_id].text = text;
                 }
             } else {
-                last[corr_id] = { 'date': date, 'text': text };
+                last[corr_id] = { 'date': formatdate(date), 'text': text };
             }
         };
 
@@ -106,3 +106,14 @@ Template.dialogs_dialog.events({
     }
 });
 
+Template.dialogs.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      var height = window.innerHeight - 44 - 50;
+      document.getElementById('dialogs').style.height = height + 'px';
+    }
+};
+
+function formatdate (date) {
+   return ('0' + date.getDate()).slice(-2) + '.' + ('0' + (date.getMonth() + 1)).slice(-2) +  '.' + date.getFullYear().toString().substr(2,2);
+}

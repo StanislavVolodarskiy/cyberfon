@@ -43,10 +43,12 @@
 
 
 <template name="message">
-         
+    
+    
     <div class="dialog_box {{author_class}}">
-        <div><span class="namee">{{first_name}} {{last_name}}</span>&nbsp;&nbsp;<span class="dialog_date">{{date}}</span></div>
-        <div>{{text}}</div>
+        <div class='dialog_author'><span class="namee">{{first_name}} {{last_name}}</span>&nbsp;&nbsp;<span class="dialog_date">{{date}}</span></div>
+        <div class='dialog_text'>{{text}}</div>
     </div>
+    <div style="clear:both"></div>
     
 </template>

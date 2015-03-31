@@ -1,0 +1,63 @@
+<template name="news_item">
+    <div class="screen news userblock">
+        <div class="not_author inradius can_message can_create">
+            <div class="navigation-bar fixed-top">
+                <div class="navigation-bar__left">
+                    <span class="navigation-bar__line-height">
+                        {{> avatar user_id=user_id}}
+                    </span>
+                </div>
+                <div class="navigation-bar__center">МО Коммунар</div>
+
+            </div>
+
+            <div class="screen-content">
+                
+                <div class="chat_row user">
+                    <div class="rowfirst">
+                        <div class="avatar_image">
+                            <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
+                            <i class="ion-connection-bars" style="font-size:35px;"></i>
+                        </div>
+                    </div>
+                    <div class="rowsecond">
+                        <div class="news_title">«Яркая зима» в Коммунаре!</div>
+                        <div class="news_body">24 февраля в 13-00 в Коммунаре на площадке у ФОКа «Олимп» по адресу: Ленинградское шоссе, д. 3 состоится акция, направленная на повышение уровня безопасности дорожного движения. Организаторами выступ..</div>
+
+                    </div>
+                    <div class="rowthird js-toggle-favorite">
+                        <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>
+                        <i class="ion-close-round" style="font-size: 22px;"></i>
+                    </div>
+                </div>
+
+
+                {{#each news}} {{> new_item}} {{/each}}
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="new_item">
+
+    <div class="chat_row user">
+        <div class="rowfirst">
+            <div class="avatar_image">
+                <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
+                <i class="ion-connection-bars" style="font-size:35px;"></i>
+            </div>
+        </div>
+        <div class="rowsecond">
+            <div class="news_title">{{news_title}}</div>
+            <div class="news_body">{{news_text}}</div>
+
+        </div>
+        <div class="rowthird js-toggle-favorite">
+            <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>
+            <i class="ion-close-round" style="font-size: 22px;"></i>
+        </div>
+    </div>
+
+
+</template>

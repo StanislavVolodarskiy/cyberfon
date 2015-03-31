@@ -43,7 +43,7 @@ Template.dialog.events({
         Messages.insert({
             'from': user_id,
             'to': corr_id,
-            'date': new Date(),
+            'date': formatdate(new Date()),
             'text': message
         });
 
@@ -65,3 +65,15 @@ Template.message.helpers({
         return (this.from == Meteor.userId()) ? 'is_author' : 'isnt_author';
     }
 });
+
+function formatdate (date) {
+   return ('0' + date.getDate()).slice(-2) + '.' + ('0' + (date.getMonth() + 1)).slice(-2) +  '.' + date.getFullYear().toString().substr(2,2);
+}
+
+Template.dialog.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      var height = window.innerHeight - 44 - 44;
+      document.getElementById('dialog_screen_id').style.height = height + 'px';
+    }
+};

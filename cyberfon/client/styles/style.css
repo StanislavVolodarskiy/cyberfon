@@ -404,7 +404,6 @@ a {
 .screen-content{
     top:44px; 
     width:100%; 
-    height:81%;
     margin-bottom: 50px;
     background:#fff; 
     position: relative; 
@@ -547,6 +546,7 @@ a {
     position: absolute;
     width:50px;
     left:0;
+    top:10px;
 }
 .twit_avatar img {
     padding:5px;
@@ -627,7 +627,7 @@ left:0;
     left:0px;
 }
 .twit_date {
-    font-size: 14px;
+    font-size: 12px;
     color:#999999;
     margin:5px 0 0 0;
 
@@ -741,7 +741,7 @@ left:0;
     width:100%;
     position:relative;
     min-height: 50px;
-    padding: 12px 0 6px 0;
+    padding: 12px 0 0 0;
     border-bottom:1px #ccc solid;
     line-height: 1.4;
 }
@@ -860,6 +860,9 @@ left:0;
 .chat_bottoms .ion-heart-active {
     color:#fde556!important;
 }
+.chat_bottoms .add_chat {
+    color:green;
+}
 
 .avatar_bar {
     padding:1px 5px 0 0;
@@ -877,10 +880,13 @@ left:0;
 
 }
 .chat_row .rowsecond {
-    
     padding:0 40px 0 50px;
+}
 
-   
+.user_chatlist .rowsecond {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 .chat_row .rowthird {
     position: absolute;
@@ -888,7 +894,7 @@ left:0;
     padding:0px;
     right:0;
     top:0;
-    margin-top:12px;
+    margin-top:14px;
     text-align: center;
     
 }
@@ -901,7 +907,7 @@ left:0;
 }
 
 .dialog_screen, .dialog_screen .screen-content {
-    background-color: #d9fbff;
+background-color: #ccc;
 }
 
 .dialog_box {
@@ -909,8 +915,11 @@ left:0;
     padding:10px;
     border:1px #000 solid;
     width:auto;
+    max-width: 70%;
+    min-width: 50%;
     display:inline-block;
     margin:10px;
+    border-radius: 10px;
 }
 
 .dialog_list .is_author {
@@ -1038,6 +1047,7 @@ left:0;
     position: absolute;
     width: 50px;
     padding:2px 0 0 5px;
+    margin-top: -4px;
 
 }
 .trans_row .chat_text {
@@ -1055,7 +1065,7 @@ left:0;
     padding:0;
     right:0;
     top:0;
-    margin-top:4px;
+    margin-top:-2px;
     text-align: center;
 }
 
@@ -1229,7 +1239,13 @@ left:0;
 .userblock .not_author .addchat {
     display: none;
 }
+.offradius .ion-wifi, .offradius .ion-connection-bars  {
+    color:#bbb;
+}
 
+.inradius .ion-wifi, .inradius .ion-connection-bars  {
+    color:green;
+}
 
 
 .userblock .inradius .ion-connection-bars {
@@ -1238,6 +1254,11 @@ left:0;
 .userblock .rowfirst .avatar_image {
     margin-left:5px;
     color:#bbb;
+    margin-top:-7px;
+}
+.subsecond {
+    font-size:12px;
+    color:#777;
 }
 
 
@@ -1391,6 +1412,10 @@ left:0;
     display:inline;
     color:#060df9;
 }
+.global_invisible .no_trans_text_invisible a{
+    color:#060df9;
+}
+
 
 .global_connecting .substatus2  {
     display:block;
@@ -1448,4 +1473,79 @@ left:0;
 .news_title {
     color: rgb(0,106,119);
     font-weight: bold;
+}
+
+
+.chat2_row {
+    width:100%;
+    position:relative;
+    min-height: 50px;
+    padding: 12px 0 0 0;
+    border-bottom:1px #ccc solid;
+    line-height: 1.4;
+}
+.chat2_row .avapic {
+    position: absolute;
+    width: 50px;
+    padding:0 0 0 5px;
+
+}
+.chat2_row .chat_text {
+    
+    padding:0 40px 0 60px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+
+   
+}
+.chat2_row .chat_bottoms {
+    position: absolute;
+    width: 40px;
+    padding:0px;
+    right:0;
+    top:0;
+    margin-top:12px;
+    text-align: center;
+    
+}
+
+.chat2_row .rowfirst {
+    position: absolute;
+    width: 50px;
+    padding:0 0 0 5px;
+
+}
+.chat2_row .rowsecond {
+    padding:7px 40px 0 50px;
+}
+
+.chat2_row .rowthird {
+    position: absolute;
+    width: 50px;
+    padding:0px;
+    right:0;
+    top:0;
+    margin-top:6px;
+    text-align: center;
+    
+}
+.chat2_row .control_block {
+    margin-top:-7px;
+}
+.user .sendmail {
+    width:60%;
+    height:30px;
+    display:inline;
+    padding: 0 5px;
+}
+
+.butcont {
+    margin-top: 10px;
+    width:100%;
+    text-align: center;
+}
+
+.dialog_text {
+    margin:5px 0 0 5px;
 }

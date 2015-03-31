@@ -1,6 +1,6 @@
 <template name="user">
-    <div class="screen user userblock">
-        <div class="not_author inradius">
+    <div class="screen user userblock user_chatlist">
+        <div class="">
             <div class="navigation-bar fixed-top">
                 <div class="navigation-bar__left">
                     <span class="navigation-bar__line-height">
@@ -9,11 +9,13 @@
                 </div>
                 <div class="navigation-bar__center">{{profile.first_name}} {{profile.last_name}}</div>
                 <div class="navigation-bar__right avatar_bar">
-                    <i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>
+                    <!--<i class="ion-email ion-email-style js-open-dialog" style="font-size:35px;"></i>-->
                 </div>
             </div>
 
-            <div class="screen-content">   
+            <div class="screen-content" id="user_screen">   
+                <div class='butcont'><button class="button  sendmail js-open-dialog">Переписка</button></div>
+                
                 {{#each statuses}} {{> user_status}} {{/each}}
                 <div class="substatus addchat"><a href="{{pathFor 'new_chat'}}">ДОБАВИТЬ ЧАТ</a></div> 
             </div>
@@ -22,18 +24,16 @@
 </template>
 
 <template name="user_status">
-    <div class="chat_row user">
+    <div class="chat_row user {{author}} {{radius}} {{translation}} is_author offradius is_translation">
         <div class="rowfirst">
             <div class="avatar_image">
-                <i class="ion-wifi {{active_class}}" style="font-size:35px;"></i>
+                <i class="ion-wifi" style="font-size:35px;"></i>
                 <i class="ion-connection-bars" style="font-size:35px;"></i>
             </div>
         </div>
         <div class="rowsecond js-open-chat">
             {{text}}
-            <br>
-            <div class="twit_date"><i class="ion-android-chat" style="font-size: 20px;"></i> <span style="font-size: 16px;">{{n_comments}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{date}}</div>
-
+            <div class="subsecond">22.03.2015&nbsp;&nbsp;|&nbsp;&nbsp;ответов: 4</div>
         </div>
         <div class="rowthird js-toggle-favorite">
            <i class="ion-heart favorit {{favorit}}" style="font-size: 30px;"></i>

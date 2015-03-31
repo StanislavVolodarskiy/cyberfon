@@ -157,9 +157,3 @@ Template.main.rendered = function() {
       document.getElementById('mainscreen').style.height = height + 'px';
     }
 };
-
-window.onresize = function(){
-   var height = window.innerHeight - 110 - 49;
-   document.getElementById('mainscreen').style.height = height + 'px';
-};  
-

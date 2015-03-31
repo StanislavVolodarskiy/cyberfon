@@ -17,6 +17,12 @@ Template.chat.helpers({
     'status': function() {
         return Statuses.findOne({'_id': this.chat_id});
     },
+    
+    'status_date': function() {
+        statuss = Statuses.findOne({'_id': this.chat_id});
+        return formatdate(statuss.date);
+    },
+    
     'comments': function() {
         var user_location = function(user) {
             if (user === undefined || user === null) {
@@ -96,6 +102,17 @@ Template.chat.events({
     }
 });
 
+Template.chat.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      var height = window.innerHeight - 44 - 44;
+      document.getElementById('chat_screen').style.height = height + 'px';
+    }
+};
+
+
+
+
 function formatdate (date) {
-   return ('0' + date.getDate()).slice(-2) + '.' + ('0' + (date.getMonth() + 1)).slice(-2) +  '.' + date.getFullYear();
+   return ('0' + date.getDate()).slice(-2) + '.' + ('0' + (date.getMonth() + 1)).slice(-2) +  '.' + date.getFullYear().toString().substr(2,2);
 }

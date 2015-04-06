@@ -23,7 +23,11 @@ Template.dialog.helpers({
             return list.concat(a1.slice(i1)).concat(a2.slice(i2));
         };
         var list = merge(outgoing, incoming, function(message) {
-            return message.date.getTime();
+            try {
+                return message.date.getTime();
+            } catch (e) {
+            }
+            return 0;
         });
         _.each(list, function(v) {v.date = formatdate(v.date);});
         return list;

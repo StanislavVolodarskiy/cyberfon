@@ -29,7 +29,12 @@ Template.dialog.helpers({
             }
             return 0;
         });
-        _.each(list, function(v) {v.date = formatdate(v.date);});
+        _.each(list, function(v) {
+            try {
+                v.date = formatdate(v.date);
+            } catch (e) {
+            }
+        });
         return list;
     }
 });

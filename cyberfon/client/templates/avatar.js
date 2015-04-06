@@ -10,9 +10,6 @@ Template.avatar.helpers({
             'width': width,
             'href': href
         }
-        
-        
-        
     }
 });
 

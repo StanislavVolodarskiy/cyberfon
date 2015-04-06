@@ -1,8 +1,15 @@
 Locations = new Meteor.Collection('locations');
 if (Meteor.isServer) {
-    Locations._ensureIndex({'user'    : 1         });
-    Locations._ensureIndex({'location': '2dsphere'});
+    Locations._ensureIndex({'user'     : 1         });
+    Locations._ensureIndex({'location' : '2dsphere'});
+    Locations._ensureIndex({'timestamp': 1         });
+
+    Meteor.setInterval(function() {
+        var time = new Date(new Date().getTime() - 10 * 1000);
+        Locations.remove({'timestamp': {'$lt': time}});
+    }, 10 * 1000);
 }
+
 
 Statuses = new Meteor.Collection('statuses');
 if (Meteor.isServer) {

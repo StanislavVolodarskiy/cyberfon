@@ -7,11 +7,16 @@ Template.user.helpers({
         var user = Meteor.users.findOne({'_id': this.user_id}, {'profile': 1});
         var status = (user === undefined) ? undefined : user.profile.status;
 
+        var author = (Meteor.userId() === this.user_id) ? 'is_author' : 'not_author';
         return Statuses.find({'user': this.user_id}, {'user_id': 0}).map(function(doc) {
             doc['active_class'] = (doc._id === status) ? 'twit_active' : 'twit_passive';
             doc['n_comments'] = Comments.find({'status': doc._id}).count();
+            doc['author'] = author;
             return doc;
         });
+    },
+    'owner': function() {
+        return (Meteor.userId() === this.user_id) ? 'is_owner' : 'not_owner';
     }
 });
 

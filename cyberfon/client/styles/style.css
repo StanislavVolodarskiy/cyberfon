@@ -1153,6 +1153,13 @@ background-color: #ccc;
     
 }
 
+.main_row .uptext {
+    font-size:10px;
+    font-weight:bold;
+    color:#bbb;
+    margin-bottom:-5px;
+}
+
 .bottom_efir {
     padding-top:3px;
 }
@@ -1571,9 +1578,36 @@ background-color: #ccc;
 .user .sendmail {
     width:60%;
     height:30px;
-    display:inline;
+    
     padding: 0 5px;
 }
+
+.sendmail  {
+    display:none;
+}
+
+.not_owner .sendmail  {
+    display:inline;
+}
+
+
+.user .createchat {
+    width:60%;
+    height:30px;
+    
+    padding: 0 5px;
+}
+
+.createchat  {
+    display:none;
+}
+
+.is_owner .createchat  {
+    display:inline;
+}
+
+
+
 
 .butcont {
     margin-top: 10px;

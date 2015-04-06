@@ -44,18 +44,18 @@
             {{> avatar user_id=user_id}}
             <div class="informer"><img src="/images/{{distance_image}}.png" /></div>
         </div>
-        <div class="chat_text js-open-chat-2"><!--<i class="ion-connection-bars" style="font-size: 20px;"></i>--> {{status.text}}</div>
+        <div class="chat_text js-open-chat-2"><div class="uptext">{{first_name}} {{last_name}}</div>{{status.text}}</div>
         <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart {{favorite_class}}" style="font-size: 30px;"></i> </span></div>
     </div>
 </template>
 
 <template name="main_region">
-    <div class="main_row">
+    <!--<div class="main_row">
         <div class="avapic">
             <img src="{{fake_avatar}}" />
             <div class="informer"><img src="/images/icon_group.png" /></div>
         </div>
         <div class="chat_text js-open-region"><span class="named">{{name}}</span></div>
         <div class="chat_bottoms js-toggle-favorite"><span class=""><i class="ion-heart {{favorite_class}}" style="font-size: 30px;"></i> </span></div>
-    </div>
+    </div>-->
 </template>

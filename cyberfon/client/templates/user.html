@@ -1,5 +1,5 @@
 <template name="user">
-    <div class="screen user userblock user_chatlist">
+    <div class="screen user userblock user_chatlist {{owner}} is_owner not_owner">
         <div class="">
             <div class="navigation-bar fixed-top">
                 <div class="navigation-bar__left goback">
@@ -18,6 +18,7 @@
 
             <div class="screen-content" id="user_screen">   
                 <div class='butcont'><button class="button  sendmail js-open-dialog">Переписка</button></div>
+                <div class='butcont'><button class="button  createchat js-create-chat">Создать новый чат</button></div>
                 
                 {{#each statuses}} {{> user_status}} {{/each}}
                 <div class="substatus addchat"><a href="{{pathFor 'new_chat'}}">ДОБАВИТЬ ЧАТ</a></div> 

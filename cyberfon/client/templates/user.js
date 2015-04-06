@@ -18,6 +18,9 @@ Template.user.helpers({
 Template.user.events({
     'click .js-open-dialog': function(event, template) {
         Router.go('dialog', {'_id': template.data.user_id});
+    },
+    'click .js-create-chat': function(event, template) {
+        Router.go('new_chat', {'_id': template.data.user_id});
     }
 });
 

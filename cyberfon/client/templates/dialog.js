@@ -22,9 +22,11 @@ Template.dialog.helpers({
 
             return list.concat(a1.slice(i1)).concat(a2.slice(i2));
         };
-        return merge(outgoing, incoming, function(message) {
-            return message.date;
+        var list = merge(outgoing, incoming, function(message) {
+            return message.date.getTime();
         });
+        _.each(list, function(v) {v.date = formatdate(v.date);});
+        return list;
     }
 });
 
@@ -43,7 +45,7 @@ Template.dialog.events({
         Messages.insert({
             'from': user_id,
             'to': corr_id,
-            'date': formatdate(new Date()),
+            'date': new Date(),
             'text': message
         });
 

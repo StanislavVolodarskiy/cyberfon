@@ -29,6 +29,21 @@ Template.main.helpers({
         return status;
     },
 
+    'location': function() {
+        var userId = Meteor.userId();
+        if (userId === undefined || userId === null) {
+            return undefined;
+        }
+        var location = Locations.findOne({'user': userId}, {'location': 1});
+        if (location === undefined) {
+            return undefined;
+        }
+        return {
+            'longitude': Math.round(100000 * location.location.coordinates[0]) / 100000,
+            'latitude' : Math.round(100000 * location.location.coordinates[1]) / 100000
+        };
+    },
+
     'users': function() {
         var user_location = function(user) {
             var location = Locations.findOne({'user': user}, {'location': 1});

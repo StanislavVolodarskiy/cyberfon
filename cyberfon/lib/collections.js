@@ -5,7 +5,7 @@ if (Meteor.isServer) {
     Locations._ensureIndex({'timestamp': 1         });
 
     Meteor.setInterval(function() {
-        var time = new Date(new Date().getTime() - 10 * 1000);
+        var time = new Date(new Date().getTime() - 120 * 1000);
         Locations.remove({'timestamp': {'$lt': time}});
     }, 10 * 1000);
 }

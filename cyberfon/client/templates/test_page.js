@@ -1,42 +1,43 @@
-/*
 (function() {
 
-    var dump = function(id, args) {
-        var dump = function() {
+    var dump = function(id, cb) {
+        return function() {
             console.log(id + ' ' + Array.prototype.slice.call(arguments).join(' '));
+            cb([]);
         };
-        if (args == undefined) {
-            return dump;
-        }
-        dump.apply(null, args);
     };
 
     var read_wifis = (Meteor.isCordova) ? function(cb) {
         WifiWizard.startScan(
             function() {
-                dump('WifiWizard.startScan.success', arguments);
-                WifiWizard.getScanResults(cb(networks), dump('WifiWizard.getScanResults.fail'));
+                WifiWizard.getScanResults(function(wifis) {
+                    cb(_.map(wifis, function(wifi) {return {'mac': wifi['BSSID']};}));
+                }, dump('WifiWizard.getScanResults.fail', cb));
             },
-            dump('WifiWizard.startScan.fail')
+            dump('WifiWizard.startScan.fail', cb)
         );
     } : function(cb) {
         cb([]);
     };
 
     var read_cells = (Meteor.isCordova) ? function(cb) {
-        CellInfo.gsmCells(cb, dump('failure'));
+        CellInfo.gsmCells(function(gsm_cells) {
+            _.each(gsm_cells, function(cell) {
+                cell['cellid'] = cell['id'];
+                delete cell['id'];
+            });
+            cb(gsm_cells);
+        }, dump('CellInfo.gsmCells.failure', cb));
     } : function(cb) {
-        cb({});
-    }
+        cb([]);
+    };
 
     var cells    = new ReactiveVar();
     var wifis    = new ReactiveVar();
     var response = new ReactiveVar();
 
     Template.test_page.helpers({
-        'wifis'   : function() {
-            console.log('UGU');
-            return JSON.stringify(wifis   .get(), null, 4);},
+        'wifis'   : function() {return JSON.stringify(wifis   .get(), null, 4);},
         'cells'   : function() {return JSON.stringify(cells   .get(), null, 4);},
         'response': function() {return JSON.stringify(response.get(), null, 4);}
     });
@@ -44,22 +45,20 @@
     Template.test_page.events({
         'click .js-show-request': function(event, template) {
             event.preventDefault();
-            console.log('UGU');
             read_cells(function(gsm_cells    ) {cells.set(gsm_cells    );});
-            console.log('UGU');
             read_wifis(function(wifi_networks) {wifis.set(wifi_networks);});
-            console.log('UGU');
         },
         'click .js-call-locator': function(event, template) {
             event.preventDefault();
-            Meteor.call('yandexLocator', cells.get(), wifis.get(), function(error, result) {
-                if (error !== undefined) {
-                    response.set(error);
-                    return;
-                }
-                response.set(result);
-            });
+            if (cells.get().length > 0 || wifis.get().length > 0) {
+                Meteor.call('yandexLocator', cells.get(), wifis.get(), function(error, result) {
+                    if (error !== undefined) {
+                        response.set(error);
+                        return;
+                    }
+                    response.set(result);
+                });
+            }
         }
     });
 })();
-*/

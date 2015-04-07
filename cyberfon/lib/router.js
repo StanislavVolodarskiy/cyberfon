@@ -67,3 +67,5 @@ Router.route('favorites', {
         'favorites_title': {'to': 'title'}
     }
 });
+
+Router.route('test_page');

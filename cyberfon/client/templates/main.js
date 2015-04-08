@@ -6,9 +6,9 @@ Template.main.helpers({
     'status': function() {
         var null_status = {
             'status_id' : undefined,
-            'text'      : '-',
+            'text'      : 'Нажмите "+" для создания геочата',
             'date'      : '-',
-            'n_comments': '-'
+            'n_comments': ''
         };
 
         var user = Meteor.user();
@@ -24,9 +24,9 @@ Template.main.helpers({
             return null_status;
         }
 
-        status['n_comments'] = Comments.find({'status': user.profile.status}).count();
+        status['n_comments'] = "(" + Comments.find({'status': user.profile.status}).count() + ")";
 
-        return status;
+        return status ;
     },
 
     'location': function() {

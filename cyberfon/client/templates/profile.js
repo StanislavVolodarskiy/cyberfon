@@ -33,5 +33,9 @@ Template.profile.events({
                 Accounts.changePassword(old_password, password);
             }
         }
-    }
+    },
+    
+    'click .js-open-main'  : function() { Router.go('main'); }
+    
 });
+

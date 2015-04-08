@@ -35,7 +35,8 @@ Template.profile.events({
         }
     },
     
-    'click .js-open-main'  : function() { Router.go('main'); }
+    'click .js-open-main'  : function() { Router.go('main'); },
+    'click .js-sign-out'  : function() { Router.go('sign_out'); },
     
 });
 

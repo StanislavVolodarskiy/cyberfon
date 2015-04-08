@@ -10,7 +10,7 @@
             var new_favorites_set = Utils.make_set(new_favorites);
             favorites.each(function(v, k) {
                 if (!new_favorites_set(k)) {
-                    favorites.put(k, Meteor.setTimeout(function() {
+                    favorites.set(k, Meteor.setTimeout(function() {
                         favorites.remove(k);
                         favorites_rv.set(favorites);
                     }, 30000));
@@ -22,10 +22,10 @@
                     var id = favorites.get(v);
                     if (id !== undefined) {
                         Meteor.clearTimeout(id);
-                        favorites.put(v);
+                        favorites.set(v, undefined);
                     }
                 } else {
-                    favorites.put(v);
+                    favorites.set(v, undefined);
                     favorites_rv.set(favorites);
                 }
             });

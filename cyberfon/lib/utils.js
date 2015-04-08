@@ -28,8 +28,18 @@ Utils = (function() {
             node.next.prev = node.prev;
         };
 
+        // reorder new node: remove(key); set(key, value);
         var put = function(key, value) {
             console.log('PUT', key, value);
+            if (dict.hasOwnProperty(key)) {
+                remove_node(dict[key]);
+            }
+            dict[key] = insert_node_before(head, key, value);
+        };
+
+        // keep node order
+        var set = function(key, value) {
+            console.log('SET', key, value);
             if (dict.hasOwnProperty(key)) {
                 dict[key]['value'] = value;
             } else {
@@ -77,14 +87,27 @@ Utils = (function() {
             return list;
         };
 
+        var first = function() {
+            return make_it(head.next);
+        };
+
+        var make_it = function(node) {
+            return {
+                'key'  : node.key  ,
+                'value': node.value
+            };
+        };
+
         return {
             'put'   : put,
+            'set'   : set,
             'get'   : get,
             'has'   : has,
             'remove': remove,
             'each'  : each,
             'map'   : map,
-            'filter': filter
+            'filter': filter,
+            'first' : first
         };
     };
     

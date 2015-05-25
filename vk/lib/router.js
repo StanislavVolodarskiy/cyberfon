@@ -25,8 +25,9 @@ Router.route('auth');
 
 Router.route('auth_cb', {
     data: function() {
-        return {'args': _.map(this.params, function(v, k) {
-            return {'key': k, 'value': v};
+        return {'args': _.map(this.params.hash.split('&'), function(v) {
+            var items = v.split('=');
+            return {'key': items[0], 'value': items[1]};
         })};
     }
 });

@@ -56,7 +56,8 @@ Router.route('auth', function() {
         ['redirect_uri' , auth_cb_url()],
         ['display'      , 'page'       ],
         ['v'            , '5.32'       ],
-        ['response_type', 'token'      ]
+        ['response_type', 'token'      ],
+        ['state'        , 'UGU'        ]
     ]), '_self');
 });
 
@@ -66,6 +67,7 @@ Router.route('auth_cb', function() {
         var items = v.split('=');
         map[items[0]] = items[1];
     });
+    console.log(map);
     vk_access.open(map.user_id, map.access_token);
     Router.go('friends');
 });

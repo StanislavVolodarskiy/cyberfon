@@ -2,8 +2,8 @@ var vk_access = (function() {
     var user;
     var token;
     return {
-        'open': function(u, token) {
-            user = u
+        'open': function(u, t) {
+            user = u;
             token = t;
         },
         'opened': function() {

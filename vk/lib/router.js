@@ -1,33 +1,28 @@
-var vk_access = (function() {
+Router.setTemplateNameConverter(function(s) { return s; });
+
+Router.configure({
+    'layoutTemplate': 'layout'
+});
+
+var vk_access = (function(auth_cb_route) {
     var user;
     var token;
 
-    var auth_cb_route = _.once(function() {
-        _.each(Router.routes, function(v) {
-            console.log(v.getName());
+    Router.route(auth_cb_route, function() {
+        var map = {};
+        _.each(this.params.hash.split('&'), function(v) {
+            var items = v.split('=');
+            map[items[0]] = items[1];
         });
-        alert('UGU');
-
-
-        Router.route('auth_cb', function() {
-            var map = {};
-            _.each(this.params.hash.split('&'), function(v) {
-                var items = v.split('=');
-                map[items[0]] = items[1];
-            });
-            console.log(map);
-            user = map.user_id;
-            token = map.access_token;
-            Router.go(decodeURIComponent(map.state));
-        });
-
-        return 'auth_cb';
+        console.log(map);
+        user = map.user_id;
+        token = map.access_token;
+        Router.go(decodeURIComponent(map.state));
     });
-
 
     var authorize = function(go_to) {
         var auth_cb_url = function() {
-            return Meteor.settings.public.scheme + '://' + Meteor.settings.public.host + '/' + auth_cb_route();
+            return Meteor.settings.public.scheme + '://' + Meteor.settings.public.host + '/' + auth_cb_route;
         };
 
         var url = function(path, params) {
@@ -57,13 +52,7 @@ var vk_access = (function() {
             return token !== undefined;
         }
     };
-})();
-
-Router.setTemplateNameConverter(function(s) { return s; });
-
-Router.configure({
-    'layoutTemplate': 'layout'
-});
+})('vk_auth_cb');
 
 Router.route('root', function() {}, {
     'path': '/',

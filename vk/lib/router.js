@@ -4,7 +4,7 @@ Router.configure({
     'layoutTemplate': 'layout'
 });
 
-var vk_access = (function(auth_cb_route) {
+var vk = (function(auth_cb_route) {
     var user;
     var token;
 
@@ -14,13 +14,12 @@ var vk_access = (function(auth_cb_route) {
             var items = v.split('=');
             map[items[0]] = items[1];
         });
-        console.log(map);
         user = map.user_id;
         token = map.access_token;
-        Router.go(decodeURIComponent(map.state));
+        Router.go(map.state);
     });
 
-    var authorize = function(go_to) {
+    var login = function(go_to) {
         var auth_cb_url = function() {
             return Meteor.settings.public.scheme + '://' + Meteor.settings.public.host + '/' + auth_cb_route;
         };
@@ -47,8 +46,8 @@ var vk_access = (function(auth_cb_route) {
     };
 
     return {
-        'authorize': authorize,
-        'authorized': function() {
+        'login': login,
+        'loggedIn': function() {
             return token !== undefined;
         }
     };
@@ -64,10 +63,9 @@ Router.route('root', function() {}, {
 
 Router.route('friends', {
     'onBeforeAction': function() {
-        if (!vk_access.authorized()) {
-            vk_access.authorize('frie&nds');
+        if (!vk.loggedIn()) {
+            vk.login('friends');
         }
-        console.log(Router.routes);
         this.next();
     }
 });

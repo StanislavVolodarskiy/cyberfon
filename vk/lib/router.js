@@ -2,24 +2,31 @@ var vk_access = (function() {
     var user;
     var token;
 
-    var auth_cb_route = 'auth_cb';
-
-    Router.route(auth_cb_route, function() {
-        console.log(this.params);
-        var map = {};
-        _.each(this.params.hash.split('&'), function(v) {
-            var items = v.split('=');
-            map[items[0]] = items[1];
+    var auth_cb_route = _.once(function() {
+        _.each(Router.routes, function(v) {
+            console.log(v.getName());
         });
-        console.log(map);
-        user = map.user_id;
-        token = map.access_token;
-        Router.go(decodeURIComponent(map.state));
+
+
+        Router.route('auth_cb', function() {
+            var map = {};
+            _.each(this.params.hash.split('&'), function(v) {
+                var items = v.split('=');
+                map[items[0]] = items[1];
+            });
+            console.log(map);
+            user = map.user_id;
+            token = map.access_token;
+            Router.go(decodeURIComponent(map.state));
+        });
+
+        return 'auth_cb';
     });
+
 
     var authorize = function(go_to) {
         var auth_cb_url = function() {
-            return Meteor.settings.public.scheme + '://' + Meteor.settings.public.host + '/' + auth_cb_route;
+            return Meteor.settings.public.scheme + '://' + Meteor.settings.public.host + '/' + auth_cb_route();
         };
 
         var url = function(path, params) {

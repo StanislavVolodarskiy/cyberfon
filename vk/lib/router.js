@@ -65,7 +65,7 @@ Router.route('root', function() {}, {
 Router.route('friends', {
     'onBeforeAction': function() {
         if (!vk_access.authorized()) {
-            vk_access.authorize('frie/nds');
+            vk_access.authorize('frie&nds');
         }
         console.log(Router.routes);
         this.next();

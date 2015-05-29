@@ -2,7 +2,7 @@ var vk_access = (function() {
     var user;
     var token;
 
-    var auth_cb_route = '/auth_cb';
+    var auth_cb_route = 'auth_cb';
 
     Router.route(auth_cb_route, function() {
         var map = {};

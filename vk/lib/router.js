@@ -5,6 +5,7 @@ var vk_access = (function() {
     var auth_cb_route = 'auth_cb';
 
     Router.route(auth_cb_route, function() {
+        console.log(this.params);
         var map = {};
         _.each(this.params.hash.split('&'), function(v) {
             var items = v.split('=');
@@ -69,6 +70,8 @@ Router.route('friends', {
         if (!vk_access.authorized()) {
             vk_access.authorize('friends');
         }
+        console.log(Router.routes);
         this.next();
     }
 });
+

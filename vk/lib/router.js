@@ -6,6 +6,7 @@ var vk_access = (function() {
         _.each(Router.routes, function(v) {
             console.log(v.getName());
         });
+        alert('UGU');
 
 
         Router.route('auth_cb', function() {

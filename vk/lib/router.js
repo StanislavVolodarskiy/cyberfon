@@ -1,3 +1,8 @@
+WebApp.connectHandlers.use(function(req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    return next();
+});
+
 Router.setTemplateNameConverter(function(s) { return s; });
 
 Router.configure({

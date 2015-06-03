@@ -44,4 +44,3 @@ Router.route('friends', {
     }
 });
 
-Router.route('wait');

@@ -4,7 +4,7 @@ Router.configure({
     'layoutTemplate': 'layout'
 });
 
-var vk = (function(auth_cb_route) {
+var vk = (function() {
     var version = '5.33';
 
     var users = function(cb) {
@@ -18,7 +18,7 @@ var vk = (function(auth_cb_route) {
     return {
         'users': users
     };
-})('vk_auth_cb');
+})();
 
 Router.route('root', function() {}, {
     'path': '/',
@@ -31,10 +31,14 @@ Router.route('root', function() {}, {
 Router.route('friends', {
     'onBeforeAction': function() {
         if (Meteor.user() === null) {
-            console.log('THERE');
-            Meteor.loginWithVk(function() {
-                console.log(arguments);
-            });
+            if (Accounts.loginServicesConfigured()) {
+                console.log('THERE');
+                Meteor.loginWithVk(function() {
+                    console.log(arguments);
+                });
+            } else {
+                Router.render('wait');
+            }
         } else {
             console.log('HERE');
         }
@@ -42,3 +46,4 @@ Router.route('friends', {
     }
 });
 
+Router.route('wait');

@@ -1,11 +1,3 @@
-if (Meteor.isServer) {
-    WebApp.connectHandlers.use(function(req, res, next) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        console.log('RES', res);
-        return next();
-    });
-}
-
 Router.setTemplateNameConverter(function(s) { return s; });
 
 Router.configure({

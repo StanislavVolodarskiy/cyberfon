@@ -36,8 +36,6 @@ Router.route('friends', {
                 Meteor.loginWithVk(function() {
                     console.log(arguments);
                 });
-            } else {
-                Router.render('wait');
             }
         } else {
             console.log('HERE');

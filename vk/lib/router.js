@@ -18,13 +18,9 @@ var vk = (function() {
     var version = '5.33';
 
     var users = function(cb) {
-        var user = Meteor.user();
-        if (user === undefined) {
-            cb([]);
-            return;
-        }
-        var token = user.services.vk.accessToken;
+        var token = Meteor.user().services.vk.accessToken;
         var users_url = url('https://api.vk.com/method/users.get', [
+            ['user_id'     , '4910052'  ],
             ['v'           , version    ],
             ['access_token', token      ],
             ['fields'      , 'sex,bdate']
@@ -52,8 +48,7 @@ Router.route('root', function() {}, {
 
 Router.route('friends', {
     'onBeforeAction': function() {
-        console.log('USER', Meteor.user());
-        if (Meteor.user() === null) {
+        if (Meteor.user() === undefined or Meteor.user() === null) {
             if (Accounts.loginServicesConfigured()) {
                 console.log('THERE');
                 Meteor.loginWithVk(function() {

@@ -48,7 +48,7 @@ Router.route('root', function() {}, {
 
 Router.route('friends', {
     'onBeforeAction': function() {
-        if (Meteor.user() === undefined or Meteor.user() === null) {
+        if (Meteor.user() === undefined || Meteor.user() === null) {
             if (Accounts.loginServicesConfigured()) {
                 console.log('THERE');
                 Meteor.loginWithVk(function() {

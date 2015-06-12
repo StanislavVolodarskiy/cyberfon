@@ -50,7 +50,7 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
-            console.log(vk);
+            console.log(Meteor.user());
             vk.users(function() {
                 console.log(arguments);
             });

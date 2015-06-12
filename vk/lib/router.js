@@ -18,10 +18,11 @@ var vk = (function() {
     var version = '5.33';
 
     var users = function(cb) {
-        console.log(Meteor.user());
+        var user_id = Meteor.user().services.vk.id;
         var token = Meteor.user().services.vk.accessToken;
+
         var users_url = url('https://api.vk.com/method/users.get', [
-            ['user_id'     , '4910052'  ],
+            ['user_id'     , id         ],
             ['v'           , version    ],
             ['access_token', token      ],
             ['fields'      , 'sex,bdate']

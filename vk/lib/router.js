@@ -50,6 +50,10 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
+            Meteor.call('ugu', function(error, result) {
+                console.log('ERROR', error);
+                console.log('RESULT', result);
+            });
             vk.users(function() {
                 console.log(arguments);
             });

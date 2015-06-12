@@ -9,3 +9,8 @@ ServiceConfiguration.configurations.insert({
     'secret' : '3GT1pXVf5eXkArMoXalz'
 });
 
+Meteor.methods({
+    'ugu': function () {
+        return "some return value";
+    }
+});

@@ -18,7 +18,7 @@ var vk = (function() {
     var version = '5.33';
 
     var users = function(cb) {
-        console.log('URL');
+        var token = Meteor.user().services.vk.accessToken;
         HTTP.get(url('https://api.vk.com/method/users.get', [
             ['v'           , version    ],
             ['access_token', token      ],
@@ -50,7 +50,6 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
-            console.log(Meteor.user().services.vk.accessToken);
             vk.users(function() {
                 console.log(arguments);
             });

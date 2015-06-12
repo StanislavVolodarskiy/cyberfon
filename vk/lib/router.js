@@ -40,6 +40,7 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
+            console.log(vk);
             vk.users(function() {
                 console.log(arguments);
             });

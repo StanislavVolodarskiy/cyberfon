@@ -19,11 +19,17 @@ var vk = (function() {
 
     var users = function(cb) {
         var token = Meteor.user().services.vk.accessToken;
-        HTTP.get(url('https://api.vk.com/method/users.get', [
+        var users_url = url('https://api.vk.com/method/users.get', [
             ['v'           , version    ],
             ['access_token', token      ],
             ['fields'      , 'sex,bdate']
-        ]), {}, cb);
+        ]);
+
+        Meteor.call('get_url', users_url, function(error, result) {
+            console.log('ERROR', error);
+            console.log('RESULT', result);
+            cb(result);
+        });
     };
 
     return {
@@ -50,10 +56,6 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
-            Meteor.call('ugu', function(error, result) {
-                console.log('ERROR', error);
-                console.log('RESULT', result);
-            });
             vk.users(function() {
                 console.log(arguments);
             });

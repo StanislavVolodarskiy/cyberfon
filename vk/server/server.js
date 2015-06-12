@@ -10,7 +10,7 @@ ServiceConfiguration.configurations.insert({
 });
 
 Meteor.methods({
-    'ugu': function () {
-        return "some return value";
+    'get_url': function(url) {
+        return HTTP.get(url, {});
     }
 });

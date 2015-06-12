@@ -52,6 +52,7 @@ Router.route('root', function() {}, {
 
 Router.route('friends', {
     'onBeforeAction': function() {
+        console.log(Meteor.user());
         if (Meteor.user() === null) {
             if (Accounts.loginServicesConfigured()) {
                 console.log('THERE');

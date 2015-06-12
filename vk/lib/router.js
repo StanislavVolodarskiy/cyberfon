@@ -5,6 +5,16 @@ Router.configure({
 });
 
 var vk = (function() {
+    var url = function(path, params) {
+        if (params === undefined) {
+            params = [];
+        }
+        var param_str = _.map(params, function(v) {
+            return v[0] + '=' + encodeURIComponent(v[1]);
+        }).join('&');
+        return (param_str === '') ? path : path + '?' + param_str;
+    };
+
     var version = '5.33';
 
     var users = function(cb) {

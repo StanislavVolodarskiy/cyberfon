@@ -22,7 +22,7 @@ var vk = (function() {
         var token = Meteor.user().services.vk.accessToken;
 
         var users_url = url('https://api.vk.com/method/users.get', [
-            ['user_id'     , id         ],
+            ['user_id'     , user_id    ],
             ['v'           , version    ],
             ['access_token', token      ],
             ['fields'      , 'sex,bdate']

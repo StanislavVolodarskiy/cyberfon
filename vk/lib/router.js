@@ -8,6 +8,7 @@ var vk = (function() {
     var version = '5.33';
 
     var users = function(cb) {
+        console.log('URL');
         HTTP.get(url('https://api.vk.com/method/users.get', [
             ['v'           , version    ],
             ['access_token', token      ],
@@ -39,6 +40,9 @@ Router.route('friends', {
             }
         } else {
             console.log('HERE');
+            vk.users(function() {
+                console.log(arguments);
+            });
         }
         this.next();
     }
